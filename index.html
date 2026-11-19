@@ -1192,57 +1192,6 @@ button{cursor:pointer}
 
 
 
-<!-- INTRODUCTION -->
-
-<section class="section">
- <div class="intro-section">
-
-  <div class="intro-visual reveal reveal-left">
-   <div class="intro-image"></div>
-   <div class="intro-accent"></div>
-   <div class="intro-badge">
-    <i class="fa-solid fa-water"></i>
-    <span>
-     <strong>Water Technology</strong>
-     <small>Products & Equipment</small>
-    </span>
-   </div>
-  </div>
-
-  <div class="intro-copy reveal reveal-right">
-   <div class="section-label">Welcome to SVN Enterprises</div>
-   <h2 class="section-title">Your Partner for Water Treatment Products</h2>
-
-   <p class="section-description">
-    Water treatment systems depend on the right components to deliver
-    consistent performance. SVN Enterprises focuses on supplying a
-    comprehensive range of water treatment spares and equipment for
-    filtration, purification and chemical dosing applications.
-   </p>
-
-   <p class="section-description" style="margin-top:15px">
-    From replacement filtration consumables to pumps, accessories and
-    complete system requirements, we aim to make product sourcing
-    straightforward for industrial, commercial and institutional customers.
-   </p>
-
-   <ul class="intro-list">
-    <li><i class="fa-solid fa-check"></i> Water filtration and purification products</li>
-    <li><i class="fa-solid fa-check"></i> Industrial pumps and dosing equipment</li>
-    <li><i class="fa-solid fa-check"></i> Replacement spares and accessories</li>
-    <li><i class="fa-solid fa-check"></i> Product enquiry and customer assistance</li>
-   </ul>
-
-   <a href="#about" class="btn btn-primary">
-    Discover Our Company <i class="fa-solid fa-arrow-right"></i>
-   </a>
-  </div>
-
- </div>
-</section>
-
-
-
 <!-- WHY CHOOSE US -->
 
 <section class="section why-section">
@@ -1688,74 +1637,6 @@ enquiryModal.addEventListener("click",event=>{
 document.addEventListener("keydown",event=>{
  if(event.key==="Escape") hideModal();
 });
-
-
-
-/* AUTOMATIC HERO IMAGE SLIDER */
-
-const heroSlides = document.querySelectorAll(".hero-slide");
-const heroDots = document.querySelectorAll(".hero-dot");
-const heroProgress = document.getElementById("heroProgress");
-
-let currentHeroSlide = 0;
-let heroTimer;
-let heroStartTime;
-const heroInterval = 5000;
-
-function showHeroSlide(index){
-
- heroSlides[currentHeroSlide].classList.remove("active");
- heroDots[currentHeroSlide].classList.remove("active");
-
- currentHeroSlide = (index + heroSlides.length) % heroSlides.length;
-
- heroSlides[currentHeroSlide].classList.add("active");
- heroDots[currentHeroSlide].classList.add("active");
-
- heroProgress.style.transition="none";
- heroProgress.style.width="0%";
-
- requestAnimationFrame(()=>{
-  requestAnimationFrame(()=>{
-   heroProgress.style.transition=`width ${heroInterval}ms linear`;
-   heroProgress.style.width="100%";
-  });
- });
-
-}
-
-function nextHeroSlide(){
- showHeroSlide(currentHeroSlide + 1);
-}
-
-function previousHeroSlide(){
- showHeroSlide(currentHeroSlide - 1);
-}
-
-function startHeroSlider(){
- clearInterval(heroTimer);
- heroTimer=setInterval(nextHeroSlide,heroInterval);
-}
-
-document.getElementById("heroNext").addEventListener("click",()=>{
- nextHeroSlide();
- startHeroSlider();
-});
-
-document.getElementById("heroPrev").addEventListener("click",()=>{
- previousHeroSlide();
- startHeroSlider();
-});
-
-heroDots.forEach((dot,index)=>{
- dot.addEventListener("click",()=>{
-  showHeroSlide(index);
-  startHeroSlider();
- });
-});
-
-startHeroSlider();
-
 
 </script>
 
