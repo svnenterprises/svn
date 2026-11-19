@@ -732,6 +732,20 @@ button{cursor:pointer}
 
 /* RESPONSIVE */
 
+@media(max-width:480px){
+ .brand-logo{
+  width:48px;
+  height:48px;
+ }
+ .brand-name{
+  font-size:16px;
+ }
+ .brand-name small{
+  font-size:7px;
+  letter-spacing:1.5px;
+ }
+}
+
 @media(max-width:1050px){
  .nav{gap:18px}
  .product-grid{grid-template-columns:repeat(3,1fr)}
@@ -813,12 +827,14 @@ button{cursor:pointer}
 
 <header class="header" id="header">
  <div class="topbar">
-  <a class="brand" href="index.html">
-   <span class="brand-logo"><i class="logos/logo.jpg"></i></span>
-   <span class="brand-name">
-    <small>WATER TREATMENT SOLUTIONS</small>
-   </span>
-  </a>
+ <a class="brand" href="index.html">
+ <span class="brand-logo">
+  <img src="logos/logo.jpg" alt="SVN Enterprises Logo">
+ </span>
+ <span class="brand-name">
+  <small>WATER TREATMENT SOLUTIONS</small>
+ </span>
+</a>
 
   <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
    <i class="fa-solid fa-bars"></i>
