@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#087e68">
 <meta name="description" content="Explore RO membranes, filter cartridges, filter housings, filter bags, filter paper, pumps, accessories, purification systems and dosing systems from SVN Enterprises.">
-<title>Our Products | SVN Enterprises - Industrial Water Treatment Solutions</title>
+<title>Products | SVN Enterprises – Water Treatment Solutions</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,915 +14,1005 @@
 
 <style>
 :root{
- --green:#087e68;
- --green2:#12a887;
- --mint:#dff6ed;
- --navy:#102d3c;
- --ink:#20313a;
- --muted:#71818a;
- --paper:#f4f8f6;
- --white:#fff;
- --line:#e4ece8;
- --shadow:0 20px 55px rgba(13,56,47,.10);
+  --green:#087e68;
+  --green2:#12a887;
+  --mint:#dff6ed;
+  --navy:#102d3c;
+  --ink:#20313a;
+  --muted:#71818a;
+  --paper:#f5f9f7;
+  --white:#fff;
+  --line:#e4ece8;
+  --shadow:0 18px 50px rgba(13,56,47,.09);
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-
 html{scroll-behavior:smooth;scroll-padding-top:90px}
-
 body{
- background:#e2f2eb;
- color:var(--ink);
- font-family:"DM Sans",sans-serif;
- padding:20px;
- overflow-x:hidden;
+  background:#f1f7f4;
+  color:var(--ink);
+  font-family:"DM Sans",sans-serif;
+  overflow-x:hidden;
 }
-
 a{text-decoration:none;color:inherit}
-
 button,input{font:inherit}
+button{cursor:pointer}
 
 .site-shell{
- max-width:1380px;
- margin:auto;
- background:var(--paper);
- overflow:hidden;
- border-radius:12px;
- box-shadow:0 25px 80px rgba(0,0,0,.14);
+  max-width:1440px;
+  margin:auto;
+  background:var(--white);
+  overflow:hidden;
+  box-shadow:0 15px 65px rgba(12,45,35,.07);
 }
 
 /* HEADER */
 
 .topbar{
- height:82px;
- padding:0 6%;
- display:flex;
- align-items:center;
- justify-content:space-between;
- background:rgba(255,255,255,.96);
- position:sticky;
- top:0;
- z-index:1000;
- border-bottom:1px solid #e9f0ec;
- backdrop-filter:blur(18px);
+  height:84px;
+  padding:0 7%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(255,255,255,.96);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-bottom:1px solid #edf2ef;
+  backdrop-filter:blur(18px);
 }
 
 .brand{
- display:flex;
- align-items:center;
- gap:12px;
- font-family:Manrope,sans-serif;
- font-size:20px;
- font-weight:800;
- letter-spacing:-.7px;
- color:var(--navy);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-family:Manrope,sans-serif;
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:-.7px;
+  color:var(--navy);
 }
 
 .brand-mark{
- width:46px;
- height:46px;
- border-radius:15px;
- background:linear-gradient(145deg,#20c99c,#08745f);
- display:grid;
- place-items:center;
- color:white;
- font-size:25px;
- box-shadow:0 8px 22px #0a8a6d38;
+  width:47px;
+  height:47px;
+  border-radius:15px;
+  background:linear-gradient(145deg,#20c99c,#08745f);
+  display:grid;
+  place-items:center;
+  color:white;
+  font-size:25px;
+  box-shadow:0 8px 22px #0a8a6d30;
 }
 
 .brand small{
- display:block;
- font:700 9px "DM Sans";
- letter-spacing:2px;
- color:#82938b;
- margin-top:3px;
+  display:block;
+  font:700 9px "DM Sans";
+  letter-spacing:2px;
+  color:#82938b;
+  margin-top:3px;
 }
 
 .nav{
- display:flex;
- align-items:center;
- gap:30px;
- font-size:12px;
- font-weight:700;
- color:#52636a;
+  display:flex;
+  align-items:center;
+  gap:31px;
+  font-size:12px;
+  font-weight:700;
+  color:#52636a;
 }
 
-.nav a{
- transition:.25s;
-}
-
-.nav a:hover,.nav a.active{
- color:var(--green);
-}
+.nav a{transition:.25s}
+.nav a:hover,.nav a.active{color:var(--green)}
 
 .nav .nav-cta{
- padding:13px 22px;
- background:var(--green);
- color:white;
- border-radius:30px;
- box-shadow:0 7px 20px #087e6830;
- transition:.3s;
+  padding:13px 22px;
+  background:var(--green);
+  color:white;
+  border-radius:30px;
+  box-shadow:0 7px 20px #087e6825;
+  transition:.3s;
 }
-
 .nav .nav-cta:hover{
- background:var(--navy);
- transform:translateY(-3px);
+  background:var(--navy);
+  transform:translateY(-3px);
 }
 
 .menu-toggle{
- display:none;
- border:0;
- background:none;
- font-size:27px;
- color:var(--navy);
- cursor:pointer;
+  display:none;
+  border:0;
+  background:none;
+  font-size:27px;
+  color:var(--navy);
 }
 
 /* HERO */
 
 .hero{
- min-height:570px;
- position:relative;
- display:flex;
- align-items:center;
- padding:85px 9%;
- color:white;
- overflow:hidden;
- background:
- linear-gradient(100deg,rgba(5,28,35,.94),rgba(5,48,45,.72),rgba(5,42,39,.35)),
- url('https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=2000&q=90')
- center/cover;
+  min-height:550px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  padding:85px 9%;
+  color:white;
+  overflow:hidden;
+  background:
+    linear-gradient(100deg,rgba(5,35,39,.92),rgba(5,65,53,.73),rgba(5,42,39,.34)),
+    url("https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=2000&q=90")
+    center/cover;
 }
 
 .hero:before{
- content:"";
- position:absolute;
- width:550px;
- height:550px;
- border:1px solid #ffffff1b;
- border-radius:50%;
- right:-100px;
- top:-130px;
- box-shadow:0 0 0 50px #ffffff08,0 0 0 100px #ffffff05;
- animation:orbit 22s linear infinite;
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  border:1px solid #ffffff20;
+  border-radius:50%;
+  right:-100px;
+  top:-130px;
+  box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff05;
+  animation:orbit 28s linear infinite;
 }
 
 .hero:after{
- content:"";
- position:absolute;
- width:350px;
- height:350px;
- border-radius:50%;
- right:12%;
- bottom:-230px;
- background:#20c99b2b;
- filter:blur(65px);
+  content:"";
+  position:absolute;
+  width:340px;
+  height:340px;
+  border-radius:50%;
+  right:14%;
+  bottom:-230px;
+  background:#20c99b38;
+  filter:blur(65px);
 }
 
-@keyframes orbit{
- to{transform:rotate(360deg)}
-}
+@keyframes orbit{to{transform:rotate(360deg)}}
 
 .hero-content{
- position:relative;
- z-index:2;
- max-width:780px;
- animation:heroEnter 1s ease both;
+  position:relative;
+  z-index:2;
+  max-width:780px;
+  animation:heroEnter 1s ease both;
 }
 
 @keyframes heroEnter{
- from{opacity:0;transform:translateY(35px)}
- to{opacity:1;transform:translateY(0)}
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
 }
 
 .hero-label{
- display:inline-flex;
- align-items:center;
- gap:10px;
- color:#9ef2d5;
- font-size:10px;
- font-weight:800;
- letter-spacing:3px;
- text-transform:uppercase;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:#9ef2d5;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
 }
 
 .hero-label:before{
- content:"";
- width:30px;
- height:2px;
- background:#37d6a7;
+  content:"";
+  width:30px;
+  height:2px;
+  background:#37d6a7;
 }
 
 .hero h1{
- font:800 clamp(42px,6vw,76px)/1.08 Manrope,sans-serif;
- letter-spacing:-3px;
- margin:24px 0 20px;
+  font:800 clamp(42px,6vw,72px)/1.09 Manrope,sans-serif;
+  letter-spacing:-3px;
+  margin:24px 0 20px;
 }
 
-.hero h1 span{
- color:#51e0b3;
-}
+.hero h1 span{color:#51e0b3}
 
 .hero p{
- max-width:620px;
- color:#d4e8e1;
- font-size:15px;
- line-height:1.9;
+  max-width:620px;
+  color:#d4e8e1;
+  font-size:15px;
+  line-height:1.9;
 }
 
 .hero-actions{
- display:flex;
- gap:14px;
- flex-wrap:wrap;
- margin-top:34px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:32px;
 }
 
 .btn{
- display:inline-flex;
- align-items:center;
- justify-content:center;
- gap:10px;
- padding:15px 25px;
- border-radius:35px;
- font-size:12px;
- font-weight:800;
- transition:.3s;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:15px 25px;
+  border-radius:35px;
+  font-size:12px;
+  font-weight:800;
+  transition:.3s;
 }
 
 .btn-primary{
- background:#25c99b;
- color:#073d32;
- box-shadow:0 10px 30px #1ac49640;
+  background:#25c99b;
+  color:#073d32;
+  box-shadow:0 10px 30px #1ac49635;
 }
-
 .btn-primary:hover{
- background:#75e9c5;
- transform:translateY(-4px);
- box-shadow:0 15px 30px #1ac49650;
+  background:#75e9c5;
+  transform:translateY(-4px);
+  box-shadow:0 15px 30px #1ac49645;
 }
 
 .btn-outline{
- border:1px solid #ffffff70;
- color:white;
- background:#ffffff0b;
+  border:1px solid #ffffff75;
+  color:white;
+  background:#ffffff0b;
 }
-
 .btn-outline:hover{
- background:white;
- color:var(--navy);
+  background:white;
+  color:var(--navy);
 }
 
-.hero-bottom{
- position:absolute;
- bottom:28px;
- right:7%;
- z-index:2;
- color:#ffffffa8;
- font-size:10px;
- letter-spacing:2px;
+.hero-note{
+  position:absolute;
+  bottom:28px;
+  right:7%;
+  z-index:2;
+  color:#ffffffb5;
+  font-size:10px;
+  letter-spacing:2px;
 }
 
-/* TRUST STRIP */
+/* INTRO STRIP */
 
-.trust-strip{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- background:white;
- padding:30px 5%;
- border-bottom:1px solid var(--line);
+.intro-strip{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  padding:27px 7%;
+  background:#fff;
+  border-bottom:1px solid var(--line);
 }
 
-.trust-item{
- display:flex;
- align-items:center;
- justify-content:center;
- gap:14px;
- padding:10px;
- border-right:1px solid var(--line);
+.intro-item{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:13px;
+  padding:12px;
+  border-right:1px solid var(--line);
+}
+.intro-item:last-child{border:0}
+
+.intro-icon{
+  width:45px;
+  height:45px;
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  border-radius:14px;
+  background:#e5f7ef;
+  color:var(--green);
+  font-size:21px;
 }
 
-.trust-item:last-child{border:0}
-
-.trust-icon{
- width:45px;
- height:45px;
- flex-shrink:0;
- border-radius:14px;
- background:#e5f7ef;
- display:grid;
- place-items:center;
- font-size:21px;
+.intro-item h3{
+  font:800 12px Manrope;
+  color:var(--navy);
+  margin-bottom:4px;
+}
+.intro-item p{
+  font-size:10px;
+  color:var(--muted);
+  line-height:1.5;
 }
 
-.trust-item h3{
- font:800 12px Manrope;
- color:var(--navy);
- margin-bottom:4px;
-}
+/* SECTION STYLE */
 
-.trust-item p{
- font-size:10px;
- color:var(--muted);
- line-height:1.5;
-}
-
-/* SECTION COMMON */
-
-.section{
- padding:85px 7%;
-}
+.section{padding:85px 7%}
 
 .section-heading{
- text-align:center;
- max-width:750px;
- margin:0 auto 38px;
+  text-align:center;
+  max-width:760px;
+  margin:0 auto 42px;
 }
 
 .section-tag{
- color:var(--green);
- font-size:10px;
- font-weight:800;
- letter-spacing:3px;
- text-transform:uppercase;
+  color:var(--green);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:3px;
+  text-transform:uppercase;
 }
 
 .section-heading h2{
- font:800 clamp(28px,4vw,42px)/1.2 Manrope;
- letter-spacing:-1.5px;
- color:var(--navy);
- margin:14px 0 13px;
+  font:800 clamp(29px,4vw,43px)/1.2 Manrope;
+  letter-spacing:-1.5px;
+  color:var(--navy);
+  margin:14px 0;
 }
 
 .section-heading p{
- font-size:13px;
- line-height:1.8;
- color:var(--muted);
+  font-size:13px;
+  line-height:1.9;
+  color:var(--muted);
 }
 
-/* PRODUCT INTRO */
+/* CATALOGUE */
 
 .catalogue{
- background:
- radial-gradient(circle at 10% 15%,#dff6ed 0,transparent 28%),
- var(--paper);
+  background:
+    radial-gradient(circle at 8% 12%,#e3f7ed 0,transparent 25%),
+    radial-gradient(circle at 95% 65%,#e7f4ef 0,transparent 23%),
+    var(--paper);
 }
 
 .catalogue-toolbar{
- display:flex;
- justify-content:space-between;
- align-items:center;
- gap:18px;
- flex-wrap:wrap;
- margin-bottom:28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
 }
 
 .catalogue-toolbar h3{
- font:800 19px Manrope;
- color:var(--navy);
+  font:800 19px Manrope;
+  color:var(--navy);
 }
-
 .catalogue-toolbar p{
- font-size:11px;
- color:var(--muted);
- margin-top:5px;
+  font-size:11px;
+  color:var(--muted);
+  margin-top:5px;
 }
 
 .search-box{
- position:relative;
- width:min(100%,310px);
+  position:relative;
+  width:min(100%,330px);
 }
-
 .search-box input{
- width:100%;
- padding:14px 45px 14px 18px;
- border:1px solid #dce9e2;
- border-radius:30px;
- background:white;
- outline:none;
- font-size:12px;
- transition:.3s;
+  width:100%;
+  padding:14px 45px 14px 18px;
+  border:1px solid #dce9e2;
+  border-radius:30px;
+  background:white;
+  outline:none;
+  font-size:12px;
+  transition:.3s;
 }
-
 .search-box input:focus{
- border-color:var(--green);
- box-shadow:0 0 0 4px #12a88715;
+  border-color:var(--green);
+  box-shadow:0 0 0 4px #12a88715;
 }
-
 .search-box span{
- position:absolute;
- right:17px;
- top:50%;
- transform:translateY(-50%);
- font-size:17px;
+  position:absolute;
+  right:17px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:19px;
+  color:var(--green);
 }
 
-/* FILTER BUTTONS */
+/* FILTERS */
 
 .filter-bar{
- display:flex;
- gap:9px;
- flex-wrap:wrap;
- margin-bottom:30px;
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
 }
 
 .filter-btn{
- border:1px solid #dce9e2;
- background:white;
- color:#64776e;
- padding:10px 17px;
- border-radius:25px;
- font-size:10px;
- font-weight:800;
- cursor:pointer;
- transition:.25s;
+  border:1px solid #dce9e2;
+  background:white;
+  color:#64776e;
+  padding:10px 17px;
+  border-radius:25px;
+  font-size:10px;
+  font-weight:800;
+  transition:.25s;
 }
-
 .filter-btn:hover,.filter-btn.active{
- background:var(--green);
- color:white;
- border-color:var(--green);
- box-shadow:0 6px 16px #087e6825;
+  background:var(--green);
+  color:white;
+  border-color:var(--green);
+  box-shadow:0 6px 16px #087e6825;
 }
 
 /* PRODUCT CARDS */
 
 .product-grid{
- display:grid;
- grid-template-columns:repeat(3,minmax(0,1fr));
- gap:23px;
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
 }
 
 .product-card{
- background:white;
- border:1px solid #e8efeb;
- border-radius:12px;
- overflow:hidden;
- position:relative;
- transition:.4s cubic-bezier(.2,.8,.2,1);
- box-shadow:0 7px 25px rgba(20,57,45,.045);
- opacity:0;
- transform:translateY(25px);
+  background:white;
+  border:1px solid #e8efeb;
+  border-radius:15px;
+  overflow:hidden;
+  position:relative;
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s,border-color .3s;
+  box-shadow:0 7px 25px rgba(20,57,45,.045);
+  opacity:0;
+  transform:translateY(25px);
 }
 
 .product-card.visible{
- opacity:1;
- transform:translateY(0);
+  opacity:1;
+  transform:translateY(0);
 }
 
 .product-card:hover{
- transform:translateY(-9px);
- border-color:#a8dfc9;
- box-shadow:0 22px 50px rgba(13,56,47,.13);
+  transform:translateY(-9px);
+  border-color:#a8dfc9;
+  box-shadow:0 22px 50px rgba(13,56,47,.13);
 }
 
 .product-image{
- height:220px;
- position:relative;
- overflow:hidden;
- background:#dfece6;
+  height:220px;
+  position:relative;
+  overflow:hidden;
+  background:#dfece6;
 }
 
 .product-image img{
- width:100%;
- height:100%;
- object-fit:cover;
- display:block;
- transition:transform .7s cubic-bezier(.2,.8,.2,1);
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .7s cubic-bezier(.2,.8,.2,1);
 }
 
-.product-card:hover .product-image img{
- transform:scale(1.09);
-}
+.product-card:hover .product-image img{transform:scale(1.08)}
 
 .product-image:after{
- content:"";
- position:absolute;
- inset:0;
- background:linear-gradient(0deg,rgba(5,35,34,.25),transparent 65%);
- pointer-events:none;
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,rgba(5,35,34,.30),transparent 65%);
+  pointer-events:none;
 }
 
 .product-badge{
- position:absolute;
- top:16px;
- left:16px;
- z-index:2;
- background:#ffffffed;
- color:var(--green);
- padding:7px 12px;
- border-radius:30px;
- font-size:9px;
- font-weight:800;
- letter-spacing:.8px;
+  position:absolute;
+  top:16px;
+  left:16px;
+  z-index:2;
+  background:#ffffffed;
+  color:var(--green);
+  padding:7px 12px;
+  border-radius:30px;
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:.8px;
 }
 
 .product-number{
- position:absolute;
- right:17px;
- bottom:14px;
- z-index:2;
- color:white;
- font:800 25px Manrope;
- opacity:.75;
+  position:absolute;
+  right:17px;
+  bottom:12px;
+  z-index:2;
+  color:white;
+  font:800 26px Manrope;
+  opacity:.85;
 }
 
-.product-info{
- padding:22px 22px 21px;
-}
+.product-info{padding:23px 22px 21px}
 
 .product-category{
- color:var(--green);
- font-size:9px;
- font-weight:800;
- letter-spacing:1.7px;
- text-transform:uppercase;
- margin-bottom:9px;
+  color:var(--green);
+  font-size:9px;
+  font-weight:800;
+  letter-spacing:1.7px;
+  text-transform:uppercase;
+  margin-bottom:9px;
 }
 
 .product-info h3{
- font:800 18px Manrope;
- color:var(--navy);
- margin-bottom:10px;
- letter-spacing:-.4px;
+  font:800 18px Manrope;
+  color:var(--navy);
+  margin-bottom:10px;
+  letter-spacing:-.4px;
 }
 
 .product-info p{
- font-size:11px;
- line-height:1.85;
- color:var(--muted);
- min-height:61px;
+  font-size:11px;
+  line-height:1.85;
+  color:var(--muted);
+  min-height:61px;
 }
 
 .product-bottom{
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:10px;
- border-top:1px solid #edf2ef;
- margin-top:18px;
- padding-top:16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  border-top:1px solid #edf2ef;
+  margin-top:18px;
+  padding-top:16px;
 }
 
 .product-bottom span{
- font-size:10px;
- color:#84958e;
- font-weight:600;
+  font-size:10px;
+  color:#84958e;
+  font-weight:600;
 }
 
 .product-link{
- display:inline-flex;
- align-items:center;
- gap:7px;
- color:var(--green);
- font-size:11px;
- font-weight:800;
- transition:.25s;
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  color:var(--green);
+  font-size:11px;
+  font-weight:800;
+  transition:.25s;
 }
-
 .product-link:hover{
- gap:13px;
- color:var(--navy);
+  gap:13px;
+  color:var(--navy);
 }
 
 .no-results{
- display:none;
- text-align:center;
- padding:45px 20px;
- color:var(--muted);
- background:white;
- border-radius:12px;
- font-size:13px;
- grid-column:1/-1;
+  display:none;
+  text-align:center;
+  padding:45px 20px;
+  color:var(--muted);
+  background:white;
+  border-radius:12px;
+  font-size:13px;
+  grid-column:1/-1;
 }
 
-/* PROCESS BAND */
+/* FEATURE SECTION */
+
+.feature-section{
+  padding:85px 7%;
+  background:white;
+}
+
+.feature-panel{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:55px;
+}
+
+.feature-image{
+  min-height:390px;
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.feature-image img{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  inset:0;
+  transition:transform .8s;
+}
+.feature-image:hover img{transform:scale(1.06)}
+
+.feature-image:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(0deg,#062e2b65,transparent 65%);
+}
+
+.feature-image-label{
+  position:absolute;
+  bottom:25px;
+  left:25px;
+  z-index:2;
+  color:white;
+  font:800 13px Manrope;
+  letter-spacing:1px;
+}
+
+.feature-copy .section-tag{margin-bottom:15px}
+.feature-copy h2{
+  font:800 clamp(29px,4vw,43px)/1.2 Manrope;
+  letter-spacing:-1.5px;
+  color:var(--navy);
+  margin-bottom:18px;
+}
+.feature-copy>p{
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.9;
+}
+
+.feature-points{
+  display:grid;
+  gap:15px;
+  margin-top:25px;
+}
+
+.feature-point{
+  display:flex;
+  align-items:flex-start;
+  gap:13px;
+}
+
+.point-icon{
+  width:34px;
+  height:34px;
+  flex-shrink:0;
+  border-radius:11px;
+  display:grid;
+  place-items:center;
+  background:var(--mint);
+  color:var(--green);
+  font-weight:800;
+}
+
+.feature-point h3{
+  color:var(--navy);
+  font:800 12px Manrope;
+  margin-bottom:4px;
+}
+.feature-point p{
+  color:var(--muted);
+  font-size:11px;
+  line-height:1.7;
+}
+
+/* HOW WE HELP */
 
 .process-band{
- background:#102d3c;
- color:white;
- padding:65px 7%;
- position:relative;
- overflow:hidden;
+  background:#102d3c;
+  color:white;
+  padding:70px 7%;
+  position:relative;
+  overflow:hidden;
 }
 
 .process-band:after{
- content:"";
- position:absolute;
- right:-130px;
- top:-200px;
- width:400px;
- height:400px;
- border:1px solid #ffffff15;
- border-radius:50%;
- box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff05;
+  content:"";
+  position:absolute;
+  right:-130px;
+  top:-200px;
+  width:400px;
+  height:400px;
+  border:1px solid #ffffff15;
+  border-radius:50%;
+  box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff05;
 }
 
 .process-inner{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:40px;
- align-items:center;
- position:relative;
- z-index:1;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:45px;
+  align-items:center;
+  position:relative;
+  z-index:1;
 }
 
 .process-copy .section-tag{color:#62e5b8}
-
 .process-copy h2{
- font:800 clamp(26px,4vw,39px)/1.2 Manrope;
- letter-spacing:-1.2px;
- margin:16px 0;
+  font:800 clamp(27px,4vw,40px)/1.2 Manrope;
+  letter-spacing:-1.2px;
+  margin:16px 0;
 }
-
 .process-copy p{
- color:#afc8be;
- font-size:12px;
- line-height:1.9;
- max-width:490px;
+  color:#afc8be;
+  font-size:12px;
+  line-height:1.9;
+  max-width:490px;
 }
 
 .process-steps{
- display:grid;
- grid-template-columns:1fr 1fr;
- gap:13px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
 }
 
 .process-step{
- background:#ffffff0b;
- border:1px solid #ffffff15;
- padding:22px;
- border-radius:9px;
- transition:.3s;
+  background:#ffffff0b;
+  border:1px solid #ffffff15;
+  padding:22px;
+  border-radius:12px;
+  transition:.3s;
 }
-
 .process-step:hover{
- background:#ffffff16;
- transform:translateY(-4px);
+  background:#ffffff16;
+  transform:translateY(-5px);
 }
 
 .step-number{
- color:#54dcb1;
- font:800 22px Manrope;
- margin-bottom:12px;
+  color:#54dcb1;
+  font:800 22px Manrope;
+  margin-bottom:12px;
 }
-
 .process-step h3{
- font:800 13px Manrope;
- margin-bottom:8px;
+  font:800 13px Manrope;
+  margin-bottom:8px;
 }
-
 .process-step p{
- color:#a9c1b9;
- font-size:10px;
- line-height:1.7;
+  color:#a9c1b9;
+  font-size:10px;
+  line-height:1.7;
 }
 
 /* ENQUIRY BANNER */
 
 .enquiry-banner{
- margin:75px 7%;
- padding:45px;
- border-radius:15px;
- display:flex;
- align-items:center;
- justify-content:space-between;
- gap:25px;
- color:white;
- background:
- linear-gradient(105deg,rgba(6,75,62,.96),rgba(11,159,119,.89)),
- url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1400&q=80') center/cover;
- box-shadow:0 15px 40px #087e6825;
+  margin:75px 7%;
+  padding:48px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+  color:white;
+  background:
+    linear-gradient(105deg,rgba(6,75,62,.96),rgba(11,159,119,.87)),
+    url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1400&q=80")
+    center/cover;
+  box-shadow:0 15px 40px #087e6825;
 }
 
 .enquiry-banner h2{
- font:800 clamp(22px,3vw,30px) Manrope;
- margin-bottom:10px;
+  font:800 clamp(22px,3vw,31px) Manrope;
+  margin-bottom:10px;
 }
-
 .enquiry-banner p{
- color:#d5f5e9;
- font-size:12px;
- line-height:1.8;
+  color:#d5f5e9;
+  font-size:12px;
+  line-height:1.8;
+  max-width:600px;
 }
-
 .enquiry-banner .btn{
- background:white;
- color:var(--green);
- white-space:nowrap;
+  background:white;
+  color:var(--green);
+  white-space:nowrap;
 }
-
 .enquiry-banner .btn:hover{
- background:#dff6ed;
- transform:translateY(-3px);
+  background:#dff6ed;
+  transform:translateY(-3px);
 }
 
 /* FOOTER */
 
 footer{
- background:#0b2430;
- color:#c7d8d3;
- padding:60px 7% 22px;
+  background:#0b2430;
+  color:#c7d8d3;
+  padding:60px 7% 22px;
 }
 
 .footer-top{
- display:grid;
- grid-template-columns:1.5fr 1fr 1fr 1.1fr;
- gap:35px;
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr 1.1fr;
+  gap:35px;
 }
 
 .footer-brand{
- display:flex;
- align-items:center;
- gap:10px;
- color:white;
- font:800 19px Manrope;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:white;
+  font:800 19px Manrope;
 }
 
 .footer-brand-icon{
- width:38px;
- height:38px;
- display:grid;
- place-items:center;
- border-radius:12px;
- background:var(--green);
- font-size:20px;
+  width:39px;
+  height:39px;
+  display:grid;
+  place-items:center;
+  border-radius:12px;
+  background:var(--green);
+  font-size:20px;
 }
 
 .footer-top p{
- font-size:11px;
- line-height:1.9;
- color:#9eb7ad;
- margin-top:15px;
- max-width:300px;
+  font-size:11px;
+  line-height:1.9;
+  color:#9eb7ad;
+  margin-top:15px;
+  max-width:300px;
 }
 
 .footer-top h4{
- color:white;
- font:800 13px Manrope;
- margin:6px 0 20px;
+  color:white;
+  font:800 13px Manrope;
+  margin:6px 0 20px;
 }
 
 .footer-links{
- display:grid;
- gap:13px;
- font-size:10px;
- color:#aec3ba;
+  display:grid;
+  gap:13px;
+  font-size:10px;
+  color:#aec3ba;
 }
-
-.footer-links a{
- transition:.25s;
-}
-
+.footer-links a{transition:.25s}
 .footer-links a:hover{
- color:#57e0b3;
- transform:translateX(4px);
+  color:#57e0b3;
+  transform:translateX(4px);
 }
 
 .footer-contact{
- display:grid;
- gap:14px;
- font-size:10px;
- line-height:1.6;
- color:#aec3ba;
+  display:grid;
+  gap:14px;
+  font-size:10px;
+  line-height:1.6;
+  color:#aec3ba;
 }
-
 .footer-contact strong{color:white}
 
 .footer-bottom{
- border-top:1px solid #ffffff18;
- margin-top:45px;
- padding-top:20px;
- display:flex;
- justify-content:space-between;
- gap:15px;
- flex-wrap:wrap;
- font-size:9px;
- color:#819e92;
+  border-top:1px solid #ffffff18;
+  margin-top:45px;
+  padding-top:20px;
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+  font-size:9px;
+  color:#819e92;
+}
+
+/* WHATSAPP */
+
+.whatsapp-float{
+  position:fixed;
+  right:25px;
+  bottom:88px;
+  width:49px;
+  height:49px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#20bd68;
+  color:white;
+  font-size:23px;
+  z-index:500;
+  box-shadow:0 8px 25px #20bd6850;
+  transition:.3s;
+}
+.whatsapp-float:hover{
+  transform:translateY(-5px) scale(1.05);
+  background:#159b52;
 }
 
 /* BACK TO TOP */
 
 .back-top{
- position:fixed;
- bottom:25px;
- right:25px;
- width:45px;
- height:45px;
- border:0;
- border-radius:50%;
- background:var(--green);
- color:white;
- font-size:19px;
- cursor:pointer;
- z-index:500;
- box-shadow:0 8px 25px #087e6850;
- opacity:0;
- visibility:hidden;
- transform:translateY(10px);
- transition:.3s;
+  position:fixed;
+  bottom:25px;
+  right:27px;
+  width:43px;
+  height:43px;
+  border:0;
+  border-radius:50%;
+  background:var(--green);
+  color:white;
+  font-size:19px;
+  z-index:500;
+  box-shadow:0 8px 25px #087e6850;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(10px);
+  transition:.3s;
 }
-
 .back-top.show{
- opacity:1;
- visibility:visible;
- transform:translateY(0);
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
 }
-
 .back-top:hover{
- background:var(--navy);
- transform:translateY(-4px);
+  background:var(--navy);
+  transform:translateY(-4px);
 }
 
-/* REVEAL ANIMATIONS */
+/* REVEAL */
 
 .reveal{
- opacity:0;
- transform:translateY(25px);
- transition:opacity .7s ease,transform .7s ease;
+  opacity:0;
+  transform:translateY(25px);
+  transition:opacity .7s ease,transform .7s ease;
 }
-
 .reveal.visible{
- opacity:1;
- transform:translateY(0);
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* RESPONSIVE */
 
-@media(max-width:1000px){
- .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
- .footer-top{grid-template-columns:1.3fr 1fr 1fr}
- .footer-top>div:last-child{grid-column:1/-1}
- .trust-strip{grid-template-columns:repeat(2,1fr)}
- .trust-item:nth-child(2){border:0}
+@media(max-width:1050px){
+  .product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-top{grid-template-columns:1.3fr 1fr 1fr}
+  .footer-top>div:last-child{grid-column:1/-1}
 }
 
-@media(max-width:680px){
- body{padding:0}
- .site-shell{border-radius:0}
- .topbar{height:72px;padding:0 5%}
- .brand{font-size:17px}
- .brand-mark{width:40px;height:40px}
- .menu-toggle{display:block}
- .nav{
-  display:none;
-  position:absolute;
-  top:72px;
-  left:0;
-  right:0;
-  background:white;
-  padding:22px 6%;
-  box-shadow:0 15px 25px #00000012;
-  flex-direction:column;
-  align-items:stretch;
-  gap:19px;
- }
- .nav.open{display:flex}
- .nav .nav-cta{text-align:center}
- .hero{min-height:510px;padding:65px 7%}
- .hero h1{letter-spacing:-1.8px}
- .hero p{font-size:13px}
- .hero-bottom{display:none}
- .trust-strip{padding:22px 5%;gap:12px}
- .trust-item{justify-content:flex-start;border:0!important;padding:12px 5px}
- .trust-item h3{font-size:11px}
- .trust-item p{font-size:9px}
- .section{padding:65px 5%}
- .section-heading{margin-bottom:30px}
- .catalogue-toolbar{align-items:flex-start}
- .search-box{width:100%}
- .filter-bar{gap:7px}
- .filter-btn{padding:9px 13px;font-size:9px}
- .product-grid{grid-template-columns:1fr;gap:18px}
- .product-image{height:230px}
- .product-info p{min-height:0}
- .process-inner{grid-template-columns:1fr;gap:28px}
- .process-band{padding:55px 6%}
- .enquiry-banner{
-  margin:50px 5%;
-  padding:30px 24px;
-  align-items:flex-start;
-  flex-direction:column;
- }
- .footer-top{grid-template-columns:1fr 1fr;gap:28px}
- .footer-top>div:last-child{grid-column:auto}
- footer{padding:45px 6% 20px}
+@media(max-width:760px){
+  .topbar{padding:0 5%}
+  .menu-toggle{display:block}
+  .nav{
+    display:none;
+    position:absolute;
+    top:84px;
+    left:0;
+    right:0;
+    background:white;
+    padding:24px 6%;
+    box-shadow:0 15px 25px #00000012;
+    flex-direction:column;
+    align-items:stretch;
+    gap:19px;
+  }
+  .nav.open{display:flex}
+  .nav .nav-cta{text-align:center}
+  .hero{min-height:510px;padding:65px 7%}
+  .hero h1{letter-spacing:-1.8px}
+  .hero p{font-size:13px}
+  .hero-note{display:none}
+  .intro-strip{padding:20px 4%}
+  .intro-item{padding:9px;gap:9px}
+  .intro-item h3{font-size:10px}
+  .intro-item p{font-size:9px}
+  .section{padding:65px 5%}
+  .catalogue-toolbar{align-items:flex-start}
+  .search-box{width:100%}
+  .product-grid{gap:18px}
+  .feature-panel{grid-template-columns:1fr;gap:30px}
+  .feature-image{min-height:300px}
+  .process-inner{grid-template-columns:1fr;gap:30px}
+  .process-band{padding:55px 6%}
+  .enquiry-banner{
+    margin:50px 5%;
+    padding:32px 25px;
+    align-items:flex-start;
+    flex-direction:column;
+  }
+  .footer-top{grid-template-columns:1fr 1fr;gap:28px}
+  .footer-top>div:last-child{grid-column:auto}
+  footer{padding:45px 6% 20px}
 }
 
-@media(max-width:430px){
- .trust-strip{grid-template-columns:1fr}
- .trust-item{justify-content:center}
- .process-steps{grid-template-columns:1fr}
- .footer-top{grid-template-columns:1fr}
- .footer-top>div:last-child{grid-column:auto}
- .footer-bottom{line-height:1.8}
+@media(max-width:540px){
+  .topbar{height:72px}
+  .brand{font-size:17px}
+  .brand-mark{width:40px;height:40px}
+  .nav{top:72px}
+  .hero{min-height:500px}
+  .hero h1{font-size:43px}
+  .intro-strip{grid-template-columns:1fr}
+  .intro-item{
+    justify-content:flex-start;
+    border:0;
+    border-bottom:1px solid var(--line);
+    padding:12px 8px;
+  }
+  .intro-item:last-child{border:0}
+  .product-grid{grid-template-columns:1fr}
+  .product-image{height:230px}
+  .product-info p{min-height:0}
+  .filter-bar{gap:7px}
+  .filter-btn{padding:9px 13px;font-size:9px}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .footer-top{grid-template-columns:1fr}
+  .footer-top>div:last-child{grid-column:auto}
+  .footer-bottom{line-height:1.8}
 }
+
+@media(max-width:380px){
+  .hero h1{font-size:37px}
+  .process-steps{grid-template-columns:1fr}
+  .product-bottom{align-items:flex-start;flex-direction:column}
+}
+
 @media(prefers-reduced-motion:reduce){
- *,*::before,*::after{
-  animation-duration:.01ms!important;
-  animation-iteration-count:1!important;
-  scroll-behavior:auto!important;
-  transition-duration:.01ms!important;
- }
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    scroll-behavior:auto!important;
+    transition-duration:.01ms!important;
+  }
 }
 </style>
 </head>
@@ -931,467 +1021,479 @@ footer{
 <div class="site-shell">
 
 <!-- HEADER -->
-
 <header class="topbar">
+  <a class="brand" href="index.html">
+    <span class="brand-mark">💧</span>
+    <span>SVN ENTERPRISES
+      <small>WATER TREATMENT SOLUTIONS</small>
+    </span>
+  </a>
 
- <a class="brand" href="index.html">
-  <span class="brand-mark">💧</span>
-  <span>SVN ENTERPRISES
-   <small>WATER TREATMENT SOLUTIONS</small>
-  </span>
- </a>
+  <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
- <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-
- <nav class="nav">
-  <a href="index.html">Home</a>
-  <a href="products.html" class="active">Products</a>
-  <a href="index.html#about">About Us</a>
-  <a href="index.html#contact">Contact</a>
-  <a class="nav-cta" href="index.html#contact">Send Enquiry ↗</a>
- </nav>
-
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="products.html" class="active">Products</a>
+    <a href="index.html#about">About Us</a>
+    <a href="index.html#contact">Contact</a>
+    <a class="nav-cta" href="index.html#contact">Send Enquiry ↗</a>
+  </nav>
 </header>
 
 <!-- HERO -->
-
 <section class="hero">
+  <div class="hero-content">
+    <div class="hero-label">SVN Enterprises · Our Product Range</div>
 
- <div class="hero-content">
+    <h1>
+      Better Filtration.<br>
+      Smarter Solutions.<br>
+      <span>Cleaner Water.</span>
+    </h1>
 
-  <div class="hero-label">SVN Enterprises · Product Catalogue</div>
+    <p>
+      Explore our range of water treatment spares, advanced filtration
+      products, industrial pumps and purification systems. Find suitable
+      product options for your water management and process requirements.
+    </p>
 
-  <h1>
-   Engineered for<br>
-   Better Water.<br>
-   <span>Built for Performance.</span>
-  </h1>
-
-  <p>
-   Discover a comprehensive range of water treatment spares,
-   advanced filtration products, industrial pumps and purification
-   systems designed to support your water management requirements.
-  </p>
-
-  <div class="hero-actions">
-   <a href="#products" class="btn btn-primary">
-    Explore Product Range <span>→</span>
-   </a>
-
-   <a href="index.html#contact" class="btn btn-outline">
-    Talk to Our Team ↗
-   </a>
+    <div class="hero-actions">
+      <a href="#products" class="btn btn-primary">Explore Our Products →</a>
+      <a href="index.html#contact" class="btn btn-outline">Contact Our Team ↗</a>
+    </div>
   </div>
 
- </div>
-
- <div class="hero-bottom">FILTRATION · PURIFICATION · PROCESS SOLUTIONS</div>
-
+  <div class="hero-note">FILTRATION · PURIFICATION · PROCESS SOLUTIONS</div>
 </section>
 
-<!-- TRUST STRIP -->
-
-<section class="trust-strip">
-
- <div class="trust-item">
-  <div class="trust-icon">⚙</div>
-  <div>
-   <h3>Complete Product Range</h3>
-   <p>Essential water treatment components</p>
+<!-- INTRO STRIP -->
+<section class="intro-strip">
+  <div class="intro-item">
+    <div class="intro-icon">◈</div>
+    <div>
+      <h3>Filtration Products</h3>
+      <p>Quality-focused product selection</p>
+    </div>
   </div>
- </div>
 
- <div class="trust-item">
-  <div class="trust-icon">◈</div>
-  <div>
-   <h3>Industrial Applications</h3>
-   <p>Products for diverse requirements</p>
+  <div class="intro-item">
+    <div class="intro-icon">⚙</div>
+    <div>
+      <h3>Industrial Equipment</h3>
+      <p>Reliable product solutions</p>
+    </div>
   </div>
- </div>
 
- <div class="trust-item">
-  <div class="trust-icon">✦</div>
-  <div>
-   <h3>Quality-Focused Sourcing</h3>
-   <p>Product options for reliable operation</p>
+  <div class="intro-item">
+    <div class="intro-icon">✦</div>
+    <div>
+      <h3>Customer Support</h3>
+      <p>Assistance for your requirements</p>
+    </div>
   </div>
- </div>
-
- <div class="trust-item">
-  <div class="trust-icon">♧</div>
-  <div>
-   <h3>Customer Assistance</h3>
-   <p>Support with product enquiries</p>
-  </div>
- </div>
-
 </section>
 
-<!-- PRODUCT CATALOGUE -->
-
+<!-- PRODUCTS -->
 <section class="section catalogue" id="products">
 
- <div class="section-heading reveal">
-  <div class="section-tag">Explore Our Solutions</div>
-
-  <h2>Our Water Treatment<br>Product Portfolio</h2>
-
-  <p>
-   From filtration consumables to complete purification and chemical
-   dosing solutions, explore our product categories and find the right
-   products for your application.
-  </p>
- </div>
-
- <div class="catalogue-toolbar reveal">
-
-  <div>
-   <h3>Discover Our Products</h3>
-   <p>Explore our eight product categories.</p>
+  <div class="section-heading reveal">
+    <div class="section-tag">Explore Our Solutions</div>
+    <h2>Water Treatment Products<br>for Every Requirement</h2>
+    <p>
+      From filtration consumables to complete purification and chemical
+      dosing solutions, discover our product categories and explore
+      options for your application.
+    </p>
   </div>
 
-  <div class="search-box">
-   <input type="search" id="productSearch" placeholder="Search products..." aria-label="Search products">
-   <span>⌕</span>
+  <div class="catalogue-toolbar reveal">
+    <div>
+      <h3>Our Product Portfolio</h3>
+      <p>Explore all eight product categories.</p>
+    </div>
+
+    <div class="search-box">
+      <input type="search" id="productSearch" placeholder="Search products..." aria-label="Search products">
+      <span>⌕</span>
+    </div>
   </div>
 
- </div>
-
- <!-- CATEGORY FILTERS -->
-
- <div class="filter-bar reveal">
-
-  <button class="filter-btn active" data-filter="all">All Products</button>
-  <button class="filter-btn" data-filter="filtration">Filtration</button>
-  <button class="filter-btn" data-filter="filters">Filter Components</button>
-  <button class="filter-btn" data-filter="equipment">Equipment</button>
-  <button class="filter-btn" data-filter="systems">Systems</button>
-
- </div>
-
- <!-- PRODUCT CARDS -->
-
- <div class="product-grid" id="productGrid">
-
-  <article class="product-card" data-category="filtration" data-name="RO Membranes Reverse Osmosis Water Purification">
-   <div class="product-image">
-    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=85" alt="RO membrane water filtration">
-    <span class="product-badge">FILTRATION</span>
-    <span class="product-number">01</span>
-   </div>
-   <div class="product-info">
-    <div class="product-category">Reverse Osmosis</div>
-    <h3>RO Membranes</h3>
-    <p>Reverse osmosis membrane options for water purification applications. Enquire with your system details, capacity and membrane specifications.</p>
-    <div class="product-bottom">
-     <span>Water Purification</span>
-     <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
-    </div>
-   </div>
-  </article>
-
-  <article class="product-card" data-category="filters" data-name="Filter Cartridges Micron Filtration Consumables">
-   <div class="product-image">
-    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=85" alt="Industrial filter cartridge products">
-    <span class="product-badge">FILTER MEDIA</span>
-    <span class="product-number">02</span>
-   </div>
-   <div class="product-info">
-    <div class="product-category">Filtration Consumables</div>
-    <h3>Filter Cartridges</h3>
-    <p>Cartridge filtration products for different filtration stages. Share your required size, micron rating and application details.</p>
-    <div class="product-bottom">
-     <span>Replacement Filters</span>
-     <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
-    </div>
-   </div>
-  </article>
-
-  <article class="product-card" data-category="filters" data-name="Filter Housings Industrial Water Filtration Housing">
-   <div class="product-image">
-    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=85" alt="Industrial water treatment equipment">
-    <span class="product-badge">HOUSINGS</span>
-    <span class="product-number">03</span>
-   </div>
-   <div class="product-info">
-    <div class="product-category">Filtration Equipment</div>
-    <h3>Filter Housings</h3>
-    <p>Filter housing solutions for water filtration installations, replacement requirements and industrial plant maintenance.</p>
-    <div class="product-bottom">
-     <span>Housing Solutions</span>
-     <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
-    </div>
-   </div>
-  </article>
-
-  <article class="product-card" data-category="filters" data-name="Filter Bags Industrial Liquid Filtration">
-   <div class="product-image">
-    <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=1000&q=85" alt="Industrial filter bags and filtration components">
-    <span class="product-badge">INDUSTRIAL FILTERS</span>
-    <span class="product-number">04</span>
-   </div>
-   <div class="product-info">
-    <div class="product-category">Liquid Filtration</div>
-    <h3>Filter Bags</h3>
-    <p>Bag filter options for industrial liquid filtration applications. Enquire with your required dimensions, material and micron rating.</p>
-    <div class="product-bottom">
-     <span>Industrial Filtration</span>
-     <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
-    </div>
-   </div>
-  </article>
-
-  <article class="product-card" data-category="filtration" data-name="Filter Paper Laboratory Process Filtration Consumables">
-   <div class="product-image">
-    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85" alt="Filter paper and filtration consumables">
-    <span class="product-badge">CONSUMABLES</span>
-    <span class="product-number">05</span>
-   </div>
-   <div class="product-info">
-    <div class="product-category">Filtration Media</div>
-    <h3>Filter Paper</h3>
-    <p>Filtration paper and consumables for laboratory, process and general filtration applications with varying requirements.</p>
-    <div class="product-bottom">
-     <span>Filter Media</span>
-     <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
-    </div>
-   </div>
-  </article>
-
-  <article class="product-card" data-category="equipment" data-name="Pumps Accessories Water Treatment Pumping Equipment">
-   <div class="product-image">
-    <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1000&q=85" alt="Industrial pumps and equipment">
-    <span class="product-badge">FLOW & CONTROL</span>
-    <span class="product-number">06</span>
-   </div>
-   <div class="product-info">
-    <div class="product-category">Industrial Equipment</div>
-    <h3>Pumps & Accessories</h3>
-    <p>Pumping equipment, replacement spares and accessories for water treatment installations and industrial process systems.</p>
-    <div class="product-bottom">
-     <span>Pumping Solutions</span>
-     <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
-    </div>
-   </div>
-  </article>
-
-  <article class="product-card" data-category="systems" data-name="Water Purification Systems Commercial Industrial">
-   <div class="product-image">
-    <img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=1000&q=85" alt="Water purification system">
-    <span class="product-badge">PURIFICATION</span>
-    <span class="product-number">07</span>
-   </div>
-   <div class="product-info">
-    <div class="product-category">Water Treatment Systems</div>
-    <h3>Water Purification Systems</h3>
-    <p>Water purification system options for commercial and industrial applications. Discuss your water quality and treatment requirements.</p>
-    <div class="product-bottom">
-     <span>System Solutions</span>
-     <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
-    </div>
-   </div>
-  </article>
-
-  <article class="product-card" data-category="systems" data-name="Dosing Systems Chemical Dosing Process Applications">
-   <div class="product-image">
-    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=85" alt="Industrial chemical dosing system">
-    <span class="product-badge">DOSING & PROCESS</span>
-    <span class="product-number">08</span>
-   </div>
-   <div class="product-info">
-    <div class="product-category">Chemical Dosing</div>
-    <h3>Dosing Systems</h3>
-    <p>Chemical dosing system solutions and related components for water treatment, process industries and chemical applications.</p>
-    <div class="product-bottom">
-     <span>Process Solutions</span>
-     <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
-    </div>
-   </div>
-  </article>
-
-  <div class="no-results" id="noResults">
-   No matching products found. Please try another search.
+  <div class="filter-bar reveal">
+    <button class="filter-btn active" data-filter="all">All Products</button>
+    <button class="filter-btn" data-filter="filtration">Filtration</button>
+    <button class="filter-btn" data-filter="filters">Filter Components</button>
+    <button class="filter-btn" data-filter="equipment">Equipment</button>
+    <button class="filter-btn" data-filter="systems">Systems</button>
   </div>
 
- </div>
+  <div class="product-grid" id="productGrid">
 
+    <!-- 01 RO MEMBRANES -->
+    <article class="product-card" data-category="filtration" data-name="RO Membranes Reverse Osmosis Water Purification">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=85" alt="RO membrane water filtration" loading="lazy">
+        <span class="product-badge">FILTRATION</span>
+        <span class="product-number">01</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Reverse Osmosis</div>
+        <h3>RO Membranes</h3>
+        <p>Reverse osmosis membrane options for water purification applications. Enquire with your system details, capacity and membrane specifications.</p>
+        <div class="product-bottom">
+          <span>Water Purification</span>
+          <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 FILTER CARTRIDGES -->
+    <article class="product-card" data-category="filters" data-name="Filter Cartridges Micron Filtration Consumables">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=85" alt="Industrial filter cartridge products" loading="lazy">
+        <span class="product-badge">FILTER MEDIA</span>
+        <span class="product-number">02</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Filtration Consumables</div>
+        <h3>Filter Cartridges</h3>
+        <p>Cartridge filtration products for different filtration stages. Share your required size, micron rating and application details.</p>
+        <div class="product-bottom">
+          <span>Replacement Filters</span>
+          <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 FILTER HOUSINGS -->
+    <article class="product-card" data-category="filters" data-name="Filter Housings Industrial Water Filtration Housing">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=85" alt="Industrial water treatment equipment" loading="lazy">
+        <span class="product-badge">HOUSINGS</span>
+        <span class="product-number">03</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Filtration Equipment</div>
+        <h3>Filter Housings</h3>
+        <p>Filter housing solutions for water filtration installations, replacement requirements and industrial plant maintenance.</p>
+        <div class="product-bottom">
+          <span>Housing Solutions</span>
+          <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 FILTER BAGS -->
+    <article class="product-card" data-category="filters" data-name="Filter Bags Industrial Liquid Filtration">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=1000&q=85" alt="Industrial filter bags and filtration components" loading="lazy">
+        <span class="product-badge">INDUSTRIAL FILTERS</span>
+        <span class="product-number">04</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Liquid Filtration</div>
+        <h3>Filter Bags</h3>
+        <p>Bag filter options for industrial liquid filtration applications. Enquire with your required dimensions, material and micron rating.</p>
+        <div class="product-bottom">
+          <span>Industrial Filtration</span>
+          <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 FILTER PAPER -->
+    <article class="product-card" data-category="filtration" data-name="Filter Paper Laboratory Process Filtration Consumables">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85" alt="Filter paper and filtration consumables" loading="lazy">
+        <span class="product-badge">CONSUMABLES</span>
+        <span class="product-number">05</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Filtration Media</div>
+        <h3>Filter Paper</h3>
+        <p>Filtration paper and consumables for laboratory, process and general filtration applications with varying requirements.</p>
+        <div class="product-bottom">
+          <span>Filter Media</span>
+          <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 PUMPS -->
+    <article class="product-card" data-category="equipment" data-name="Pumps Accessories Water Treatment Pumping Equipment">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1000&q=85" alt="Industrial pumps and equipment" loading="lazy">
+        <span class="product-badge">FLOW & CONTROL</span>
+        <span class="product-number">06</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Industrial Equipment</div>
+        <h3>Pumps & Accessories</h3>
+        <p>Pumping equipment, replacement spares and accessories for water treatment installations and industrial process systems.</p>
+        <div class="product-bottom">
+          <span>Pumping Solutions</span>
+          <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 07 PURIFICATION SYSTEMS -->
+    <article class="product-card" data-category="systems" data-name="Water Purification Systems Commercial Industrial">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=1000&q=85" alt="Water purification system" loading="lazy">
+        <span class="product-badge">PURIFICATION</span>
+        <span class="product-number">07</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Water Treatment Systems</div>
+        <h3>Water Purification Systems</h3>
+        <p>Water purification system options for commercial and industrial applications. Discuss your water quality and treatment requirements.</p>
+        <div class="product-bottom">
+          <span>System Solutions</span>
+          <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 08 DOSING SYSTEMS -->
+    <article class="product-card" data-category="systems" data-name="Dosing Systems Chemical Dosing Process Applications">
+      <div class="product-image">
+        <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=85" alt="Industrial chemical dosing system" loading="lazy">
+        <span class="product-badge">DOSING & PROCESS</span>
+        <span class="product-number">08</span>
+      </div>
+      <div class="product-info">
+        <div class="product-category">Chemical Dosing</div>
+        <h3>Dosing Systems</h3>
+        <p>Chemical dosing system solutions and related components for water treatment, process industries and chemical applications.</p>
+        <div class="product-bottom">
+          <span>Process Solutions</span>
+          <a class="product-link" href="index.html#contact">Enquire Now ↗</a>
+        </div>
+      </div>
+    </article>
+
+    <div class="no-results" id="noResults">
+      No matching products found. Please try another search.
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURE SECTION -->
+<section class="feature-section">
+  <div class="feature-panel">
+
+    <div class="feature-image reveal">
+      <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1200&q=85" alt="Industrial water treatment equipment" loading="lazy">
+      <div class="feature-image-label">INDUSTRIAL WATER SOLUTIONS</div>
+    </div>
+
+    <div class="feature-copy reveal">
+      <div class="section-tag">Why SVN Enterprises</div>
+      <h2>A Better Way to Source Water Treatment Products.</h2>
+      <p>
+        We focus on making product discovery and sourcing easier through
+        clear communication and customer-oriented assistance. Our product
+        range supports filtration, purification and industrial water
+        treatment requirements.
+      </p>
+
+      <div class="feature-points">
+        <div class="feature-point">
+          <div class="point-icon">✓</div>
+          <div>
+            <h3>Multiple Product Categories</h3>
+            <p>Explore filtration consumables, industrial equipment, pumps and water treatment systems.</p>
+          </div>
+        </div>
+
+        <div class="feature-point">
+          <div class="point-icon">✓</div>
+          <div>
+            <h3>Application Understanding</h3>
+            <p>We aim to understand your operating requirements and help identify relevant product options.</p>
+          </div>
+        </div>
+
+        <div class="feature-point">
+          <div class="point-icon">✓</div>
+          <div>
+            <h3>Responsive Communication</h3>
+            <p>Connect with our team to discuss product specifications and enquiry requirements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 <!-- HOW WE HELP -->
-
 <section class="process-band">
+  <div class="process-inner">
 
- <div class="process-inner">
+    <div class="process-copy reveal">
+      <div class="section-tag">Your Requirement Matters</div>
+      <h2>Finding the Right Product Starts with Understanding Your Application.</h2>
+      <p>
+        Every water treatment installation has its own operating conditions
+        and technical requirements. Share your specifications with SVN
+        Enterprises and let our team assist you with relevant product
+        information and suitable options.
+      </p>
 
-  <div class="process-copy reveal">
-   <div class="section-tag">Your Requirement Matters</div>
+      <div style="margin-top:25px">
+        <a href="index.html#contact" class="btn btn-primary">Discuss Your Requirement →</a>
+      </div>
+    </div>
 
-   <h2>Finding the Right Product Starts with Understanding Your Application.</h2>
+    <div class="process-steps reveal">
+      <div class="process-step">
+        <div class="step-number">01</div>
+        <h3>Share Your Requirement</h3>
+        <p>Tell us about your product, application or replacement requirement.</p>
+      </div>
 
-   <p>
-    Every water treatment installation has its own operating conditions
-    and technical requirements. Share your specifications with SVN
-    Enterprises and let our team assist you with relevant product
-    information and suitable options.
-   </p>
+      <div class="process-step">
+        <div class="step-number">02</div>
+        <h3>Provide Specifications</h3>
+        <p>Share dimensions, capacity, ratings and other available technical details.</p>
+      </div>
 
-   <div style="margin-top:25px">
-    <a href="index.html#contact" class="btn btn-primary">Discuss Your Requirement →</a>
-   </div>
-  </div>
+      <div class="process-step">
+        <div class="step-number">03</div>
+        <h3>Explore Product Options</h3>
+        <p>Review relevant product information and available solutions.</p>
+      </div>
 
-  <div class="process-steps reveal">
-
-   <div class="process-step">
-    <div class="step-number">01</div>
-    <h3>Share Your Requirement</h3>
-    <p>Tell us about your product, application or replacement requirement.</p>
-   </div>
-
-   <div class="process-step">
-    <div class="step-number">02</div>
-    <h3>Provide Specifications</h3>
-    <p>Share dimensions, capacity, ratings and other available technical details.</p>
-   </div>
-
-   <div class="process-step">
-    <div class="step-number">03</div>
-    <h3>Explore Product Options</h3>
-    <p>Review relevant product information and available solutions.</p>
-   </div>
-
-   <div class="process-step">
-    <div class="step-number">04</div>
-    <h3>Connect With Our Team</h3>
-    <p>Discuss your enquiry and the next steps with our team.</p>
-   </div>
+      <div class="process-step">
+        <div class="step-number">04</div>
+        <h3>Connect With Our Team</h3>
+        <p>Discuss your enquiry and the next steps with our team.</p>
+      </div>
+    </div>
 
   </div>
-
- </div>
-
 </section>
 
 <!-- ENQUIRY BANNER -->
-
 <section class="enquiry-banner reveal">
+  <div>
+    <h2>Looking for a Specific Water Treatment Product?</h2>
+    <p>
+      Have a product photo, specification or technical requirement?
+      Send it to our team and let's discuss your requirement.
+    </p>
+  </div>
 
- <div>
-  <h2>Looking for a Specific Water Treatment Product?</h2>
-  <p>
-   Have a product photo, specification or technical requirement?
-   Send it to our team and let's discuss your requirement.
-  </p>
- </div>
-
- <a href="index.html#contact" class="btn">
-  Send Your Enquiry ↗
- </a>
-
+  <a href="index.html#contact" class="btn">
+    Send Your Enquiry ↗
+  </a>
 </section>
 
 <!-- FOOTER -->
-
 <footer>
+  <div class="footer-top">
 
- <div class="footer-top">
-
-  <div>
-   <div class="footer-brand">
-    <span class="footer-brand-icon">💧</span>
-    SVN ENTERPRISES
-   </div>
-
-   <p>
-    Your sourcing partner for water treatment spares, filtration
-    products, industrial pumps, accessories and water purification
-    and dosing system solutions.
-   </p>
-  </div>
-
-  <div>
-   <h4>Quick Navigation</h4>
-   <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="products.html">Our Products</a>
-    <a href="index.html#about">About Us</a>
-    <a href="index.html#contact">Contact Us</a>
-   </div>
-  </div>
-
-  <div>
-   <h4>Product Categories</h4>
-   <div class="footer-links">
-    <a href="#products">RO Membranes</a>
-    <a href="#products">Filter Cartridges</a>
-    <a href="#products">Filter Housings & Bags</a>
-    <a href="#products">Filter Paper</a>
-    <a href="#products">Pumps & Accessories</a>
-    <a href="#products">Purification & Dosing</a>
-   </div>
-  </div>
-
-  <div>
-   <h4>Contact Information</h4>
-
-   <div class="footer-contact">
-    <div><strong>Email</strong><br>
-     <a href="mailto:svnblr@yahoo.com">svnblr@yahoo.com</a>
+    <div>
+      <div class="footer-brand">
+        <span class="footer-brand-icon">💧</span>
+        SVN ENTERPRISES
+      </div>
+      <p>
+        Your sourcing partner for water treatment spares, filtration
+        products, industrial pumps, accessories and water purification
+        and dosing system solutions.
+      </p>
     </div>
 
-    <div><strong>Phone / WhatsApp</strong><br>
-     <a href="tel:+919886643627">+91 9886643627</a>
+    <div>
+      <h4>Quick Navigation</h4>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Our Products</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#contact">Contact Us</a>
+      </div>
     </div>
 
-    <div><strong>Business Enquiries</strong><br>
-     Contact us for product information and assistance.
+    <div>
+      <h4>Product Categories</h4>
+      <div class="footer-links">
+        <a href="#products">RO Membranes</a>
+        <a href="#products">Filter Cartridges</a>
+        <a href="#products">Filter Housings</a>
+        <a href="#products">Filter Bags</a>
+        <a href="#products">Filter Paper</a>
+        <a href="#products">Pumps & Accessories</a>
+        <a href="#products">Purification & Dosing Systems</a>
+      </div>
     </div>
-   </div>
+
+    <div>
+      <h4>Get in Touch</h4>
+      <div class="footer-contact">
+        <div>
+          <strong>Email Address</strong><br>
+          <a href="mailto:svnblr@yahoo.com">svnblr@yahoo.com</a>
+        </div>
+
+        <div>
+          <strong>Phone Number</strong><br>
+          <a href="tel:+919886643627">+91 9886643627</a>
+        </div>
+
+        <div>
+          <strong>WhatsApp Enquiries</strong><br>
+          <a href="https://wa.me/919886643627" target="_blank" rel="noopener">Chat with our team ↗</a>
+        </div>
+      </div>
+    </div>
 
   </div>
 
- </div>
-
- <div class="footer-bottom">
-  <span>© <span id="year"></span> SVN Enterprises. All Rights Reserved.</span>
-  <span>Water Treatment Spares & System Solutions</span>
- </div>
-
+  <div class="footer-bottom">
+    <span>© <span id="year"></span> SVN Enterprises. All Rights Reserved.</span>
+    <span>Water Treatment Spares & System Solutions</span>
+  </div>
 </footer>
 
 </div>
 
-<!-- BACK TO TOP -->
+<!-- WHATSAPP -->
+<a class="whatsapp-float"
+   href="https://wa.me/919886643627"
+   target="_blank"
+   rel="noopener"
+   aria-label="Chat with SVN Enterprises on WhatsApp">✆</a>
 
+<!-- BACK TO TOP -->
 <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 
 <script>
-
 // CURRENT YEAR
-
 document.getElementById("year").textContent=new Date().getFullYear();
 
 // MOBILE NAVIGATION
-
 const menuToggle=document.querySelector(".menu-toggle");
 const nav=document.querySelector(".nav");
 
 menuToggle.addEventListener("click",()=>{
- nav.classList.toggle("open");
- menuToggle.setAttribute("aria-expanded",nav.classList.contains("open"));
- menuToggle.textContent=nav.classList.contains("open")?"✕":"☰";
+  nav.classList.toggle("open");
+  const isOpen=nav.classList.contains("open");
+  menuToggle.setAttribute("aria-expanded",isOpen);
+  menuToggle.textContent=isOpen?"✕":"☰";
 });
 
 document.querySelectorAll(".nav a").forEach(link=>{
- link.addEventListener("click",()=>{
-  nav.classList.remove("open");
-  menuToggle.setAttribute("aria-expanded","false");
-  menuToggle.textContent="☰";
- });
+  link.addEventListener("click",()=>{
+    nav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded","false");
+    menuToggle.textContent="☰";
+  });
 });
 
 // PRODUCT FILTER AND SEARCH
-
 const filterButtons=document.querySelectorAll(".filter-btn");
 const productCards=document.querySelectorAll(".product-card");
 const searchInput=document.getElementById("productSearch");
@@ -1400,83 +1502,74 @@ const noResults=document.getElementById("noResults");
 let activeFilter="all";
 
 function filterProducts(){
+  const search=searchInput.value.toLowerCase().trim();
+  let visibleCount=0;
 
- const search=searchInput.value.toLowerCase().trim();
- let visibleCount=0;
+  productCards.forEach(card=>{
+    const category=card.dataset.category;
+    const name=card.dataset.name.toLowerCase();
+    const title=card.querySelector("h3").textContent.toLowerCase();
+    const description=card.querySelector("p").textContent.toLowerCase();
 
- productCards.forEach(card=>{
+    const categoryMatch=activeFilter==="all"||category===activeFilter;
+    const searchMatch=!search||
+      name.includes(search)||
+      title.includes(search)||
+      description.includes(search);
 
-  const category=card.dataset.category;
-  const name=card.dataset.name.toLowerCase();
-  const title=card.querySelector("h3").textContent.toLowerCase();
-  const description=card.querySelector("p").textContent.toLowerCase();
+    const show=categoryMatch&&searchMatch;
+    card.style.display=show?"block":"none";
 
-  const categoryMatch=activeFilter==="all"||category===activeFilter;
-  const searchMatch=!search||name.includes(search)||title.includes(search)||description.includes(search);
+    if(show){
+      visibleCount++;
+      card.classList.add("visible");
+    }
+  });
 
-  const show=categoryMatch&&searchMatch;
-
-  card.style.display=show?"block":"none";
-
-  if(show){
-   visibleCount++;
-   card.classList.add("visible");
-  }
-
- });
-
- noResults.style.display=visibleCount===0?"block":"none";
+  noResults.style.display=visibleCount===0?"block":"none";
 }
 
 filterButtons.forEach(button=>{
-
- button.addEventListener("click",()=>{
-
-  filterButtons.forEach(btn=>btn.classList.remove("active"));
-
-  button.classList.add("active");
-
-  activeFilter=button.dataset.filter;
-
-  filterProducts();
-
- });
-
+  button.addEventListener("click",()=>{
+    filterButtons.forEach(btn=>btn.classList.remove("active"));
+    button.classList.add("active");
+    activeFilter=button.dataset.filter;
+    filterProducts();
+  });
 });
 
 searchInput.addEventListener("input",filterProducts);
 
-// SCROLL REVEAL ANIMATION
+// SCROLL REVEAL
+if("IntersectionObserver" in window){
+  const revealObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:.12});
 
-const revealObserver=new IntersectionObserver(entries=>{
-
- entries.forEach(entry=>{
-
-  if(entry.isIntersecting){
-   entry.target.classList.add("visible");
-   revealObserver.unobserve(entry.target);
-  }
-
- });
-
-},{threshold:.12});
-
-document.querySelectorAll(".reveal,.product-card").forEach(element=>{
- revealObserver.observe(element);
-});
+  document.querySelectorAll(".reveal,.product-card").forEach(element=>{
+    revealObserver.observe(element);
+  });
+}else{
+  document.querySelectorAll(".reveal,.product-card").forEach(element=>{
+    element.classList.add("visible");
+  });
+}
 
 // BACK TO TOP
-
 const backTop=document.getElementById("backTop");
 
 window.addEventListener("scroll",()=>{
- backTop.classList.toggle("show",window.scrollY>450);
+  backTop.classList.toggle("show",window.scrollY>450);
 });
 
 backTop.addEventListener("click",()=>{
- window.scrollTo({top:0,behavior:"smooth"});
+  window.scrollTo({top:0,behavior:"smooth"});
 });
-
 </script>
 
 </body>
