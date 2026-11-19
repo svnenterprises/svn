@@ -837,6 +837,185 @@ button{cursor:pointer}
 .why-card h3{font:800 15px Manrope;color:var(--dark);margin-bottom:10px}
 .why-card p{font-size:11px;line-height:1.85;color:var(--muted)}
 
+
+
+/* PREMIUM INDUSTRIAL ABOUT VISUAL */
+
+.about-box {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ align-items: center;
+ gap: 55px;
+}
+
+.about-visual {
+ position: relative;
+ min-height: 430px;
+ height: 100%;
+ overflow: hidden;
+ border-radius: 24px;
+ isolation: isolate;
+ background: #071f2a;
+ box-shadow: 0 20px 50px rgba(0,0,0,.16);
+}
+
+.about-visual img {
+ position: absolute;
+ inset: 0;
+ width: 100%;
+ height: 100%;
+ object-fit: cover;
+ transition: transform 1s ease;
+}
+
+.about-visual:hover img {
+ transform: scale(1.09);
+}
+
+.about-overlay {
+ position: absolute;
+ inset: 0;
+ background: linear-gradient(
+  180deg,
+  rgba(4,25,35,.05) 10%,
+  rgba(4,25,35,.35) 45%,
+  rgba(4,25,35,.92) 100%
+ );
+}
+
+.about-visual-content {
+ position: absolute;
+ bottom: 45px;
+ left: 35px;
+ right: 25px;
+ color: white;
+ z-index: 2;
+}
+
+.about-tag {
+ display: inline-block;
+ font-size: 11px;
+ letter-spacing: 2px;
+ font-weight: 800;
+ color: #72f1d0;
+ margin-bottom: 15px;
+}
+
+.about-visual-content h3 {
+ font-size: clamp(32px, 4vw, 48px);
+ line-height: 1.08;
+ font-weight: 800;
+ margin: 0 0 12px;
+}
+
+.about-visual-content p {
+ font-size: 14px;
+ color: rgba(255,255,255,.85);
+ line-height: 1.7;
+}
+
+.about-floating-card {
+ position: absolute;
+ top: 25px;
+ right: 20px;
+ display: flex;
+ align-items: center;
+ gap: 12px;
+ padding: 14px 18px;
+ background: rgba(255,255,255,.94);
+ backdrop-filter: blur(15px);
+ border-radius: 14px;
+ z-index: 3;
+ box-shadow: 0 10px 30px rgba(0,0,0,.15);
+ animation: aboutFloat 4s ease-in-out infinite;
+}
+
+.about-icon {
+ font-size: 27px;
+}
+
+.about-floating-card strong,
+.about-floating-card small {
+ display: block;
+}
+
+.about-floating-card strong {
+ font-size: 13px;
+ color: #073d45;
+}
+
+.about-floating-card small {
+ font-size: 10px;
+ color: #71818a;
+ margin-top: 4px;
+}
+
+.about-image-badge {
+ position: absolute;
+ bottom: 25px;
+ right: 25px;
+ z-index: 3;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ width: 75px;
+ height: 75px;
+ border-radius: 50%;
+ background: #16b99a;
+ color: white;
+ border: 4px solid rgba(255,255,255,.8);
+}
+
+.about-image-badge strong {
+ font-size: 21px;
+ font-weight: 900;
+}
+
+.about-image-badge span {
+ font-size: 7px;
+ letter-spacing: 1px;
+}
+
+@keyframes aboutFloat {
+ 0%,100% { transform: translateY(0); }
+ 50% { transform: translateY(-9px); }
+}
+
+@media(max-width: 850px) {
+ .about-box {
+  grid-template-columns: 1fr;
+  gap: 30px;
+ }
+
+ .about-visual {
+  min-height: 370px;
+ }
+}
+
+@media(max-width: 480px) {
+ .about-visual {
+  min-height: 330px;
+  border-radius: 18px;
+ }
+
+ .about-visual-content {
+  left: 22px;
+  bottom: 35px;
+ }
+
+ .about-floating-card {
+  top: 15px;
+  right: 12px;
+  padding: 10px;
+ }
+}
+
+
+
+
+
+
 /* ABOUT */
 
 .about-section{
@@ -1393,11 +1572,46 @@ Complete water treatment solutions, premium filtration products and dependable i
 
 <section class="section about-section" id="about">
  <div class="about-inner">
+
   <div class="about-box reveal">
-   <div class="about-visual"="https://cdn.britannica.com/58/223158-050-A61FA1C8/spinning-room-in-Shadwell-Rope-Works.jpg"></div>
+
+   <div class="about-visual">
+    <img src="images/industrial-water-treatment.jpg"
+         alt="Industrial Water Treatment and Filtration Systems">
+
+    <div class="about-overlay"></div>
+
+    <div class="about-visual-content">
+     <span class="about-tag">INDUSTRIAL WATER SOLUTIONS</span>
+     <h3>Engineering<br>Better Water.</h3>
+     <p>Reliable products. Advanced filtration. Trusted solutions.</p>
+    </div>
+
+    <div class="about-floating-card">
+     <span class="about-icon">💧</span>
+     <div>
+      <strong>Water Treatment</strong>
+      <small>Quality Products & Solutions</small>
+     </div>
+    </div>
+
+    <div class="about-image-badge">
+     <strong>SVN</strong>
+     <span>ENTERPRISES</span>
+    </div>
+   </div>
+
    <div class="about-content">
     <div class="section-label">Get to Know Us</div>
     <h2 class="section-title">About SVN Enterprises</h2>
+
+    <!-- Keep your existing About Us paragraph and content here -->
+
+   </div>
+
+  </div>
+ </div>
+</section>
 
     <p>
      SVN Enterprises is a water treatment products and spares supplier
