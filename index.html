@@ -448,6 +448,170 @@ button{cursor:pointer}
 .product-link i{transition:.3s}
 .product-link:hover i{transform:translateX(6px)}
 
+
+
+
+/* LARGE WATER TREATMENT IMAGE SLIDER */
+
+.hero{
+ min-height:680px;
+ position:relative;
+ overflow:hidden;
+ color:white;
+ display:flex;
+ align-items:center;
+ background:#071f2a;
+}
+
+.hero-slider{
+ position:absolute;
+ inset:0;
+ overflow:hidden;
+}
+
+.hero-slide{
+ position:absolute;
+ inset:0;
+ opacity:0;
+ visibility:hidden;
+ background-size:cover;
+ background-position:center;
+ transform:scale(1.08);
+ transition:opacity 1s ease,transform 6s ease,visibility 1s;
+}
+
+.hero-slide.active{
+ opacity:1;
+ visibility:visible;
+ transform:scale(1);
+}
+
+.hero-slide:after{
+ content:"";
+ position:absolute;
+ inset:0;
+ background:linear-gradient(
+  90deg,
+  rgba(3,24,31,.90),
+  rgba(3,34,38,.66),
+  rgba(3,42,42,.18)
+ );
+}
+
+.hero-slide:nth-child(1){
+ background-image:url('https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=2000&q=90');
+}
+
+.hero-slide:nth-child(2){
+ background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=2000&q=90');
+}
+
+.hero-slide:nth-child(3){
+ background-image:url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=2000&q=90');
+}
+
+.hero-slide:nth-child(4){
+ background-image:url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=2000&q=90');
+}
+
+.hero-slide:nth-child(5){
+ background-image:url('https://images.unsplash.com/photo-1581093458791-9d42e3c7f6e5?auto=format&fit=crop&w=2000&q=90');
+}
+
+.hero-slide:nth-child(6){
+ background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2000&q=90');
+}
+
+.hero-content{
+ position:relative;
+ z-index:3;
+}
+
+.hero-grid,.hero-orb{
+ z-index:2;
+ pointer-events:none;
+}
+
+.hero-arrow{
+ position:absolute;
+ top:50%;
+ transform:translateY(-50%);
+ z-index:5;
+ width:48px;
+ height:48px;
+ border:1px solid #ffffff65;
+ border-radius:50%;
+ background:#ffffff20;
+ color:white;
+ display:grid;
+ place-items:center;
+ font-size:17px;
+ backdrop-filter:blur(10px);
+ transition:.3s;
+}
+
+.hero-arrow:hover{
+ background:#29d5a4;
+ color:#063d32;
+ border-color:#29d5a4;
+}
+
+.hero-prev{left:25px}
+.hero-next{right:25px}
+
+.hero-dots{
+ position:absolute;
+ bottom:24px;
+ left:50%;
+ transform:translateX(-50%);
+ z-index:6;
+ display:flex;
+ gap:10px;
+}
+
+.hero-dot{
+ width:9px;
+ height:9px;
+ padding:0;
+ border:0;
+ border-radius:20px;
+ background:#ffffff80;
+ transition:.4s;
+}
+
+.hero-dot.active{
+ width:32px;
+ background:#36d6a9;
+}
+
+.hero-progress{
+ position:absolute;
+ left:0;
+ bottom:0;
+ height:3px;
+ width:0;
+ background:#36d6a9;
+ z-index:7;
+}
+
+@media(max-width:780px){
+ .hero{min-height:620px}
+ .hero-prev{left:10px}
+ .hero-next{right:10px}
+ .hero-arrow{width:37px;height:37px;font-size:13px}
+ .hero-content{padding:80px 10%}
+ .hero-dots{bottom:18px}
+}
+
+@media(max-width:480px){
+ .hero{min-height:590px}
+ .hero-content{padding:65px 9%}
+ .hero-arrow{width:32px;height:32px}
+ .hero-prev{left:7px}
+ .hero-next{right:7px}
+}
+
+
 /* PRODUCT IMAGES */
 
 .img-membrane{background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80')}
@@ -930,6 +1094,103 @@ button{cursor:pointer}
   <p>We understand your requirements and help identify suitable product options.</p>
  </div>
 </section>
+
+
+<!-- LARGE WATER TREATMENT IMAGE SLIDER -->
+
+<section class="hero" id="home">
+
+ <div class="hero-slider" id="heroSlider">
+
+  <div class="hero-slide active"></div>
+  <div class="hero-slide"></div>
+  <div class="hero-slide"></div>
+  <div class="hero-slide"></div>
+  <div class="hero-slide"></div>
+  <div class="hero-slide"></div>
+
+ </div>
+
+ <div class="hero-grid"></div>
+ <div class="hero-orb one"></div>
+ <div class="hero-orb two"></div>
+
+ <button class="hero-arrow hero-prev" id="heroPrev" aria-label="Previous slide">
+  <i class="fa-solid fa-chevron-left"></i>
+ </button>
+
+ <button class="hero-arrow hero-next" id="heroNext" aria-label="Next slide">
+  <i class="fa-solid fa-chevron-right"></i>
+ </button>
+
+ <div class="hero-content">
+  <div class="hero-text">
+
+   <div class="eyebrow">Your Water Treatment Sourcing Partner</div>
+
+   <h1>Pure Solutions.<br><span>Better Water.</span><br>Better Tomorrow.</h1>
+
+   <p class="hero-description">
+    Discover dependable water treatment spares, advanced filtration products,
+    industrial pumps and purification systems from SVN Enterprises.
+    Your requirements, supported by the right products.
+   </p>
+
+   <div class="hero-actions">
+    <a href="products.html" class="btn btn-primary">
+     Explore Our Products <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+    <a href="#contact" class="btn btn-outline">
+     <i class="fa-regular fa-paper-plane"></i> Contact Our Team
+    </a>
+   </div>
+
+   <div class="hero-bottom">
+
+    <div class="hero-feature">
+     <i class="fa-solid fa-filter"></i>
+     <span>
+      <strong>Filtration Products</strong>
+      <small>Quality-focused selection</small>
+     </span>
+    </div>
+
+    <div class="hero-feature">
+     <i class="fa-solid fa-gears"></i>
+     <span>
+      <strong>Industrial Equipment</strong>
+      <small>Reliable product solutions</small>
+     </span>
+    </div>
+
+    <div class="hero-feature">
+     <i class="fa-solid fa-headset"></i>
+     <span>
+      <strong>Customer Support</strong>
+      <small>Responsive assistance</small>
+     </span>
+    </div>
+
+   </div>
+  </div>
+ </div>
+
+ <div class="hero-dots" id="heroDots">
+  <button class="hero-dot active" aria-label="Slide 1"></button>
+  <button class="hero-dot" aria-label="Slide 2"></button>
+  <button class="hero-dot" aria-label="Slide 3"></button>
+  <button class="hero-dot" aria-label="Slide 4"></button>
+  <button class="hero-dot" aria-label="Slide 5"></button>
+  <button class="hero-dot" aria-label="Slide 6"></button>
+ </div>
+
+ <div class="hero-progress" id="heroProgress"></div>
+
+</section>
+
+
+
 
 <!-- INTRODUCTION -->
 
@@ -1427,6 +1688,74 @@ enquiryModal.addEventListener("click",event=>{
 document.addEventListener("keydown",event=>{
  if(event.key==="Escape") hideModal();
 });
+
+
+
+/* AUTOMATIC HERO IMAGE SLIDER */
+
+const heroSlides = document.querySelectorAll(".hero-slide");
+const heroDots = document.querySelectorAll(".hero-dot");
+const heroProgress = document.getElementById("heroProgress");
+
+let currentHeroSlide = 0;
+let heroTimer;
+let heroStartTime;
+const heroInterval = 5000;
+
+function showHeroSlide(index){
+
+ heroSlides[currentHeroSlide].classList.remove("active");
+ heroDots[currentHeroSlide].classList.remove("active");
+
+ currentHeroSlide = (index + heroSlides.length) % heroSlides.length;
+
+ heroSlides[currentHeroSlide].classList.add("active");
+ heroDots[currentHeroSlide].classList.add("active");
+
+ heroProgress.style.transition="none";
+ heroProgress.style.width="0%";
+
+ requestAnimationFrame(()=>{
+  requestAnimationFrame(()=>{
+   heroProgress.style.transition=`width ${heroInterval}ms linear`;
+   heroProgress.style.width="100%";
+  });
+ });
+
+}
+
+function nextHeroSlide(){
+ showHeroSlide(currentHeroSlide + 1);
+}
+
+function previousHeroSlide(){
+ showHeroSlide(currentHeroSlide - 1);
+}
+
+function startHeroSlider(){
+ clearInterval(heroTimer);
+ heroTimer=setInterval(nextHeroSlide,heroInterval);
+}
+
+document.getElementById("heroNext").addEventListener("click",()=>{
+ nextHeroSlide();
+ startHeroSlider();
+});
+
+document.getElementById("heroPrev").addEventListener("click",()=>{
+ previousHeroSlide();
+ startHeroSlider();
+});
+
+heroDots.forEach((dot,index)=>{
+ dot.addEventListener("click",()=>{
+  showHeroSlide(index);
+  startHeroSlider();
+ });
+});
+
+startHeroSlider();
+
 
 </script>
 
