@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,1647 +6,335 @@
 <meta name="theme-color" content="#071f2a">
 <meta name="description" content="SVN Enterprises supplies RO membranes, filter cartridges, filter housings, filter bags, pumps, accessories and industrial water treatment systems.">
 <title>SVN Enterprises | Advanced Water Treatment Solutions</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
 <style>
-:root{
- --green:#08a985;
- --green2:#36d6a9;
- --dark:#071f2a;
- --navy:#102f40;
- --ink:#193440;
- --muted:#71858b;
- --paper:#f4f8f7;
- --white:#fff;
- --line:#e3eeea;
- --shadow:0 20px 60px rgba(5,42,39,.10);
- --radius:18px;
-}
-
+:root{--green:#08a985;--green2:#36d6a9;--dark:#071f2a;--navy:#102f40;--ink:#193440;--muted:#71858b;--paper:#f4f8f7;--white:#fff;--line:#e3eeea;--shadow:0 20px 60px rgba(5,42,39,.10);--radius:18px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{
- background:#edf4f1;
- color:var(--ink);
- font-family:"DM Sans",sans-serif;
- overflow-x:hidden;
-}
-a{text-decoration:none;color:inherit}
-button,input,textarea{font:inherit}
-button{cursor:pointer}
-::selection{background:#08a985;color:white}
+body{background:#edf4f1;color:var(--ink);font-family:"DM Sans",sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}button,input,textarea,select{font:inherit}button{cursor:pointer}::selection{background:#08a985;color:white}
 
-/* LOADING SCREEN */
-
-.loader{
- position:fixed;inset:0;z-index:10000;
- background:#071f2a;
- display:flex;align-items:center;justify-content:center;
- flex-direction:column;gap:20px;
- transition:opacity .7s,visibility .7s;
-}
-.loader.hide{opacity:0;visibility:hidden}
-.loader-logo{
- width:76px;height:76px;border-radius:25px;
- display:grid;place-items:center;
- background:linear-gradient(145deg,#ffffff,#ffffff);
- color:white;font-size:34px;
- box-shadow:0 0 50px #14c99b55;
- animation:loaderPulse 1.5s infinite;
-}
-.loader p{
- color:#b8d8d0;font-size:10px;
- letter-spacing:4px;font-weight:800;
-}
-.loader-line{
- width:130px;height:3px;background:#ffffff20;
- border-radius:10px;overflow:hidden;
-}
-.loader-line:after{
- content:"";display:block;width:45%;height:100%;
- background:#39e4b4;
- animation:loading 1.2s infinite;
-}
+/* LOADER */
+.loader{position:fixed;inset:0;z-index:10000;background:#071f2a;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;transition:opacity .7s,visibility .7s}
+.loader.hide{opacity:0;visibility:hidden;pointer-events:none}
+.loader-logo{width:90px;height:75px;object-fit:contain;background:white;border-radius:16px;padding:7px;box-shadow:0 0 50px #14c99b55;animation:loaderPulse 1.5s infinite}
+.loader p{color:#b8d8d0;font-size:10px;letter-spacing:4px;font-weight:800}
+.loader-line{width:130px;height:3px;background:#ffffff20;border-radius:10px;overflow:hidden}
+.loader-line:after{content:"";display:block;width:45%;height:100%;background:#39e4b4;animation:loading 1.2s infinite}
 @keyframes loading{from{transform:translateX(-100%)}to{transform:translateX(240%)}}
 @keyframes loaderPulse{50%{transform:scale(1.09);box-shadow:0 0 65px #14c99b88}}
-
-/* SCROLL PROGRESS */
-
-.scroll-progress{
- position:fixed;top:0;left:0;height:3px;width:0;
- background:linear-gradient(90deg,#1bcb9b,#8bf4d1);
- z-index:9999;
-}
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,#1bcb9b,#8bf4d1);z-index:9999}
 
 /* HEADER */
-
-.header{
- position:sticky;top:0;z-index:1000;
- background:rgba(255,255,255,.91);
- backdrop-filter:blur(20px);
- border-bottom:1px solid rgba(220,235,228,.8);
- transition:.3s;
-}
+.header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.91);backdrop-filter:blur(20px);border-bottom:1px solid rgba(220,235,228,.8);transition:.3s}
 .header.scrolled{box-shadow:0 8px 30px #0a393015}
-.topbar{
- max-width:1380px;margin:auto;height:86px;
- padding:0 6%;
- display:flex;align-items:center;
- justify-content:space-between;gap:25px;
-}
-.brand{
- display:flex;align-items:center;gap:12px;
- color:var(--dark);flex-shrink:0;
-}
-.brand-logo{
- width:100px;
- height:80px;
- min-width:100px;
- border-radius:15px;
- display:flex;
- align-items:center;
- justify-content:center;
- padding:5px;
- background:#fff;
- box-shadow:0 8px 20px #08a98520;
- position:relative;
- overflow:visible;
- flex-shrink:0;
-}
-
-.brand-logo img{
- width:100%;
- height:100%;
- max-width:100%;
- max-height:100%;
- object-fit:contain;
- object-position:center;
- display:block;
- border-radius:10px;
-}
-@keyframes logoShine{
- 0%,65%{left:-50px}
- 85%,100%{left:70px}
-}
-.brand-name{
- font:800 19px Manrope;
- letter-spacing:-.7px;
-}
-.brand-name small{
- display:block;font:800 8px "DM Sans";
- letter-spacing:2px;color:#79928b;margin-top:3px;
-}
-.nav{
- display:flex;align-items:center;gap:30px;
- font-size:12px;font-weight:800;color:#526a70;
-}
+.topbar{max-width:1380px;margin:auto;height:86px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.brand{display:flex;align-items:center;gap:12px;color:var(--dark);flex-shrink:0}
+.brand-logo{width:100px;height:80px;min-width:100px;border-radius:15px;display:flex;align-items:center;justify-content:center;padding:5px;background:#fff;box-shadow:0 8px 20px #08a98520;overflow:hidden;flex-shrink:0}
+.brand-logo img{width:100%;height:100%;object-fit:contain;object-position:center;display:block;border-radius:10px}
+.brand-name{font:800 19px Manrope;letter-spacing:-.7px}
+.brand-name small{display:block;font:800 8px "DM Sans";letter-spacing:2px;color:#79928b;margin-top:3px}
+.nav{display:flex;align-items:center;gap:30px;font-size:12px;font-weight:800;color:#526a70}
 .nav a{position:relative;transition:.3s}
-.nav a:not(.nav-cta):after{
- content:"";position:absolute;bottom:-9px;left:0;
- width:0;height:2px;background:var(--green);
- transition:.3s;
-}
-.nav a:hover{color:var(--green)}
-.nav a:hover:after{width:100%}
-.nav-cta{
- background:var(--green);color:white!important;
- padding:14px 22px;border-radius:30px;
- box-shadow:0 7px 20px #08a98535;
- transition:.3s;
-}
-.nav-cta:hover{
- transform:translateY(-3px);
- background:#087e68;
- box-shadow:0 12px 25px #08a98555;
-}
-.menu-toggle{
- display:none;border:0;background:none;
- font-size:24px;color:var(--dark);
-}
+.nav a:not(.nav-cta):after{content:"";position:absolute;bottom:-9px;left:0;width:0;height:2px;background:var(--green);transition:.3s}
+.nav a:hover{color:var(--green)}.nav a:hover:after{width:100%}
+.nav-cta{background:var(--green);color:white!important;padding:14px 22px;border-radius:30px;box-shadow:0 7px 20px #08a98535;transition:.3s}
+.nav-cta:hover{transform:translateY(-3px);background:#087e68;box-shadow:0 12px 25px #08a98555}
+.menu-toggle{display:none;border:0;background:none;font-size:24px;color:var(--dark)}
 
-
-
-/* LARGE WATER TREATMENT IMAGE SLIDER */
-
-.hero{
- min-height:680px;
- position:relative;
- overflow:hidden;
- color:white;
- display:flex;
- align-items:center;
- background:#071f2a;
-}
-
-.hero-slider{
- position:absolute;
- inset:0;
- overflow:hidden;
-}
-
-.hero-slide{
- position:absolute;
- inset:0;
- opacity:0;
- visibility:hidden;
- background-size:cover;
- background-position:center;
- transform:scale(1.08);
- transition:opacity 1s ease,transform 6s ease,visibility 1s;
-}
-
-.hero-slide.active{
- opacity:1;
- visibility:visible;
- transform:scale(1);
-}
-
-.hero-slide:after{
- content:"";
- position:absolute;
- inset:0;
- background:linear-gradient(
-  90deg,
-  rgba(3,24,31,.90),
-  rgba(3,34,38,.66),
-  rgba(3,42,42,.18)
- );
-}
-
-.hero-slide:nth-child(1){
- background-image:url('https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=2000&q=90');
-}
-
-.hero-slide:nth-child(2){
- background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=2000&q=90');
-}
-
-.hero-slide:nth-child(3){
- background-image:url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=2000&q=90');
-}
-
-.hero-slide:nth-child(4){
- background-image:url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=2000&q=90');
-}
-
-.hero-slide:nth-child(5){
- background-image:url('https://images.unsplash.com/photo-1581093458791-9d42e3c7f6e5?auto=format&fit=crop&w=2000&q=90');
-}
-
-.hero-slide:nth-child(6){
- background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2000&q=90');
-}
-
-.hero-content{
- position:relative;
- z-index:3;
-}
-
-.hero-grid,.hero-orb{
- z-index:2;
- pointer-events:none;
-}
-
-.hero-arrow{
- position:absolute;
- top:50%;
- transform:translateY(-50%);
- z-index:5;
- width:48px;
- height:48px;
- border:1px solid #ffffff65;
- border-radius:50%;
- background:#ffffff20;
- color:white;
- display:grid;
- place-items:center;
- font-size:17px;
- backdrop-filter:blur(10px);
- transition:.3s;
-}
-
-.hero-arrow:hover{
- background:#29d5a4;
- color:#063d32;
- border-color:#29d5a4;
-}
-
-.hero-prev{left:25px}
-.hero-next{right:25px}
-
-.hero-dots{
- position:absolute;
- bottom:24px;
- left:50%;
- transform:translateX(-50%);
- z-index:6;
- display:flex;
- gap:10px;
-}
-
-.hero-dot{
- width:9px;
- height:9px;
- padding:0;
- border:0;
- border-radius:20px;
- background:#ffffff80;
- transition:.4s;
-}
-
-.hero-dot.active{
- width:32px;
- background:#36d6a9;
-}
-
-.hero-progress{
- position:absolute;
- left:0;
- bottom:0;
- height:3px;
- width:0;
- background:#36d6a9;
- z-index:7;
-}
-
-@media(max-width:780px){
- .hero{min-height:620px}
- .hero-prev{left:10px}
- .hero-next{right:10px}
- .hero-arrow{width:37px;height:37px;font-size:13px}
- .hero-content{padding:80px 10%}
- .hero-dots{bottom:18px}
-}
-
-@media(max-width:480px){
- .hero{min-height:590px}
- .hero-content{padding:65px 9%}
- .hero-arrow{width:32px;height:32px}
- .hero-prev{left:7px}
- .hero-next{right:7px}
-}
-
-
-
-/* HERO */
-
-.hero{
- min-height:680px;
- position:relative;
- display:flex;align-items:center;
- overflow:hidden;color:white;
- background:
- linear-gradient(100deg,rgba(3,24,31,.91),rgba(3,34,38,.72),rgba(3,42,42,.32)),
- url('https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=2000&q=90') center/cover;
-}
-.hero:before{
- content:"";position:absolute;inset:0;
- background:
- radial-gradient(circle at 80% 30%,#31d7a522,transparent 35%),
- linear-gradient(0deg,#071f2a88,transparent 50%);
-}
-.hero-grid{
- position:absolute;inset:0;opacity:.12;
- background-image:
- linear-gradient(#ffffff30 1px,transparent 1px),
- linear-gradient(90deg,#ffffff30 1px,transparent 1px);
- background-size:65px 65px;
- mask-image:linear-gradient(90deg,transparent,black);
- animation:gridMove 25s linear infinite;
-}
-@keyframes gridMove{
- to{background-position:65px 65px}
-}
-.hero-orb{
- position:absolute;border-radius:50%;
- border:1px solid #ffffff20;
- pointer-events:none;
-}
-.hero-orb.one{
- width:380px;height:380px;right:8%;top:10%;
- animation:float 9s ease-in-out infinite;
-}
-.hero-orb.two{
- width:250px;height:250px;right:13%;top:19%;
- border-color:#37e2b53a;
- animation:float 7s ease-in-out infinite reverse;
-}
-@keyframes float{
- 50%{transform:translateY(-25px) translateX(12px)}
-}
-.hero-content{
- width:100%;max-width:1380px;
- margin:auto;padding:100px 8%;
- position:relative;z-index:2;
-}
+/* HERO SLIDER */
+.hero{min-height:680px;position:relative;overflow:hidden;color:white;display:flex;align-items:center;background:#071f2a}
+.hero-slider{position:absolute;inset:0;overflow:hidden}
+.hero-slide{position:absolute;inset:0;opacity:0;visibility:hidden;background-size:cover;background-position:center;transform:scale(1.08);transition:opacity 1s ease,transform 6s ease,visibility 1s}
+.hero-slide.active{opacity:1;visibility:visible;transform:scale(1)}
+.hero-slide:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,24,31,.90),rgba(3,34,38,.66),rgba(3,42,42,.18))}
+.hero-slide:nth-child(1){background-image:url('https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=2000&q=90')}
+.hero-slide:nth-child(2){background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=2000&q=90')}
+.hero-slide:nth-child(3){background-image:url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=2000&q=90')}
+.hero-slide:nth-child(4){background-image:url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=2000&q=90')}
+.hero-slide:nth-child(5){background-image:url('https://images.unsplash.com/photo-1581093458791-9d42e3c7f6e5?auto=format&fit=crop&w=2000&q=90')}
+.hero-slide:nth-child(6){background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2000&q=90')}
+.hero:before{content:"";position:absolute;inset:0;z-index:1;background:radial-gradient(circle at 80% 30%,#31d7a522,transparent 35%),linear-gradient(0deg,#071f2a88,transparent 50%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;z-index:2;opacity:.12;pointer-events:none;background-image:linear-gradient(#ffffff30 1px,transparent 1px),linear-gradient(90deg,#ffffff30 1px,transparent 1px);background-size:65px 65px;mask-image:linear-gradient(90deg,transparent,black);animation:gridMove 25s linear infinite}
+@keyframes gridMove{to{background-position:65px 65px}}
+.hero-orb{position:absolute;border-radius:50%;border:1px solid #ffffff20;z-index:2;pointer-events:none}
+.hero-orb.one{width:380px;height:380px;right:8%;top:10%;animation:float 9s ease-in-out infinite}
+.hero-orb.two{width:250px;height:250px;right:13%;top:19%;border-color:#37e2b53a;animation:float 7s ease-in-out infinite reverse}
+@keyframes float{50%{transform:translateY(-25px) translateX(12px)}}
+.hero-content{width:100%;max-width:1380px;margin:auto;padding:100px 8%;position:relative;z-index:3}
 .hero-text{max-width:760px;animation:heroIn 1s both}
-@keyframes heroIn{
- from{opacity:0;transform:translateY(35px)}
- to{opacity:1;transform:translateY(0)}
-}
-.eyebrow{
- display:inline-flex;align-items:center;gap:10px;
- color:#65edc1;font-size:10px;
- font-weight:800;letter-spacing:3px;
- text-transform:uppercase;
-}
-.eyebrow:before{
- content:"";width:30px;height:2px;background:#36d6a9;
-}
-.hero h1{
- font:800 clamp(43px,6.5vw,78px)/1.06 Manrope;
- letter-spacing:-3.5px;margin:25px 0 23px;
-}
-.hero h1 span{
- color:#52e1b5;
- text-shadow:0 5px 30px #22c99c35;
-}
-.hero-description{
- color:#d4e5e2;font-size:15px;
- line-height:1.95;max-width:630px;
-}
-.hero-actions{
- display:flex;gap:14px;flex-wrap:wrap;
- margin-top:35px;
-}
-.btn{
- display:inline-flex;align-items:center;
- justify-content:center;gap:10px;
- padding:16px 25px;border-radius:40px;
- font-size:11px;font-weight:800;
- transition:.35s;border:1px solid transparent;
-}
-.btn-primary{
- background:#29d5a4;color:#063d32;
- box-shadow:0 10px 35px #22c99c35;
-}
-.btn-primary:hover{
- transform:translateY(-5px);
- background:#77efc7;
- box-shadow:0 15px 40px #22c99c55;
-}
-.btn-outline{
- color:white;border-color:#ffffff60;
- background:#ffffff0c;
- backdrop-filter:blur(10px);
-}
+@keyframes heroIn{from{opacity:0;transform:translateY(35px)}to{opacity:1;transform:translateY(0)}}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:#65edc1;font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
+.eyebrow:before{content:"";width:30px;height:2px;background:#36d6a9}
+.hero h1{font:800 clamp(43px,6.5vw,78px)/1.06 Manrope;letter-spacing:-3.5px;margin:25px 0 23px}
+.hero h1 span{color:#52e1b5;text-shadow:0 5px 30px #22c99c35}
+.hero-description{color:#d4e5e2;font-size:15px;line-height:1.95;max-width:630px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:35px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 25px;border-radius:40px;font-size:11px;font-weight:800;transition:.35s;border:1px solid transparent}
+.btn-primary{background:#29d5a4;color:#063d32;box-shadow:0 10px 35px #22c99c35}
+.btn-primary:hover{transform:translateY(-5px);background:#77efc7;box-shadow:0 15px 40px #22c99c55}
+.btn-outline{color:white;border-color:#ffffff60;background:#ffffff0c;backdrop-filter:blur(10px)}
 .btn-outline:hover{background:white;color:var(--dark)}
-.hero-bottom{
- display:flex;align-items:center;gap:35px;
- margin-top:65px;padding-top:27px;
- border-top:1px solid #ffffff30;
- flex-wrap:wrap;
-}
-.hero-feature{
- display:flex;align-items:center;gap:11px;
-}
+.hero-bottom{display:flex;align-items:center;gap:35px;margin-top:65px;padding-top:27px;border-top:1px solid #ffffff30;flex-wrap:wrap}
+.hero-feature{display:flex;align-items:center;gap:11px}
 .hero-feature i{color:#52e1b5;font-size:19px}
 .hero-feature strong{display:block;font:800 12px Manrope}
 .hero-feature small{display:block;color:#b8d1ca;font-size:9px;margin-top:4px}
+.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:48px;height:48px;border:1px solid #ffffff65;border-radius:50%;background:#ffffff20;color:white;display:grid;place-items:center;font-size:17px;backdrop-filter:blur(10px);transition:.3s}
+.hero-arrow:hover{background:#29d5a4;color:#063d32;border-color:#29d5a4}
+.hero-prev{left:25px}.hero-next{right:25px}
+.hero-dots{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:6;display:flex;gap:10px}
+.hero-dot{width:9px;height:9px;padding:0;border:0;border-radius:20px;background:#ffffff80;transition:.4s}
+.hero-dot.active{width:32px;background:#36d6a9}
+.hero-progress{position:absolute;left:0;bottom:0;height:3px;width:0;background:#36d6a9;z-index:7}
 
-/* GENERAL */
-
-.section{
- padding:95px 7%;
- max-width:1500px;margin:auto;
-}
-.section-label{
- color:var(--green);font-size:10px;
- letter-spacing:3px;font-weight:800;
- text-transform:uppercase;
-}
-.section-title{
- font:800 clamp(27px,3.5vw,43px)/1.2 Manrope;
- letter-spacing:-1.6px;color:var(--dark);
- margin:13px 0 14px;
-}
-.section-description{
- font-size:13px;line-height:1.9;
- color:var(--muted);max-width:650px;
-}
-.heading-center{text-align:center}
-.heading-center .section-description{margin:auto}
-.heading-center .section-label:before,
-.heading-center .section-label:after{
- content:"";display:inline-block;
- width:22px;height:2px;background:var(--green);
- vertical-align:middle;margin:0 10px;
-}
-
-/* TRUST STRIP */
-
-.trust{
- background:white;padding:32px 7%;
- display:grid;grid-template-columns:repeat(3,1fr);
- max-width:1380px;margin:-1px auto 0;
- position:relative;z-index:3;
- box-shadow:0 15px 45px #0a403010;
-}
-.trust-item{
- text-align:center;padding:12px 20px;
- border-right:1px solid var(--line);
-}
-.trust-item:last-child{border:0}
-.trust-item i{
- font-size:23px;color:var(--green);
- margin-bottom:13px;
-}
+/* GENERAL + TRUST */
+.section{padding:95px 7%;max-width:1500px;margin:auto}
+.section-label{color:var(--green);font-size:10px;letter-spacing:3px;font-weight:800;text-transform:uppercase}
+.section-title{font:800 clamp(27px,3.5vw,43px)/1.2 Manrope;letter-spacing:-1.6px;color:var(--dark);margin:13px 0 14px}
+.section-description{font-size:13px;line-height:1.9;color:var(--muted);max-width:650px}
+.heading-center{text-align:center}.heading-center .section-description{margin:auto}
+.heading-center .section-label:before,.heading-center .section-label:after{content:"";display:inline-block;width:22px;height:2px;background:var(--green);vertical-align:middle;margin:0 10px}
+.trust{background:white;padding:32px 7%;display:grid;grid-template-columns:repeat(3,1fr);max-width:1380px;margin:-1px auto 0;position:relative;z-index:3;box-shadow:0 15px 45px #0a403010}
+.trust-item{text-align:center;padding:12px 20px;border-right:1px solid var(--line)}
+.trust-item:last-child{border:0}.trust-item i{font-size:23px;color:var(--green);margin-bottom:13px}
 .trust-item h3{font:800 14px Manrope;color:var(--dark)}
-.trust-item p{
- font-size:10px;line-height:1.7;
- color:var(--muted);margin-top:7px;
-}
-
-/* INTRO */
-
-.intro-section{
- display:grid;grid-template-columns:1fr 1fr;
- gap:70px;align-items:center;
-}
-.intro-visual{position:relative;min-height:450px}
-.intro-image{
- position:absolute;inset:0 35px 30px 0;
- border-radius:25px;
- background:url('https://images.unsplash.com/photo-1581093458791-9d42e3c7f6e5?auto=format&fit=crop&w=1100&q=85') center/cover;
- box-shadow:var(--shadow);
-}
-.intro-image:after{
- content:"";position:absolute;inset:0;
- border-radius:25px;
- background:linear-gradient(0deg,#071f2a55,transparent 60%);
-}
-.intro-accent{
- position:absolute;width:180px;height:180px;
- right:0;bottom:0;border:12px solid #d4f2e7;
- border-radius:25px;z-index:-1;
-}
-.intro-badge{
- position:absolute;right:0;top:40px;
- background:white;padding:19px 23px;
- border-radius:14px;box-shadow:var(--shadow);
- display:flex;align-items:center;gap:12px;
-}
-.intro-badge i{font-size:25px;color:var(--green)}
-.intro-badge strong{display:block;font:800 12px Manrope;color:var(--dark)}
-.intro-badge small{font-size:9px;color:var(--muted)}
-.intro-copy .section-description{margin-bottom:18px}
-.intro-list{display:grid;gap:14px;margin:25px 0}
-.intro-list li{
- list-style:none;display:flex;align-items:center;
- gap:12px;font-size:12px;font-weight:700;color:#45616a;
-}
-.intro-list i{
- width:25px;height:25px;border-radius:50%;
- background:#dff7ed;color:var(--green);
- display:grid;place-items:center;font-size:11px;
-}
-.intro-copy .btn{margin-top:10px}
-
-/* PRODUCTS */
-
-.products-section{
- background:#edf6f2;
- max-width:none;
-}
-.products-inner{max-width:1380px;margin:auto}
-.product-grid{
- display:grid;grid-template-columns:repeat(4,1fr);
- gap:19px;margin-top:43px;
-}
-.product-card{
- background:white;border-radius:14px;
- overflow:hidden;position:relative;
- box-shadow:0 8px 30px #123e3210;
- transition:.4s;
- border:1px solid #e5efea;
-}
-.product-card:hover{
- transform:translateY(-9px);
- box-shadow:0 20px 45px #0a49301d;
- border-color:#9bdfc5;
-}
-.product-image{
- height:180px;position:relative;
- background-size:cover;background-position:center;
- overflow:hidden;
-}
-.product-image:after{
- content:"";position:absolute;inset:0;
- background:linear-gradient(0deg,#062b2b70,transparent 65%);
- transition:.4s;
-}
-.product-card:hover .product-image:after{
- background:linear-gradient(0deg,#087e6866,transparent 80%);
-}
-.product-number{
- position:absolute;top:14px;left:14px;z-index:2;
- padding:7px 11px;border-radius:20px;
- background:#ffffffeb;color:var(--green);
- font-size:9px;font-weight:800;
-}
-.product-icon{
- position:absolute;right:15px;bottom:14px;
- width:38px;height:38px;border-radius:12px;
- background:#ffffffed;color:var(--green);
- display:grid;place-items:center;z-index:2;
-}
-.product-copy{padding:20px}
-.product-copy h3{
- font:800 14px Manrope;color:var(--dark);
- margin-bottom:9px;
-}
-.product-copy p{
- font-size:10px;line-height:1.8;
- color:var(--muted);min-height:54px;
-}
-.product-link{
- display:inline-flex;align-items:center;gap:8px;
- color:var(--green);font-size:10px;
- font-weight:800;margin-top:15px;
-}
-.product-link i{transition:.3s}
-.product-link:hover i{transform:translateX(6px)}
-
-
-
-
-/* LARGE WATER TREATMENT IMAGE SLIDER */
-
-.hero{
- min-height:680px;
- position:relative;
- overflow:hidden;
- color:white;
- display:flex;
- align-items:center;
- background:#071f2a;
-}
-
-.hero-slider{
- position:absolute;
- inset:0;
- overflow:hidden;
-}
-
-.hero-slide{
- position:absolute;
- inset:0;
- opacity:0;
- visibility:hidden;
- background-size:cover;
- background-position:center;
- transform:scale(1.08);
- transition:opacity 1s ease,transform 6s ease,visibility 1s;
-}
-
-.hero-slide.active{
- opacity:1;
- visibility:visible;
- transform:scale(1);
-}
-
-.hero-slide:after{
- content:"";
- position:absolute;
- inset:0;
- background:linear-gradient(
-  90deg,
-  rgba(3,24,31,.90),
-  rgba(3,34,38,.66),
-  rgba(3,42,42,.18)
- );
-}
-
-.hero-slide:nth-child(1){
- background-image:url('https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=2000&q=90');
-}
-
-.hero-slide:nth-child(2){
- background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=2000&q=90');
-}
-
-.hero-slide:nth-child(3){
- background-image:url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=2000&q=90');
-}
-
-.hero-slide:nth-child(4){
- background-image:url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=2000&q=90');
-}
-
-.hero-slide:nth-child(5){
- background-image:url('https://images.unsplash.com/photo-1581093458791-9d42e3c7f6e5?auto=format&fit=crop&w=2000&q=90');
-}
-
-.hero-slide:nth-child(6){
- background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=2000&q=90');
-}
-
-.hero-content{
- position:relative;
- z-index:3;
-}
-
-.hero-grid,.hero-orb{
- z-index:2;
- pointer-events:none;
-}
-
-.hero-arrow{
- position:absolute;
- top:50%;
- transform:translateY(-50%);
- z-index:5;
- width:48px;
- height:48px;
- border:1px solid #ffffff65;
- border-radius:50%;
- background:#ffffff20;
- color:white;
- display:grid;
- place-items:center;
- font-size:17px;
- backdrop-filter:blur(10px);
- transition:.3s;
-}
-
-.hero-arrow:hover{
- background:#29d5a4;
- color:#063d32;
- border-color:#29d5a4;
-}
-
-.hero-prev{left:25px}
-.hero-next{right:25px}
-
-.hero-dots{
- position:absolute;
- bottom:24px;
- left:50%;
- transform:translateX(-50%);
- z-index:6;
- display:flex;
- gap:10px;
-}
-
-.hero-dot{
- width:9px;
- height:9px;
- padding:0;
- border:0;
- border-radius:20px;
- background:#ffffff80;
- transition:.4s;
-}
-
-.hero-dot.active{
- width:32px;
- background:#36d6a9;
-}
-
-.hero-progress{
- position:absolute;
- left:0;
- bottom:0;
- height:3px;
- width:0;
- background:#36d6a9;
- z-index:7;
-}
-
-@media(max-width:780px){
- .hero{min-height:620px}
- .hero-prev{left:10px}
- .hero-next{right:10px}
- .hero-arrow{width:37px;height:37px;font-size:13px}
- .hero-content{padding:80px 10%}
- .hero-dots{bottom:18px}
-}
-
-@media(max-width:480px){
- .hero{min-height:590px}
- .hero-content{padding:65px 9%}
- .hero-arrow{width:32px;height:32px}
- .hero-prev{left:7px}
- .hero-next{right:7px}
-}
-
-
-/* PRODUCT IMAGES */
-
-.img-membrane{background-image:url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80')}
-.img-cartridge{background-image:url('https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80')}
-.img-housing{background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80')}
-.img-bag{background-image:url('https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=800&q=80')}
-.img-paper{background-image:url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80')}
-.img-pump{background-image:url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=800&q=80')}
-.img-purification{background-image:url('https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=800&q=80')}
-.img-dosing{background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80')}
-
-/* PROMO */
-
-.promo{
- position:relative;overflow:hidden;
- margin-top:65px;padding:45px 50px;
- border-radius:20px;color:white;
- display:flex;align-items:center;
- justify-content:space-between;gap:25px;
- background:linear-gradient(115deg,#075c50,#0a9d79);
-}
-.promo:after{
- content:"";position:absolute;
- width:340px;height:340px;border-radius:50%;
- border:1px solid #ffffff30;
- right:10%;top:-190px;
- box-shadow:0 0 0 35px #ffffff08,0 0 0 70px #ffffff06;
-}
-.promo h2{font:800 24px Manrope;margin-bottom:9px}
-.promo p{font-size:11px;color:#d0f1e5;line-height:1.8}
-.promo .btn{background:white;color:#087e68;z-index:1}
-.promo .btn:hover{transform:translateY(-4px);background:#dff8ec}
+.trust-item p{font-size:10px;line-height:1.7;color:var(--muted);margin-top:7px}
 
 /* WHY US */
-
-.why-section{
- background:white;max-width:none;
-}
-.why-inner{max-width:1380px;margin:auto}
-.why-grid{
- display:grid;grid-template-columns:repeat(3,1fr);
- gap:20px;margin-top:40px;
-}
-.why-card{
- padding:30px 26px;border:1px solid var(--line);
- border-radius:14px;transition:.3s;
-}
-.why-card:hover{
- border-color:#9de1c7;
- background:#f6fcf9;
- transform:translateY(-6px);
-}
-.why-icon{
- width:53px;height:53px;border-radius:16px;
- background:#e3f7ee;color:var(--green);
- display:grid;place-items:center;font-size:22px;
- margin-bottom:20px;
-}
+.why-section{background:white;max-width:none}.why-inner{max-width:1380px;margin:auto}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px}
+.why-card{padding:30px 26px;border:1px solid var(--line);border-radius:14px;transition:.3s}
+.why-card:hover{border-color:#9de1c7;background:#f6fcf9;transform:translateY(-6px)}
+.why-icon{width:53px;height:53px;border-radius:16px;background:#e3f7ee;color:var(--green);display:grid;place-items:center;font-size:22px;margin-bottom:20px}
 .why-card h3{font:800 15px Manrope;color:var(--dark);margin-bottom:10px}
 .why-card p{font-size:11px;line-height:1.85;color:var(--muted)}
 
-
-
-/* PREMIUM INDUSTRIAL ABOUT VISUAL */
-
-.about-box {
- display: grid;
- grid-template-columns: 1fr 1fr;
- align-items: center;
- gap: 55px;
-}
-
-.about-visual {
- position: relative;
- min-height: 430px;
- height: 100%;
- overflow: hidden;
- border-radius: 24px;
- isolation: isolate;
- background: #071f2a;
- box-shadow: 0 20px 50px rgba(0,0,0,.16);
-}
-
-.about-visual img {
- position: absolute;
- inset: 0;
- width: 100%;
- height: 100%;
- object-fit: cover;
- transition: transform 1s ease;
-}
-
-.about-visual:hover img {
- transform: scale(1.09);
-}
-
-.about-overlay {
- position: absolute;
- inset: 0;
- background: linear-gradient(
-  180deg,
-  rgba(4,25,35,.05) 10%,
-  rgba(4,25,35,.35) 45%,
-  rgba(4,25,35,.92) 100%
- );
-}
-
-.about-visual-content {
- position: absolute;
- bottom: 45px;
- left: 35px;
- right: 25px;
- color: white;
- z-index: 2;
-}
-
-.about-tag {
- display: inline-block;
- font-size: 11px;
- letter-spacing: 2px;
- font-weight: 800;
- color: #72f1d0;
- margin-bottom: 15px;
-}
-
-.about-visual-content h3 {
- font-size: clamp(32px, 4vw, 48px);
- line-height: 1.08;
- font-weight: 800;
- margin: 0 0 12px;
-}
-
-.about-visual-content p {
- font-size: 14px;
- color: rgba(255,255,255,.85);
- line-height: 1.7;
-}
-
-.about-floating-card {
- position: absolute;
- top: 25px;
- right: 20px;
- display: flex;
- align-items: center;
- gap: 12px;
- padding: 14px 18px;
- background: rgba(255,255,255,.94);
- backdrop-filter: blur(15px);
- border-radius: 14px;
- z-index: 3;
- box-shadow: 0 10px 30px rgba(0,0,0,.15);
- animation: aboutFloat 4s ease-in-out infinite;
-}
-
-.about-icon {
- font-size: 27px;
-}
-
-.about-floating-card strong,
-.about-floating-card small {
- display: block;
-}
-
-.about-floating-card strong {
- font-size: 13px;
- color: #073d45;
-}
-
-.about-floating-card small {
- font-size: 10px;
- color: #71818a;
- margin-top: 4px;
-}
-
-.about-image-badge {
- position: absolute;
- bottom: 25px;
- right: 25px;
- z-index: 3;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- width: 75px;
- height: 75px;
- border-radius: 50%;
- background: #16b99a;
- color: white;
- border: 4px solid rgba(255,255,255,.8);
-}
-
-.about-image-badge strong {
- font-size: 21px;
- font-weight: 900;
-}
-
-.about-image-badge span {
- font-size: 7px;
- letter-spacing: 1px;
-}
-
-@keyframes aboutFloat {
- 0%,100% { transform: translateY(0); }
- 50% { transform: translateY(-9px); }
-}
-
-@media(max-width: 850px) {
- .about-box {
-  grid-template-columns: 1fr;
-  gap: 30px;
- }
-
- .about-visual {
-  min-height: 370px;
- }
-}
-
-@media(max-width: 480px) {
- .about-visual {
-  min-height: 330px;
-  border-radius: 18px;
- }
-
- .about-visual-content {
-  left: 22px;
-  bottom: 35px;
- }
-
- .about-floating-card {
-  top: 15px;
-  right: 12px;
-  padding: 10px;
- }
-}
-
-
-
-
-
-
 /* ABOUT */
-
-.about-section{
- background:#f0f7f4;max-width:none;
-}
+.about-section{background:#f0f7f4;max-width:none}
 .about-inner{max-width:1380px;margin:auto}
-.about-box{
- display:grid;grid-template-columns:.9fr 1.1fr;
- background:white;border-radius:20px;overflow:hidden;
- box-shadow:var(--shadow);
-}
-.about-visual{
- min-height:420px;
- background:
- linear-gradient(0deg,#062c2c55,transparent),
- url('https://images.unsplash.com/photo-1581093458791-9d42e3c7f6e5?auto=format&fit=crop&w=1000&q=85') center/cover;
-}
+.about-box{display:grid;grid-template-columns:.9fr 1.1fr;background:white;border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.about-visual{position:relative;min-height:430px;overflow:hidden;isolation:isolate;background:#071f2a}
+.about-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.about-visual:hover img{transform:scale(1.09)}
+.about-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,25,35,.05) 10%,rgba(4,25,35,.35) 45%,rgba(4,25,35,.92) 100%)}
+.about-visual-content{position:absolute;bottom:45px;left:35px;right:25px;color:white;z-index:2}
+.about-tag{display:inline-block;font-size:11px;letter-spacing:2px;font-weight:800;color:#72f1d0;margin-bottom:15px}
+.about-visual-content h3{font-size:clamp(32px,4vw,48px);line-height:1.08;font-weight:800;margin:0 0 12px}
+.about-visual-content p{font-size:14px;color:rgba(255,255,255,.85);line-height:1.7}
+.about-floating-card{position:absolute;top:25px;right:20px;display:flex;align-items:center;gap:12px;padding:14px 18px;background:rgba(255,255,255,.94);backdrop-filter:blur(15px);border-radius:14px;z-index:3;box-shadow:0 10px 30px rgba(0,0,0,.15);animation:aboutFloat 4s ease-in-out infinite}
+.about-icon{font-size:27px}.about-floating-card strong,.about-floating-card small{display:block}
+.about-floating-card strong{font-size:13px;color:#073d45}.about-floating-card small{font-size:10px;color:#71818a;margin-top:4px}
+.about-image-badge{position:absolute;bottom:25px;right:25px;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;width:75px;height:75px;border-radius:50%;background:#16b99a;color:white;border:4px solid rgba(255,255,255,.8)}
+.about-image-badge strong{font-size:21px;font-weight:900}.about-image-badge span{font-size:7px;letter-spacing:1px}
+@keyframes aboutFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 .about-content{padding:55px 45px}
-.about-content p{
- font-size:12px;line-height:2;color:var(--muted);
- margin:13px 0;
-}
-.about-values{
- display:grid;grid-template-columns:repeat(3,1fr);
- gap:12px;margin-top:25px;
-}
-.about-value{
- padding:17px 12px;background:#f2faf6;
- border-radius:10px;
-}
+.about-content p{font-size:12px;line-height:2;color:var(--muted);margin:13px 0}
+.about-values{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:25px}
+.about-value{padding:17px 12px;background:#f2faf6;border-radius:10px}
 .about-value i{color:var(--green);font-size:18px;margin-bottom:12px}
 .about-value strong{display:block;font:800 11px Manrope;color:var(--dark)}
 .about-value small{display:block;font-size:9px;line-height:1.6;color:var(--muted);margin-top:6px}
 
 /* CONTACT */
-
-.contact-section{
- background:#071f2a;max-width:none;color:white;
- position:relative;overflow:hidden;
-}
-.contact-section:before{
- content:"";position:absolute;width:450px;height:450px;
- border:1px solid #ffffff10;border-radius:50%;
- right:-120px;top:-150px;
- box-shadow:0 0 0 50px #ffffff05,0 0 0 100px #ffffff03;
-}
+.contact-section{background:#071f2a;max-width:none;color:white;position:relative;overflow:hidden}
+.contact-section:before{content:"";position:absolute;width:450px;height:450px;border:1px solid #ffffff10;border-radius:50%;right:-120px;top:-150px;box-shadow:0 0 0 50px #ffffff05,0 0 0 100px #ffffff03}
 .contact-inner{max-width:1380px;margin:auto;position:relative;z-index:1}
-.contact-heading .section-title{color:white}
-.contact-heading .section-description{color:#a9c3bf}
+.contact-heading .section-title{color:white}.contact-heading .section-description{color:#a9c3bf}
 .contact-heading{margin-bottom:42px}
-.contact-layout{
- display:grid;grid-template-columns:.85fr 1.15fr;
- gap:55px;align-items:start;
-}
+.contact-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:start}
 .contact-info h3{font:800 22px Manrope;margin-bottom:12px}
 .contact-info>p{font-size:12px;color:#a9c3bf;line-height:1.9;margin-bottom:30px}
-.contact-detail{
- display:flex;gap:15px;align-items:center;
- padding:17px 0;border-bottom:1px solid #ffffff17;
-}
-.contact-detail i{
- width:43px;height:43px;border-radius:13px;
- display:grid;place-items:center;
- background:#ffffff12;color:#48ddb0;font-size:17px;
-}
+.contact-detail{display:flex;gap:15px;align-items:center;padding:17px 0;border-bottom:1px solid #ffffff17}
+.contact-detail i{width:43px;height:43px;border-radius:13px;display:grid;place-items:center;background:#ffffff12;color:#48ddb0;font-size:17px}
 .contact-detail strong{display:block;font-size:11px;margin-bottom:5px}
-.contact-detail span{font-size:11px;color:#b7ccc5}
-.contact-detail a:hover{color:#4de1b3}
+.contact-detail span{font-size:11px;color:#b7ccc5}.contact-detail a:hover{color:#4de1b3}
 .contact-social{display:flex;gap:10px;margin-top:25px}
-.contact-social a{
- width:39px;height:39px;border-radius:50%;
- border:1px solid #ffffff30;display:grid;place-items:center;
- transition:.3s;
-}
+.contact-social a{width:39px;height:39px;border-radius:50%;border:1px solid #ffffff30;display:grid;place-items:center;transition:.3s}
 .contact-social a:hover{background:var(--green);border-color:var(--green);transform:translateY(-4px)}
-.form-card{
- background:white;color:var(--dark);
- padding:35px;border-radius:17px;
- box-shadow:0 20px 60px #0003;
-}
-.form-card h3{font:800 21px Manrope;margin-bottom:8px}
-.form-card>p{font-size:11px;color:var(--muted);margin-bottom:25px}
+.form-card{background:white;color:var(--dark);padding:35px;border-radius:17px;box-shadow:0 20px 60px #0003}
+.form-card h3{font:800 21px Manrope;margin-bottom:8px}.form-card>p{font-size:11px;color:var(--muted);margin-bottom:25px}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .form-field{margin-bottom:13px}
-.form-field label{
- display:block;font-size:10px;font-weight:800;
- color:#526a70;margin-bottom:8px;
-}
-.form-field input,.form-field select,.form-field textarea{
- width:100%;padding:13px 14px;
- border:1px solid #e0eae5;border-radius:8px;
- background:#f9fcfa;font-size:11px;
- outline:none;transition:.3s;color:var(--ink);
-}
-.form-field input:focus,.form-field select:focus,.form-field textarea:focus{
- border-color:var(--green);background:white;
- box-shadow:0 0 0 3px #08a98513;
-}
+.form-field label{display:block;font-size:10px;font-weight:800;color:#526a70;margin-bottom:8px}
+.form-field input,.form-field select,.form-field textarea{width:100%;padding:13px 14px;border:1px solid #e0eae5;border-radius:8px;background:#f9fcfa;font-size:11px;outline:none;transition:.3s;color:var(--ink)}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--green);background:white;box-shadow:0 0 0 3px #08a98513}
 .form-field textarea{min-height:115px;resize:vertical}
-.form-submit{
- width:100%;border:0;padding:15px;
- background:linear-gradient(100deg,#08a985,#0b826c);
- color:white;border-radius:8px;
- font-size:11px;font-weight:800;
- transition:.3s;
-}
+.form-submit{width:100%;border:0;padding:15px;background:linear-gradient(100deg,#08a985,#0b826c);color:white;border-radius:8px;font-size:11px;font-weight:800;transition:.3s}
 .form-submit:hover{transform:translateY(-3px);box-shadow:0 10px 25px #08a98540}
 .form-submit:disabled{opacity:.6;cursor:wait;transform:none}
 .form-status{font-size:11px;color:var(--muted);margin-top:12px;line-height:1.6}
-.whatsapp-enquiry{
- display:flex;align-items:center;justify-content:center;
- gap:9px;width:100%;margin-top:12px;
- padding:14px;border-radius:8px;
- background:#e5f8ed;color:#159d57;
- font-size:11px;font-weight:800;transition:.3s;
-}
+.whatsapp-enquiry{display:flex;align-items:center;justify-content:center;gap:9px;width:100%;margin-top:12px;padding:14px;border-radius:8px;background:#e5f8ed;color:#159d57;font-size:11px;font-weight:800;transition:.3s}
 .whatsapp-enquiry:hover{background:#20bd69;color:white}
 
 /* FOOTER */
-
-.footer{
- background:#041720;color:#b2c8c1;
- padding:65px 7% 23px;
-}
+.footer{background:#041720;color:#b2c8c1;padding:65px 7% 23px}
 .footer-inner{max-width:1380px;margin:auto}
-.footer-grid{
- display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;
- gap:40px;padding-bottom:40px;
-}
-.footer-brand{
- display:flex;align-items:center;gap:11px;
- font:800 19px Manrope;color:white;
-}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:40px}
+.footer-brand{display:flex;align-items:center;gap:11px;font:800 19px Manrope;color:white}
 .footer-brand i{color:#35d9aa;font-size:24px}
-.footer-about p{
- font-size:11px;line-height:1.9;
- color:#8ca9a0;margin-top:18px;max-width:320px;
-}
-.footer-column h4{
- font:800 12px Manrope;color:white;margin-bottom:20px;
-}
+.footer-about p{font-size:11px;line-height:1.9;color:#8ca9a0;margin-top:18px;max-width:320px}
+.footer-column h4{font:800 12px Manrope;color:white;margin-bottom:20px}
 .footer-links{display:grid;gap:13px}
-.footer-links a{
- font-size:10px;color:#94ada4;transition:.3s;
-}
+.footer-links a{font-size:10px;color:#94ada4;transition:.3s}
 .footer-links a:hover{color:#4ce2b4;padding-left:5px}
-.footer-bottom{
- border-top:1px solid #ffffff16;
- padding-top:22px;display:flex;
- justify-content:space-between;gap:15px;
- flex-wrap:wrap;font-size:9px;color:#79948b;
-}
+.footer-bottom{border-top:1px solid #ffffff16;padding-top:22px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:9px;color:#79948b}
 
-/* WHATSAPP FLOAT */
-
-.whatsapp-float{
- position:fixed;right:25px;bottom:25px;
- z-index:900;display:flex;align-items:center;gap:10px;
- background:#20bd69;color:white;
- padding:14px 18px;border-radius:40px;
- box-shadow:0 10px 30px #20bd6955;
- font-size:11px;font-weight:800;
- transition:.3s;
-}
-.whatsapp-float i{font-size:20px}
-.whatsapp-float:hover{transform:translateY(-6px);background:#119f52}
-.whatsapp-float:before{
- content:"";position:absolute;inset:-5px;
- border:1px solid #20bd6960;border-radius:50px;
- animation:waPulse 2s infinite;
-}
-@keyframes waPulse{
- 50%{transform:scale(1.1);opacity:0}
-}
-
-/* BACK TO TOP */
-
-.back-top{
- position:fixed;right:28px;bottom:92px;
- width:42px;height:42px;border:0;border-radius:50%;
- background:var(--dark);color:white;
- display:grid;place-items:center;
- opacity:0;visibility:hidden;transform:translateY(15px);
- transition:.3s;z-index:800;
-}
-.back-top.show{opacity:1;visibility:visible;transform:none}
-.back-top:hover{background:var(--green)}
-
-/* SUCCESS MODAL */
-
-.modal{
- position:fixed;inset:0;z-index:9998;
- display:flex;align-items:center;justify-content:center;
- padding:20px;background:#031b1dcc;
- backdrop-filter:blur(8px);
- opacity:0;visibility:hidden;transition:.35s;
-}
+/* FLOATING BUTTONS + MODAL */
+.whatsapp-float{position:fixed;right:25px;bottom:25px;z-index:900;display:flex;align-items:center;gap:10px;background:#20bd69;color:white;padding:14px 18px;border-radius:40px;box-shadow:0 10px 30px #20bd6955;font-size:11px;font-weight:800;transition:.3s}
+.whatsapp-float i{font-size:20px}.whatsapp-float:hover{transform:translateY(-6px);background:#119f52}
+.whatsapp-float:before{content:"";position:absolute;inset:-5px;border:1px solid #20bd6960;border-radius:50px;animation:waPulse 2s infinite}
+@keyframes waPulse{50%{transform:scale(1.1);opacity:0}}
+.back-top{position:fixed;right:28px;bottom:92px;width:42px;height:42px;border:0;border-radius:50%;background:var(--dark);color:white;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(15px);transition:.3s;z-index:800}
+.back-top.show{opacity:1;visibility:visible;transform:none}.back-top:hover{background:var(--green)}
+.modal{position:fixed;inset:0;z-index:9998;display:flex;align-items:center;justify-content:center;padding:20px;background:#031b1dcc;backdrop-filter:blur(8px);opacity:0;visibility:hidden;transition:.35s}
 .modal.show{opacity:1;visibility:visible}
-.modal-card{
- background:white;width:min(100%,430px);
- padding:38px 30px;border-radius:20px;
- text-align:center;transform:translateY(25px);
- transition:.4s;
-}
+.modal-card{background:white;width:min(100%,430px);padding:38px 30px;border-radius:20px;text-align:center;transform:translateY(25px);transition:.4s}
 .modal.show .modal-card{transform:translateY(0)}
-.modal-icon{
- width:75px;height:75px;border-radius:50%;
- display:grid;place-items:center;
- background:#e1f8ed;color:#0aaa77;
- font-size:32px;margin:0 auto 22px;
-}
+.modal-icon{width:75px;height:75px;border-radius:50%;display:grid;place-items:center;background:#e1f8ed;color:#0aaa77;font-size:32px;margin:0 auto 22px}
 .modal-card h3{font:800 22px Manrope;color:var(--dark);margin-bottom:12px}
 .modal-card p{font-size:12px;line-height:1.9;color:var(--muted);margin-bottom:22px}
 .modal-actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}
-.modal-actions a,.modal-actions button{
- border:0;padding:12px 19px;border-radius:30px;
- font-size:10px;font-weight:800;background:var(--green);color:white;
-}
+.modal-actions a,.modal-actions button{border:0;padding:12px 19px;border-radius:30px;font-size:10px;font-weight:800;background:var(--green);color:white}
 .modal-actions button{background:var(--dark)}
 
-/* SCROLL REVEAL */
-
-.reveal{
- opacity:0;transform:translateY(35px);
- transition:opacity .8s ease,transform .8s ease;
-}
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-left{transform:translateX(-35px)}
-.reveal-right{transform:translateX(35px)}
+.reveal-left{transform:translateX(-35px)}.reveal-right{transform:translateX(35px)}
 .reveal-left.visible,.reveal-right.visible{transform:translateX(0)}
 
 /* RESPONSIVE */
-
-@media(max-width:480px){
- .brand-logo{
-  width:65px;
-  height:55px;
-  min-width:65px;
- }
-
- .brand-name{
-  font-size:16px;
- }
-
- .brand-name small{
-  font-size:7px;
-  letter-spacing:1.5px;
- }
-}
-
-@media(max-width:1050px){
- .nav{gap:18px}
- .product-grid{grid-template-columns:repeat(3,1fr)}
- .footer-grid{grid-template-columns:1.5fr 1fr 1fr}
- .footer-column:last-child{grid-column:2}
- .section{padding:75px 5%}
-}
+@media(max-width:1050px){.nav{gap:18px}.footer-grid{grid-template-columns:1.5fr 1fr 1fr}.footer-column:last-child{grid-column:2}.section{padding:75px 5%}}
+@media(max-width:850px){.about-box{grid-template-columns:1fr}.about-visual{min-height:370px}.about-content{padding:40px 32px}}
 @media(max-width:780px){
- .topbar{height:74px;padding:0 5%}
- .menu-toggle{display:block}
- .nav{
-  display:none;position:absolute;top:74px;left:0;right:0;
-  background:white;padding:25px 6%;
-  flex-direction:column;align-items:stretch;
-  gap:22px;box-shadow:0 15px 30px #00000012;
- }
- .nav.open{display:flex}
- .nav-cta{text-align:center}
- .hero{min-height:620px}
- .hero-content{padding:80px 7%}
- .hero h1{letter-spacing:-2px}
- .trust{grid-template-columns:1fr;padding:25px 7%;gap:12px}
- .trust-item{border-right:0;border-bottom:1px solid var(--line);padding:20px}
- .trust-item:last-child{border:0}
- .intro-section{grid-template-columns:1fr;gap:45px}
- .intro-visual{min-height:370px;order:2}
- .product-grid{grid-template-columns:repeat(2,1fr)}
- .why-grid{grid-template-columns:1fr 1fr}
- .about-box{grid-template-columns:1fr}
- .about-visual{min-height:280px}
- .about-content{padding:35px 27px}
- .contact-layout{grid-template-columns:1fr;gap:35px}
- .footer-grid{grid-template-columns:1fr 1fr}
- .footer-column:last-child{grid-column:auto}
+ .topbar{height:74px;padding:0 5%}.menu-toggle{display:block}
+ .nav{display:none;position:absolute;top:74px;left:0;right:0;background:white;padding:25px 6%;flex-direction:column;align-items:stretch;gap:22px;box-shadow:0 15px 30px #00000012}
+ .nav.open{display:flex}.nav-cta{text-align:center}
+ .hero{min-height:620px}.hero-content{padding:80px 10%}.hero-prev{left:10px}.hero-next{right:10px}.hero-arrow{width:37px;height:37px;font-size:13px}
+ .hero-dots{bottom:18px}
+ .trust{grid-template-columns:1fr;padding:25px 7%;gap:12px}.trust-item{border-right:0;border-bottom:1px solid var(--line);padding:20px}.trust-item:last-child{border:0}
+ .why-grid{grid-template-columns:1fr 1fr}.contact-layout{grid-template-columns:1fr;gap:35px}.footer-grid{grid-template-columns:1fr 1fr}.footer-column:last-child{grid-column:auto}
 }
 @media(max-width:480px){
- .hero{min-height:590px}
- .hero h1{font-size:43px}
- .hero-description{font-size:13px}
- .hero-bottom{gap:20px}
- .hero-feature{min-width:40%}
- .section{padding:65px 6%}
- .intro-visual{min-height:290px}
- .product-grid{grid-template-columns:1fr}
- .product-image{height:200px}
- .why-grid{grid-template-columns:1fr}
- .promo{padding:30px 24px;align-items:flex-start;flex-direction:column}
- .about-values{grid-template-columns:1fr}
- .form-card{padding:25px 18px}
- .form-grid{grid-template-columns:1fr}
- .footer-grid{grid-template-columns:1fr}
- .footer{padding:50px 7% 22px}
- .footer-bottom{flex-direction:column}
- .whatsapp-float{right:16px;bottom:18px;padding:13px 15px}
- .back-top{right:20px;bottom:80px}
- .intro-badge{right:-3px;top:15px}
+ .brand-logo{width:65px;height:55px;min-width:65px}.brand-name{font-size:16px}.brand-name small{font-size:7px;letter-spacing:1.5px}
+ .hero{min-height:590px}.hero-content{padding:65px 9%}.hero h1{font-size:43px;letter-spacing:-2px}.hero-description{font-size:13px}.hero-bottom{gap:20px}.hero-feature{min-width:40%}
+ .hero-arrow{width:32px;height:32px}.hero-prev{left:7px}.hero-next{right:7px}
+ .section{padding:65px 6%}.why-grid{grid-template-columns:1fr}
+ .about-visual{min-height:330px;border-radius:18px}.about-visual-content{left:22px;bottom:35px}.about-floating-card{top:15px;right:12px;padding:10px}
+ .about-values{grid-template-columns:1fr}.form-card{padding:25px 18px}.form-grid{grid-template-columns:1fr}
+ .footer-grid{grid-template-columns:1fr}.footer{padding:50px 7% 22px}.footer-bottom{flex-direction:column}
+ .whatsapp-float{right:16px;bottom:18px;padding:13px 15px}.back-top{right:20px;bottom:80px}
 }
 @media(prefers-reduced-motion:reduce){
- *,*:before,*:after{
-  animation-duration:.01ms!important;
-  animation-iteration-count:1!important;
-  scroll-behavior:auto!important;
-  transition-duration:.01ms!important;
- }
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
  .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
-
 <body>
 
 <div class="loader" id="loader">
- <<img src="logos/logo.jpg" alt="">
+ <img class="loader-logo" src="logos/logo.png" alt="SVN Enterprises logo">
  <p>SVN ENTERPRISES</p>
  <div class="loader-line"></div>
 </div>
-
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <header class="header" id="header">
  <div class="topbar">
- <a class="brand" href="index.html">
- <span class="brand-logo">
-  <img src="logos/logo.png" alt="">
- </span>
- <span class="brand-name">
-  <small></small>
- </span>
-</a>
-
-  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
-   <i class="fa-solid fa-bars"></i>
-  </button>
-
-  <nav class="nav" id="navigation">
-   <a href="index.html">Home</a>
-   <a href="product.html">Products</a>
-   <a href="#about">About Us</a>
-   <a href="#contact">Contact</a>
+  <a class="brand" href="index.html" aria-label="SVN Enterprises home">
+   <span class="brand-logo"><img src="logos/logo.png" alt="SVN Enterprises logo"></span>
+   <span class="brand-name"><small></small></span>
+  </a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+  <nav class="nav" id="navigation" aria-label="Main navigation">
+   <a href="index.html">Home</a><a href="product.html">Products</a><a href="#about">About Us</a><a href="#contact">Contact</a>
    <a href="#contact" class="nav-cta">Send Enquiry <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
   </nav>
  </div>
 </header>
 
 <main>
-
-<!-- HERO -->
-
-<section class="hero" id="home">
- <div class="hero-grid"></div>
- <div class="hero-orb one"></div>
- <div class="hero-orb two"></div>
-
+<!-- SINGLE HERO IMAGE SLIDER -->
+<section class="hero" id="home" aria-label="SVN Enterprises introduction">
+ <div class="hero-slider" id="heroSlider" aria-hidden="true">
+  <div class="hero-slide active"></div><div class="hero-slide"></div><div class="hero-slide"></div>
+  <div class="hero-slide"></div><div class="hero-slide"></div><div class="hero-slide"></div>
+ </div>
+ <div class="hero-grid"></div><div class="hero-orb one"></div><div class="hero-orb two"></div>
+ <button class="hero-arrow hero-prev" id="heroPrev" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
+ <button class="hero-arrow hero-next" id="heroNext" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
  <div class="hero-content">
   <div class="hero-text">
    <div class="eyebrow">Your Water Treatment Sourcing Partner</div>
-
-   <h1>Pure Solutions.<br><span>Better Water.</span><br>Better Tomorrow.</h1>
-
-   <p class="hero-description">
-    Discover dependable water treatment spares, advanced filtration products,
-    industrial pumps and purification systems from SVN Enterprises.
-    Your requirements, supported by the right products.
-   </p>
-
-   <div class="hero-actions">
-    <a href="product.html" class="btn btn-primary">
-     Explore Our Products <i class="fa-solid fa-arrow-right"></i>
-    </a>
-    <a href="#contact" class="btn btn-outline">
-     <i class="fa-regular fa-paper-plane"></i> Contact Our Team
-    </a>
-   </div>
-
-   <div class="hero-bottom">
-    <div class="hero-feature">
-     <i class="fa-solid fa-filter"></i>
-     <span><strong>Filtration Products</strong><small>Quality-focused selection</small></span>
-    </div>
-    <div class="hero-feature">
-     <i class="fa-solid fa-gears"></i>
-     <span><strong>Industrial Equipment</strong><small>Reliable product solutions</small></span>
-    </div>
-    <div class="hero-feature">
-     <i class="fa-solid fa-headset"></i>
-     <span><strong>Customer Support</strong><small>Responsive assistance</small></span>
-    </div>
-   </div>
-  </div>
- </div>
-</section>
-
-<!-- TRUST -->
-
-<section class="trust">
- <div class="trust-item reveal">
-  <i class="fa-solid fa-layer-group"></i>
-  <h3>Wide Product Selection</h3>
-  <p>Filtration spares, pumps, accessories and complete system requirements.</p>
- </div>
- <div class="trust-item reveal">
-  <i class="fa-solid fa-shield-halved"></i>
-  <h3>Quality-Focused Sourcing</h3>
-  <p>Product options selected to support dependable operation and maintenance.</p>
- </div>
- <div class="trust-item reveal">
-  <i class="fa-solid fa-headset"></i>
-  <h3>Customer Assistance</h3>
-  <p>We understand your requirements and help identify suitable product options.</p>
- </div>
-</section>
-
-
-<!-- LARGE WATER TREATMENT IMAGE SLIDER -->
-
-<section class="hero" id="home">
-
- <div class="hero-slider" id="heroSlider">
-
-  <div class="hero-slide active"></div>
-  <div class="hero-slide"></div>
-  <div class="hero-slide"></div>
-  <div class="hero-slide"></div>
-  <div class="hero-slide"></div>
-  <div class="hero-slide"></div>
-
- </div>
-
- <div class="hero-grid"></div>
- <div class="hero-orb one"></div>
- <div class="hero-orb two"></div>
-
- <button class="hero-arrow hero-prev" id="heroPrev" aria-label="Previous slide">
-  <i class="fa-solid fa-chevron-left"></i>
- </button>
-
- <button class="hero-arrow hero-next" id="heroNext" aria-label="Next slide">
-  <i class="fa-solid fa-chevron-right"></i>
- </button>
-
- <div class="hero-content">
-  <div class="hero-text">
-
-   <div class="eyebrow">Your Water Treatment Sourcing Partner</div>
-
    <h1>Better Filtration.<br><span>Smarter Solutions.</span><br>Cleaner Water.</h1>
-
-   <p class="hero-description">
-Complete water treatment solutions, premium filtration products and dependable industrial equipment — delivering quality, performance and reliability in every solution.
-   </p>
-
+   <p class="hero-description">Complete water treatment solutions, premium filtration products and dependable industrial equipment — delivering quality, performance and reliability in every solution.</p>
    <div class="hero-actions">
-    <a href="products.html" class="btn btn-primary">
-     Explore Our Products <i class="fa-solid fa-arrow-right"></i>
-    </a>
-
-    <a href="#contact" class="btn btn-outline">
-     <i class="fa-regular fa-paper-plane"></i> Contact Our Team
-    </a>
+    <a href="product.html" class="btn btn-primary">Explore Our Products <i class="fa-solid fa-arrow-right"></i></a>
+    <a href="#contact" class="btn btn-outline"><i class="fa-regular fa-paper-plane"></i> Contact Our Team</a>
    </div>
-
    <div class="hero-bottom">
-
-    <div class="hero-feature">
-     <i class="fa-solid fa-filter"></i>
-     <span>
-      <strong>Filtration Products</strong>
-      <small>Quality-focused selection</small>
-     </span>
-    </div>
-
-    <div class="hero-feature">
-     <i class="fa-solid fa-gears"></i>
-     <span>
-      <strong>Industrial Equipment</strong>
-      <small>Reliable product solutions</small>
-     </span>
-    </div>
-
-    <div class="hero-feature">
-     <i class="fa-solid fa-headset"></i>
-     <span>
-      <strong>Customer Support</strong>
-      <small>Responsive assistance</small>
-     </span>
-    </div>
-
+    <div class="hero-feature"><i class="fa-solid fa-filter"></i><span><strong>Filtration Products</strong><small>Quality-focused selection</small></span></div>
+    <div class="hero-feature"><i class="fa-solid fa-gears"></i><span><strong>Industrial Equipment</strong><small>Reliable product solutions</small></span></div>
+    <div class="hero-feature"><i class="fa-solid fa-headset"></i><span><strong>Customer Support</strong><small>Responsive assistance</small></span></div>
    </div>
   </div>
  </div>
-
- <div class="hero-dots" id="heroDots">
-  <button class="hero-dot active" aria-label="Slide 1"></button>
-  <button class="hero-dot" aria-label="Slide 2"></button>
-  <button class="hero-dot" aria-label="Slide 3"></button>
-  <button class="hero-dot" aria-label="Slide 4"></button>
-  <button class="hero-dot" aria-label="Slide 5"></button>
+ <div class="hero-dots" id="heroDots" aria-label="Choose hero slide">
+  <button class="hero-dot active" aria-label="Slide 1" aria-current="true"></button>
+  <button class="hero-dot" aria-label="Slide 2"></button><button class="hero-dot" aria-label="Slide 3"></button>
+  <button class="hero-dot" aria-label="Slide 4"></button><button class="hero-dot" aria-label="Slide 5"></button>
   <button class="hero-dot" aria-label="Slide 6"></button>
  </div>
-
  <div class="hero-progress" id="heroProgress"></div>
-
 </section>
 
-
-
-
-<!-- WHY CHOOSE US -->
+<section class="trust">
+ <div class="trust-item reveal"><i class="fa-solid fa-layer-group"></i><h3>Wide Product Selection</h3><p>Filtration spares, pumps, accessories and complete system requirements.</p></div>
+ <div class="trust-item reveal"><i class="fa-solid fa-shield-halved"></i><h3>Quality-Focused Sourcing</h3><p>Product options selected to support dependable operation and maintenance.</p></div>
+ <div class="trust-item reveal"><i class="fa-solid fa-headset"></i><h3>Customer Assistance</h3><p>We understand your requirements and help identify suitable product options.</p></div>
+</section>
 
 <section class="section why-section">
  <div class="why-inner">
   <div class="heading-center reveal">
    <div class="section-label">Why SVN Enterprises</div>
    <h2 class="section-title">A Better Way to Source Water Treatment Products</h2>
-   <p class="section-description">
-    We focus on making product discovery and sourcing easier
-    through clear communication and customer-oriented assistance.
-   </p>
+   <p class="section-description">We focus on making product discovery and sourcing easier through clear communication and customer-oriented assistance.</p>
   </div>
-
   <div class="why-grid">
-   <div class="why-card reveal">
-    <div class="why-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-    <h3>Multiple Product Categories</h3>
-    <p>Find filtration consumables, industrial equipment, pumps and water treatment system products through one sourcing partner.</p>
-   </div>
-
-   <div class="why-card reveal">
-    <div class="why-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-    <h3>Application Understanding</h3>
-    <p>We aim to understand your operating requirements and help identify relevant product information and options.</p>
-   </div>
-
-   <div class="why-card reveal">
-    <div class="why-icon"><i class="fa-solid fa-comments"></i></div>
-    <h3>Responsive Communication</h3>
-    <p>Get in touch with our team to discuss product specifications, availability and your enquiry requirements.</p>
-   </div>
+   <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-boxes-stacked"></i></div><h3>Multiple Product Categories</h3><p>Find filtration consumables, industrial equipment, pumps and water treatment system products through one sourcing partner.</p></div>
+   <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h3>Application Understanding</h3><p>We aim to understand your operating requirements and help identify relevant product information and options.</p></div>
+   <div class="why-card reveal"><div class="why-icon"><i class="fa-solid fa-comments"></i></div><h3>Responsive Communication</h3><p>Get in touch with our team to discuss product specifications, availability and your enquiry requirements.</p></div>
   </div>
  </div>
 </section>
 
 <!-- ABOUT -->
-
 <section class="section about-section" id="about">
  <div class="about-inner">
-
   <div class="about-box reveal">
-
    <div class="about-visual">
-    <img src="images/industrial-water-treatment.jpg"
-         alt="Industrial Water Treatment and Filtration Systems">
-
+    <img src="images/industrial-water-treatment.jpg" alt="Industrial water treatment and filtration systems" loading="lazy">
     <div class="about-overlay"></div>
-
-    <div class="about-visual-content">
-     <span class="about-tag">INDUSTRIAL WATER SOLUTIONS</span>
-     <h3>Engineering<br>Better Water.</h3>
-     <p>Reliable products. Advanced filtration. Trusted solutions.</p>
-    </div>
-
-    <div class="about-floating-card">
-     <span class="about-icon">💧</span>
-     <div>
-      <strong>Water Treatment</strong>
-      <small>Quality Products & Solutions</small>
-     </div>
-    </div>
-
-    <div class="about-image-badge">
-     <strong>SVN</strong>
-     <span>ENTERPRISES</span>
-    </div>
+    <div class="about-visual-content"><span class="about-tag">INDUSTRIAL WATER SOLUTIONS</span><h3>Engineering<br>Better Water.</h3><p>Reliable products. Advanced filtration. Trusted solutions.</p></div>
+    <div class="about-floating-card"><span class="about-icon">💧</span><div><strong>Water Treatment</strong><small>Quality Products &amp; Solutions</small></div></div>
+    <div class="about-image-badge"><strong>SVN</strong><span>ENTERPRISES</span></div>
    </div>
-
    <div class="about-content">
     <div class="section-label">Get to Know Us</div>
     <h2 class="section-title">About SVN Enterprises</h2>
-
-    <!-- Keep your existing About Us paragraph and content here -->
-
-   </div>
-
-  </div>
- </div>
-</section>
-
-    <p>
-     SVN Enterprises is a water treatment products and spares supplier
-     serving customers who require components for water filtration,
-     purification and treatment applications.
-    </p>
-
-    <p>
-     Our product portfolio covers RO membranes, filter cartridges,
-     filter housings, filter bags, filter papers, pumps and accessories,
-     water purification systems and dosing systems.
-    </p>
-
-    <p>
-     We understand that every installation has different operating
-     conditions and requirements. Our approach is to listen to customers,
-     understand their applications and assist with relevant product
-     information to support informed purchasing decisions.
-    </p>
-
+    <p>SVN Enterprises is a water treatment products and spares supplier serving customers who require components for water filtration, purification and treatment applications.</p>
+    <p>Our product portfolio covers RO membranes, filter cartridges, filter housings, filter bags, filter papers, pumps and accessories, water purification systems and dosing systems.</p>
+    <p>We understand that every installation has different operating conditions and requirements. Our approach is to listen to customers, understand their applications and assist with relevant product information to support informed purchasing decisions.</p>
     <div class="about-values">
-     <div class="about-value">
-      <i class="fa-solid fa-bullseye"></i>
-      <strong>Our Approach</strong>
-      <small>Understand the application and requirements.</small>
-     </div>
-     <div class="about-value">
-      <i class="fa-solid fa-gears"></i>
-      <strong>Our Focus</strong>
-      <small>Filtration products and equipment solutions.</small>
-     </div>
-     <div class="about-value">
-      <i class="fa-solid fa-handshake"></i>
-      <strong>Our Commitment</strong>
-      <small>Clear communication and responsive support.</small>
-     </div>
+     <div class="about-value"><i class="fa-solid fa-bullseye"></i><strong>Our Approach</strong><small>Understand the application and requirements.</small></div>
+     <div class="about-value"><i class="fa-solid fa-gears"></i><strong>Our Focus</strong><small>Filtration products and equipment solutions.</small></div>
+     <div class="about-value"><i class="fa-solid fa-handshake"></i><strong>Our Commitment</strong><small>Clear communication and responsive support.</small></div>
     </div>
    </div>
   </div>
@@ -1655,298 +342,136 @@ Complete water treatment solutions, premium filtration products and dependable i
 </section>
 
 <!-- CONTACT -->
-
 <section class="section contact-section" id="contact">
  <div class="contact-inner">
-
   <div class="contact-heading reveal">
    <div class="section-label">Let's Connect</div>
    <h2 class="section-title">Let's Discuss Your Requirements.</h2>
-   <p class="section-description">
-    Looking for filtration products, replacement spares, pumps or
-    water treatment systems? Get in touch with our team.
-   </p>
+   <p class="section-description">Looking for filtration products, replacement spares, pumps or water treatment systems? Get in touch with our team.</p>
   </div>
-
   <div class="contact-layout">
-
    <div class="contact-info reveal reveal-left">
     <h3>Contact Our Team</h3>
-    <p>
-     Share your product name, technical specifications or application
-     details. We will review your enquiry and get back to you.
-    </p>
-
-    <div class="contact-detail">
-     <i class="fa-regular fa-envelope"></i>
-     <div>
-      <strong>Email Address</strong>
-      <span><a href="mailto:svnblr@yahoo.com">svnblr@yahoo.com</a></span>
-     </div>
-    </div>
-
-    <div class="contact-detail">
-     <i class="fa-solid fa-phone"></i>
-     <div>
-      <strong>Phone Number</strong>
-      <span><a href="tel:+919886643627">+91 9886643627</a></span>
-     </div>
-    </div>
-
-    <div class="contact-detail">
-     <i class="fa-brands fa-whatsapp"></i>
-     <div>
-      <strong>WhatsApp Enquiries</strong>
-      <span><a href="https://wa.me/919886643627" target="_blank" rel="noopener">Chat with our team</a></span>
-     </div>
-    </div>
-
-    <div class="contact-detail">
-     <i class="fa-solid fa-location-dot"></i>
-     <div>
-      <strong>Business Location</strong>
-      <span>Contact us for business location and support.</span>
-     </div>
-    </div>
-
+    <p>Share your product name, technical specifications or application details. We will review your enquiry and get back to you.</p>
+    <div class="contact-detail"><i class="fa-regular fa-envelope"></i><div><strong>Email Address</strong><span><a href="mailto:svnblr@yahoo.com">svnblr@yahoo.com</a></span></div></div>
+    <div class="contact-detail"><i class="fa-solid fa-phone"></i><div><strong>Phone Number</strong><span><a href="tel:+919886643627">+91 9886643627</a></span></div></div>
+    <div class="contact-detail"><i class="fa-brands fa-whatsapp"></i><div><strong>WhatsApp Enquiries</strong><span><a href="https://wa.me/919886643627" target="_blank" rel="noopener">Chat with our team</a></span></div></div>
+    <div class="contact-detail"><i class="fa-solid fa-location-dot"></i><div><strong>Business Location</strong><span>Contact us for business location and support.</span></div></div>
     <div class="contact-social">
      <a href="mailto:svnblr@yahoo.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
      <a href="https://wa.me/919886643627" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
      <a href="tel:+919886643627" aria-label="Call"><i class="fa-solid fa-phone"></i></a>
     </div>
    </div>
-
    <div class="form-card reveal reveal-right">
-    <h3>Send an Enquiry</h3>
-    <p>Fill in the details below and our team will contact you.</p>
-
+    <h3>Send an Enquiry</h3><p>Fill in the details below and our team will contact you.</p>
     <form id="enquiryForm" action="https://formsubmit.co/ajax/svnblr@yahoo.com" method="POST">
-
      <input type="hidden" name="_subject" value="New Product Enquiry - SVN Enterprises">
      <input type="hidden" name="_template" value="table">
      <input type="hidden" name="_captcha" value="true">
-
-     <!-- Honeypot spam protection -->
-     <input type="text" name="_honey" style="display:none">
-
+     <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none">
      <div class="form-grid">
-      <div class="form-field">
-       <label for="name">Your Name *</label>
-       <input id="name" type="text" name="Name" placeholder="Enter your name" autocomplete="name" required>
-      </div>
-
-      <div class="form-field">
-       <label for="email">Email Address *</label>
-       <input id="email" type="email" name="Email" placeholder="Enter your email" autocomplete="email" required>
-      </div>
+      <div class="form-field"><label for="name">Your Name *</label><input id="name" type="text" name="Name" placeholder="Enter your name" autocomplete="name" required></div>
+      <div class="form-field"><label for="email">Email Address *</label><input id="email" type="email" name="Email" placeholder="Enter your email" autocomplete="email" required></div>
      </div>
-
      <div class="form-grid">
-      <div class="form-field">
-       <label for="phone">Phone Number *</label>
-       <input id="phone" type="tel" name="Phone" placeholder="Enter phone number" autocomplete="tel" required>
-      </div>
-
-      <div class="form-field">
-       <label for="category">Product Category</label>
+      <div class="form-field"><label for="phone">Phone Number *</label><input id="phone" type="tel" name="Phone" placeholder="Enter phone number" autocomplete="tel" required></div>
+      <div class="form-field"><label for="category">Product Category</label>
        <select id="category" name="Product Category">
-        <option value="">Select a category</option>
-        <option>RO Membranes</option>
-        <option>Filter Cartridges</option>
-        <option>Filter Housings</option>
-        <option>Filter Bags</option>
-        <option>Filter Paper</option>
-        <option>Pumps & Accessories</option>
-        <option>Water Purification Systems</option>
-        <option>Dosing Systems</option>
-        <option>Other Requirements</option>
+        <option value="">Select a category</option><option>RO Membranes</option><option>Filter Cartridges</option><option>Filter Housings</option><option>Filter Bags</option><option>Filter Paper</option><option>Pumps &amp; Accessories</option><option>Water Purification Systems</option><option>Dosing Systems</option><option>Other Requirements</option>
        </select>
       </div>
      </div>
-
-     <div class="form-field">
-      <label for="message">Your Requirement *</label>
-      <textarea id="message" name="Enquiry" placeholder="Describe your product or technical requirements..." required></textarea>
-     </div>
-
-     <button type="submit" class="form-submit" id="enquirySubmit">
-      Submit Enquiry <i class="fa-solid fa-arrow-right"></i>
-     </button>
-
+     <div class="form-field"><label for="message">Your Requirement *</label><textarea id="message" name="Enquiry" placeholder="Describe your product or technical requirements..." required></textarea></div>
+     <button type="submit" class="form-submit" id="enquirySubmit">Submit Enquiry <i class="fa-solid fa-arrow-right"></i></button>
      <div id="enquiryStatus" class="form-status" role="status" aria-live="polite"></div>
-
-     <a class="whatsapp-enquiry" href="https://wa.me/919886643627?text=Hello%20SVN%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20water%20treatment%20products." target="_blank" rel="noopener">
-      <i class="fa-brands fa-whatsapp"></i> Enquire Directly on WhatsApp
-     </a>
+     <a class="whatsapp-enquiry" href="https://wa.me/919886643627?text=Hello%20SVN%20Enterprises%2C%20I%20would%20like%20to%20enquire%20about%20your%20water%20treatment%20products." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> Enquire Directly on WhatsApp</a>
     </form>
    </div>
-
   </div>
  </div>
 </section>
-
 </main>
-
-<!-- FOOTER -->
 
 <footer class="footer">
  <div class="footer-inner">
   <div class="footer-grid">
-
-   <div class="footer-about">
-    <div class="footer-brand">
-     <i class="fa-solid fa-droplet"></i>
-     SVN ENTERPRISES
-    </div>
-    <p>
-     Your sourcing partner for water treatment spares, filtration
-     products, pumps, accessories and purification and dosing
-     system solutions.
-    </p>
-   </div>
-
-   <div class="footer-column">
-    <h4>Quick Navigation</h4>
-    <div class="footer-links">
-     <a href="index.html">Home</a>
-     <a href="product.html">Products</a>
-     <a href="#about">About Us</a>
-     <a href="#contact">Contact</a>
-    </div>
-   </div>
-
-   <div class="footer-column">
-    <h4>Our Products</h4>
-    <div class="footer-links">
-     <a href="product.html">RO Membranes</a>
-     <a href="product.html">Filter Cartridges</a>
-     <a href="product.html">Filter Housings & Bags</a>
-     <a href="product.html">Pumps & Accessories</a>
-     <a href="product.html">Dosing Systems</a>
-    </div>
-   </div>
-
-   <div class="footer-column">
-    <h4>Get in Touch</h4>
-    <div class="footer-links">
-     <a href="mailto:svnblr@yahoo.com">svnblr@yahoo.com</a>
-     <a href="tel:+919886643627">+91 9886643627</a>
-     <a href="https://wa.me/919886643627" target="_blank" rel="noopener">WhatsApp Enquiry</a>
-    </div>
-   </div>
-
+   <div class="footer-about"><div class="footer-brand"><i class="fa-solid fa-droplet"></i> SVN ENTERPRISES</div><p>Your sourcing partner for water treatment spares, filtration products, pumps, accessories and purification and dosing system solutions.</p></div>
+   <div class="footer-column"><h4>Quick Navigation</h4><div class="footer-links"><a href="index.html">Home</a><a href="product.html">Products</a><a href="#about">About Us</a><a href="#contact">Contact</a></div></div>
+   <div class="footer-column"><h4>Our Products</h4><div class="footer-links"><a href="product.html">RO Membranes</a><a href="product.html">Filter Cartridges</a><a href="product.html">Filter Housings &amp; Bags</a><a href="product.html">Pumps &amp; Accessories</a><a href="product.html">Dosing Systems</a></div></div>
+   <div class="footer-column"><h4>Get in Touch</h4><div class="footer-links"><a href="mailto:svnblr@yahoo.com">svnblr@yahoo.com</a><a href="tel:+919886643627">+91 9886643627</a><a href="https://wa.me/919886643627" target="_blank" rel="noopener">WhatsApp Enquiry</a></div></div>
   </div>
-
-  <div class="footer-bottom">
-   <span>© <span id="year"></span> SVN Enterprises. All Rights Reserved.</span>
-   <span>Water Treatment Spares & System Solutions.</span>
-  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> SVN Enterprises. All Rights Reserved.</span><span>Water Treatment Spares &amp; System Solutions.</span></div>
  </div>
 </footer>
 
-<!-- FLOATING BUTTONS -->
-
-<a class="whatsapp-float" href="https://wa.me/919886643627?text=Hello%20SVN%20Enterprises%2C%20I%20need%20information%20about%20your%20products." target="_blank" rel="noopener">
- <i class="fa-brands fa-whatsapp"></i> WhatsApp
-</a>
-
-<button class="back-top" id="backTop" aria-label="Back to top">
- <i class="fa-solid fa-arrow-up"></i>
-</button>
-
-<!-- SUCCESS POPUP -->
+<a class="whatsapp-float" href="https://wa.me/919886643627?text=Hello%20SVN%20Enterprises%2C%20I%20need%20information%20about%20your%20products." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+<button class="back-top" id="backTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
 <div class="modal" id="enquiryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
  <div class="modal-card">
   <div class="modal-icon"><i class="fa-solid fa-check"></i></div>
   <h3 id="modalTitle">Enquiry Submitted!</h3>
-  <p>
-   Your enquiry has been submitted successfully.
-   Please wait until we revert back, or call
-   <strong>+91 9886643627</strong> for assistance.
-  </p>
-  <div class="modal-actions">
-   <a href="https://wa.me/919886643627" target="_blank" rel="noopener">
-    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-   </a>
-   <button type="button" id="closeModal">Close</button>
-  </div>
+  <p>Your enquiry has been submitted successfully. Please wait until we revert back, or call <strong>+91 9886643627</strong> for assistance.</p>
+  <div class="modal-actions"><a href="https://wa.me/919886643627" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a><button type="button" id="closeModal">Close</button></div>
  </div>
 </div>
 
 <script>
-
 /* PAGE LOADER */
-
 window.addEventListener("load",()=>{
- setTimeout(()=>{
-  document.getElementById("loader").classList.add("hide");
- },650);
+ const loader=document.getElementById("loader");
+ window.setTimeout(()=>loader.classList.add("hide"),650);
 });
 
 /* YEAR */
-
 document.getElementById("year").textContent=new Date().getFullYear();
 
 /* MOBILE NAVIGATION */
-
 const menuToggle=document.getElementById("menuToggle");
 const navigation=document.getElementById("navigation");
-
 menuToggle.addEventListener("click",()=>{
  const isOpen=navigation.classList.toggle("open");
- menuToggle.setAttribute("aria-expanded",isOpen);
- menuToggle.innerHTML=isOpen
- ?'<i class="fa-solid fa-xmark"></i>'
- :'<i class="fa-solid fa-bars"></i>';
+ menuToggle.setAttribute("aria-expanded",String(isOpen));
+ menuToggle.innerHTML=isOpen?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';
 });
-
-navigation.querySelectorAll("a").forEach(link=>{
- link.addEventListener("click",()=>{
-  navigation.classList.remove("open");
-  menuToggle.setAttribute("aria-expanded","false");
-  menuToggle.innerHTML='<i class="fa-solid fa-bars"></i>';
- });
-});
+navigation.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{
+ navigation.classList.remove("open");
+ menuToggle.setAttribute("aria-expanded","false");
+ menuToggle.innerHTML='<i class="fa-solid fa-bars"></i>';
+}));
 
 /* SCROLL EFFECTS */
-
 const header=document.getElementById("header");
 const progress=document.getElementById("scrollProgress");
 const backTop=document.getElementById("backTop");
-
-window.addEventListener("scroll",()=>{
+function updateScroll(){
  const scrollTop=window.scrollY;
  const maxScroll=document.documentElement.scrollHeight-window.innerHeight;
-
  header.classList.toggle("scrolled",scrollTop>30);
  backTop.classList.toggle("show",scrollTop>500);
-
  progress.style.width=(maxScroll>0?(scrollTop/maxScroll)*100:0)+"%";
-},{passive:true});
+}
+window.addEventListener("scroll",updateScroll,{passive:true});
+updateScroll();
+backTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
 
-backTop.addEventListener("click",()=>{
- window.scrollTo({top:0,behavior:"smooth"});
-});
-
-/* SCROLL REVEAL ANIMATION */
-
-const revealObserver=new IntersectionObserver((entries,observer)=>{
- entries.forEach(entry=>{
-  if(entry.isIntersecting){
-   entry.target.classList.add("visible");
-   observer.unobserve(entry.target);
-  }
+/* SCROLL REVEAL */
+if("IntersectionObserver" in window){
+ const revealObserver=new IntersectionObserver((entries,observer)=>{
+  entries.forEach(entry=>{
+   if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}
+  });
+ },{threshold:.12,rootMargin:"0px 0px -35px 0px"});
+ document.querySelectorAll(".reveal").forEach((element,index)=>{
+  element.style.transitionDelay=(index%4)*70+"ms";
+  revealObserver.observe(element);
  });
-},{threshold:.12,rootMargin:"0px 0px -35px 0px"});
-
-document.querySelectorAll(".reveal").forEach((element,index)=>{
- element.style.transitionDelay=(index%4)*70+"ms";
- revealObserver.observe(element);
-});
+}else{
+ document.querySelectorAll(".reveal").forEach(element=>element.classList.add("visible"));
+}
 
 /* ENQUIRY FORM */
-
 const enquiryForm=document.getElementById("enquiryForm");
 const enquirySubmit=document.getElementById("enquirySubmit");
 const enquiryStatus=document.getElementById("enquiryStatus");
@@ -1954,136 +479,86 @@ const enquiryModal=document.getElementById("enquiryModal");
 const closeModal=document.getElementById("closeModal");
 
 enquiryForm.addEventListener("submit",async function(event){
-
  event.preventDefault();
-
- if(!enquiryForm.reportValidity()) return;
-
+ if(!enquiryForm.reportValidity())return;
  enquirySubmit.disabled=true;
  enquirySubmit.innerHTML='<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
  enquiryStatus.textContent="Sending your enquiry. Please wait...";
-
  try{
-
   const response=await fetch(enquiryForm.action,{
    method:"POST",
    body:new FormData(enquiryForm),
-   headers:{
-    "Accept":"application/json"
-   }
+   headers:{"Accept":"application/json"}
   });
-
-  const result=await response.json().catch(()=>({}));
-
-  if(!response.ok || result.success===false || result.success==="false"){
-   throw new Error(result.message||"Unable to submit enquiry.");
+  const result=await response.json().catch(()=>null);
+  if(!response.ok||!result||result.success===false||result.success==="false"){
+   throw new Error((result&&result.message)||"Unable to submit enquiry.");
   }
-
   enquiryForm.reset();
   enquiryStatus.textContent="";
   enquiryModal.classList.add("show");
   closeModal.focus();
-
  }catch(error){
-
-  enquiryStatus.textContent=
-   "Your enquiry could not be sent. Please try again or contact us directly at +91 9886643627.";
-
+  enquiryStatus.textContent="Your enquiry could not be sent. Please try again or contact us directly at +91 9886643627.";
  }finally{
-
   enquirySubmit.disabled=false;
   enquirySubmit.innerHTML='Submit Enquiry <i class="fa-solid fa-arrow-right"></i>';
-
  }
-
 });
 
 /* CLOSE SUCCESS POPUP */
-
-function hideModal(){
- enquiryModal.classList.remove("show");
-}
-
+function hideModal(){enquiryModal.classList.remove("show");}
 closeModal.addEventListener("click",hideModal);
-
-enquiryModal.addEventListener("click",event=>{
- if(event.target===enquiryModal) hideModal();
-});
-
-document.addEventListener("keydown",event=>{
- if(event.key==="Escape") hideModal();
-});
-
-
-
+enquiryModal.addEventListener("click",event=>{if(event.target===enquiryModal)hideModal();});
+document.addEventListener("keydown",event=>{if(event.key==="Escape")hideModal();});
 
 /* AUTOMATIC HERO IMAGE SLIDER */
-
-const heroSlides = document.querySelectorAll(".hero-slide");
-const heroDots = document.querySelectorAll(".hero-dot");
-const heroProgress = document.getElementById("heroProgress");
-
-let currentHeroSlide = 0;
-let heroTimer;
-let heroStartTime;
-const heroInterval = 5000;
+const heroSlides=[...document.querySelectorAll(".hero-slide")];
+const heroDots=[...document.querySelectorAll(".hero-dot")];
+const heroProgress=document.getElementById("heroProgress");
+const heroPrev=document.getElementById("heroPrev");
+const heroNext=document.getElementById("heroNext");
+let currentHeroSlide=0;
+let heroTimer=null;
+const heroInterval=5000;
+const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function showHeroSlide(index){
-
  heroSlides[currentHeroSlide].classList.remove("active");
  heroDots[currentHeroSlide].classList.remove("active");
-
- currentHeroSlide = (index + heroSlides.length) % heroSlides.length;
-
+ heroDots[currentHeroSlide].removeAttribute("aria-current");
+ currentHeroSlide=(index+heroSlides.length)%heroSlides.length;
  heroSlides[currentHeroSlide].classList.add("active");
  heroDots[currentHeroSlide].classList.add("active");
-
+ heroDots[currentHeroSlide].setAttribute("aria-current","true");
  heroProgress.style.transition="none";
  heroProgress.style.width="0%";
-
- requestAnimationFrame(()=>{
-  requestAnimationFrame(()=>{
+ if(!reduceMotion){
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{
    heroProgress.style.transition=`width ${heroInterval}ms linear`;
    heroProgress.style.width="100%";
-  });
- });
-
+  }));
+ }
 }
-
-function nextHeroSlide(){
- showHeroSlide(currentHeroSlide + 1);
-}
-
-function previousHeroSlide(){
- showHeroSlide(currentHeroSlide - 1);
-}
-
+function nextHeroSlide(){showHeroSlide(currentHeroSlide+1);}
+function previousHeroSlide(){showHeroSlide(currentHeroSlide-1);}
 function startHeroSlider(){
  clearInterval(heroTimer);
- heroTimer=setInterval(nextHeroSlide,heroInterval);
+ if(!reduceMotion){
+  heroProgress.style.transition=`width ${heroInterval}ms linear`;
+  heroProgress.style.width="100%";
+  heroTimer=setInterval(nextHeroSlide,heroInterval);
+ }
 }
-
-document.getElementById("heroNext").addEventListener("click",()=>{
- nextHeroSlide();
- startHeroSlider();
-});
-
-document.getElementById("heroPrev").addEventListener("click",()=>{
- previousHeroSlide();
- startHeroSlider();
-});
-
-heroDots.forEach((dot,index)=>{
- dot.addEventListener("click",()=>{
-  showHeroSlide(index);
-  startHeroSlider();
- });
-});
-
+heroNext.addEventListener("click",()=>{nextHeroSlide();startHeroSlider();});
+heroPrev.addEventListener("click",()=>{previousHeroSlide();startHeroSlider();});
+heroDots.forEach((dot,index)=>dot.addEventListener("click",()=>{showHeroSlide(index);startHeroSlider();}));
+const heroSection=document.querySelector(".hero");
+heroSection.addEventListener("mouseenter",()=>clearInterval(heroTimer));
+heroSection.addEventListener("mouseleave",startHeroSlider);
+heroSection.addEventListener("focusin",()=>clearInterval(heroTimer));
+heroSection.addEventListener("focusout",startHeroSlider);
 startHeroSlider();
-
-
 </script>
-
 </body>
 </html>
