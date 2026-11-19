@@ -70,6 +70,17 @@ footer{background:#102d3c;color:#c7d8d3;padding:30px 5% 20px}.footer-top{display
 .contact-form-page input,.contact-form-page textarea{width:100%;padding:12px;border:1px solid #dce8e2;margin:0 0 10px;font:12px "DM Sans";border-radius:3px}
 .contact-form-page textarea{min-height:105px;resize:vertical}
 .contact-form-page button{background:var(--green);color:white;border:0;padding:13px 20px;font:800 11px "DM Sans";border-radius:3px;cursor:pointer}
+.contact-form-page button:disabled{opacity:.65;cursor:wait}
+.contact-actions{display:grid;gap:10px}
+.whatsapp-enquiry{display:inline-flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px 18px;background:#20b968;color:#fff;border-radius:3px;font:800 11px "DM Sans";transition:.2s}
+.whatsapp-enquiry:hover{background:#159b53;transform:translateY(-2px)}
+.enquiry-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(5,25,25,.62)}
+.enquiry-modal.show{display:flex}
+.enquiry-modal-card{width:min(100%,420px);background:#fff;padding:30px 26px;text-align:center;border-radius:8px;box-shadow:0 20px 60px #0003}
+.enquiry-modal-card h3{font:800 21px Manrope;color:var(--navy);margin:0 0 10px}
+.enquiry-modal-card p{font:12px/1.8 "DM Sans";color:var(--muted);margin:0 0 18px}
+.enquiry-modal-card a,.enquiry-modal-card button{display:inline-block;border:0;border-radius:25px;padding:11px 18px;background:var(--green);color:#fff;font:800 11px "DM Sans";cursor:pointer;margin:4px}
+.enquiry-modal-card button{background:var(--navy)}
 .product-grid-page{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .product-grid-page .category-photo{height:155px}
 .product-intro{padding:28px 5% 8px}
@@ -124,15 +135,25 @@ footer{background:#102d3c;color:#c7d8d3;padding:30px 5% 20px}.footer-top{display
     <div class="contact-layout">
       <div><p>Have a question about a product, replacement spare or water treatment system? Contact our team with your requirement. Share the product name, specification or application details so we can understand how to assist.</p>
       <div class="contact-lines">
-        <div class="contact-line"><b>✉</b><span><strong>Email</strong><br>Add your official business email address</span></div>
-        <div class="contact-line"><b>☎</b><span><strong>Phone</strong><br>Add your business contact number</span></div>
-        <div class="contact-line"><b>⌖</b><span><strong>Address</strong><br>Add your office or business address</span></div>
+        <div class="contact-line"><b>✉</b><span><strong>Email</strong><br><a href="mailto:svnblr@yahoo.com">svnblr@yahoo.com</a></span></div>
+        <div class="contact-line"><b>☎</b><span><strong>Phone / WhatsApp</strong><br><a href="tel:+919886643627">+91 9886643627</a></span></div>
+        <div class="contact-line"><b>⌖</b><span><strong>Address</strong><br>Contact us for business location and support</span></div>
       </div></div>
-      <form class="contact-form-page" onsubmit="event.preventDefault();alert('Please connect this form to your business email or form service before publishing.');">
-        <input type="text" placeholder="Your Name" required><input type="email" placeholder="Email Address" required>
-        <input type="tel" placeholder="Phone Number"><textarea placeholder="Tell us about your product requirement" required></textarea>
-        <button type="submit">Send Enquiry ↗</button>
-      </form>
+      <div>
+        <form class="contact-form-page" id="enquiryForm" action="https://formsubmit.co/ajax/svnblr@yahoo.com" method="POST">
+          <input type="hidden" name="_subject" value="New Product Enquiry - SVN Enterprises">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="Name" placeholder="Your Name" autocomplete="name" required>
+          <input type="email" name="Email" placeholder="Email Address" autocomplete="email" required>
+          <input type="tel" name="Phone" placeholder="Phone Number" autocomplete="tel" required>
+          <textarea name="Enquiry" placeholder="Tell us about your product requirement" required></textarea>
+          <div class="contact-actions">
+            <button type="submit" id="enquirySubmit">Send Enquiry ↗</button>
+            <a class="whatsapp-enquiry" href="https://wa.me/919886643627?text=Hello%20SVN%20Enterprises%2C%20I%20would%20like%20to%20make%20an%20enquiry%20about%20your%20water%20treatment%20products." target="_blank" rel="noopener">☏ Enquire on WhatsApp</a>
+          </div>
+          <p id="enquiryStatus" role="status" aria-live="polite" style="font-size:11px;color:#71818a;margin:10px 0 0"></p>
+        </form>
+      </div>
     </div>
   </div>
 </section>
@@ -144,5 +165,46 @@ footer{background:#102d3c;color:#c7d8d3;padding:30px 5% 20px}.footer-top{display
   </div>
   <div class="copyright"><span>© <span id="year"></span> SVN Enterprises. All Rights Reserved.</span><span>Water Treatment Spares & System Solutions</span></div>
 </footer>
-<script>document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav').classList.remove('open')));</script>
+<div class="enquiry-modal" id="enquiryModal" role="dialog" aria-modal="true" aria-labelledby="enquiryModalTitle">
+  <div class="enquiry-modal-card">
+    <h3 id="enquiryModalTitle">Enquiry Submitted Successfully!</h3>
+    <p>Your enquiry has been submitted. Please wait until we revert back, or call <strong>+91 9886643627</strong> for assistance.</p>
+    <a href="https://wa.me/919886643627" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    <button type="button" id="closeEnquiryModal">Close</button>
+  </div>
+</div>
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav').classList.remove('open')));
+const enquiryForm=document.getElementById('enquiryForm');
+const enquirySubmit=document.getElementById('enquirySubmit');
+const enquiryStatus=document.getElementById('enquiryStatus');
+const enquiryModal=document.getElementById('enquiryModal');
+enquiryForm.addEventListener('submit',async function(event){
+  event.preventDefault();
+  if(!enquiryForm.reportValidity()) return;
+  enquirySubmit.disabled=true;
+  enquirySubmit.textContent='Submitting...';
+  enquiryStatus.textContent='Sending your enquiry securely...';
+  try{
+    const response=await fetch(enquiryForm.action,{
+      method:'POST',
+      body:new FormData(enquiryForm),
+      headers:{'Accept':'application/json'}
+    });
+    const result=await response.json().catch(()=>({}));
+    if(!response.ok || result.success===false) throw new Error(result.message || 'Unable to submit your enquiry.');
+    enquiryForm.reset();
+    enquiryStatus.textContent='';
+    enquiryModal.classList.add('show');
+  }catch(error){
+    enquiryStatus.textContent='Sorry, your enquiry could not be sent. Please try again or contact us on WhatsApp / +91 9886643627.';
+  }finally{
+    enquirySubmit.disabled=false;
+    enquirySubmit.textContent='Send Enquiry ↗';
+  }
+});
+document.getElementById('closeEnquiryModal').addEventListener('click',()=>enquiryModal.classList.remove('show'));
+enquiryModal.addEventListener('click',event=>{if(event.target===enquiryModal) enquiryModal.classList.remove('show');});
+</script>
 </div></body></html>
