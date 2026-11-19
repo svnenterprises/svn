@@ -27,18 +27,25 @@
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
+
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:100px;
+}
+
 body{
   background:#f1f7f4;
   color:var(--ink);
   font-family:"DM Sans",sans-serif;
   overflow-x:hidden;
 }
+
 a{text-decoration:none;color:inherit}
 button,input{font:inherit}
 button{cursor:pointer}
 
 .site-shell{
+  width:100%;
   max-width:1440px;
   margin:auto;
   background:var(--white);
@@ -46,8 +53,7 @@ button{cursor:pointer}
   box-shadow:0 15px 65px rgba(12,45,35,.07);
 }
 
-
-/* HEADER — ALIGNED WITH HOMEPAGE */
+/* HEADER */
 
 .topbar{
   width:100%;
@@ -91,7 +97,6 @@ button{cursor:pointer}
   border-radius:10px;
   overflow:hidden;
   flex-shrink:0;
-  box-shadow:none;
 }
 
 .brand-logo img{
@@ -229,95 +234,7 @@ button{cursor:pointer}
     min-width:62px;
   }
 
-  .brand-name{
-    font-size:16px;
-  }
-}
-
-/* MOBILE NAVIGATION */
-
-@media(max-width:760px){
-
-  .topbar{
-    min-height:76px;
-    padding:0 5%;
-    gap:12px;
-  }
-
-  .brand{
-    gap:10px;
-  }
-
-  .brand-logo{
-    width:59px;
-    height:59px;
-    min-width:59px;
-  }
-
-  .brand-name{
-    font-size:16px;
-  }
-
-  .menu-toggle{
-    display:flex;
-  }
-
-  .nav{
-    display:none;
-    position:absolute;
-    top:100%;
-    left:0;
-    right:0;
-    width:100%;
-    padding:23px 6% 27px;
-    background:#fff;
-    box-shadow:0 16px 30px rgba(0,0,0,.10);
-    border-top:1px solid #edf2ef;
-    flex-direction:column;
-    align-items:stretch;
-    gap:0;
-  }
-
-  .nav.open{
-    display:flex;
-  }
-
-  .nav a{
-    padding:14px 5px;
-    border-bottom:1px solid #edf2ef;
-    font-size:13px;
-  }
-
-  .nav a:not(.nav-cta)::after{
-    display:none;
-  }
-
-  .nav .nav-cta{
-    margin-top:15px;
-    padding:14px 20px;
-    text-align:center;
-    border:0;
-  }
-}
-
-/* SMALL MOBILE */
-
-@media(max-width:380px){
-
-  .topbar{
-    padding:0 4%;
-  }
-
-  .brand-logo{
-    width:53px;
-    height:53px;
-    min-width:53px;
-  }
-
-  .brand-name{
-    font-size:14px;
-  }
-
+  .brand-name{font-size:16px}
 }
 
 /* HERO */
@@ -347,6 +264,7 @@ button{cursor:pointer}
   top:-130px;
   box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff05;
   animation:orbit 28s linear infinite;
+  pointer-events:none;
 }
 
 .hero:after{
@@ -359,6 +277,7 @@ button{cursor:pointer}
   bottom:-230px;
   background:#20c99b38;
   filter:blur(65px);
+  pointer-events:none;
 }
 
 @keyframes orbit{to{transform:rotate(360deg)}}
@@ -432,6 +351,7 @@ button{cursor:pointer}
   color:#073d32;
   box-shadow:0 10px 30px #1ac49635;
 }
+
 .btn-primary:hover{
   background:#75e9c5;
   transform:translateY(-4px);
@@ -443,6 +363,7 @@ button{cursor:pointer}
   color:white;
   background:#ffffff0b;
 }
+
 .btn-outline:hover{
   background:white;
   color:var(--navy);
@@ -476,6 +397,7 @@ button{cursor:pointer}
   padding:12px;
   border-right:1px solid var(--line);
 }
+
 .intro-item:last-child{border:0}
 
 .intro-icon{
@@ -495,6 +417,7 @@ button{cursor:pointer}
   color:var(--navy);
   margin-bottom:4px;
 }
+
 .intro-item p{
   font-size:10px;
   color:var(--muted);
@@ -554,6 +477,7 @@ button{cursor:pointer}
   font:800 19px Manrope;
   color:var(--navy);
 }
+
 .catalogue-toolbar p{
   font-size:11px;
   color:var(--muted);
@@ -564,6 +488,7 @@ button{cursor:pointer}
   position:relative;
   width:min(100%,330px);
 }
+
 .search-box input{
   width:100%;
   padding:14px 45px 14px 18px;
@@ -574,10 +499,12 @@ button{cursor:pointer}
   font-size:12px;
   transition:.3s;
 }
+
 .search-box input:focus{
   border-color:var(--green);
   box-shadow:0 0 0 4px #12a88715;
 }
+
 .search-box span{
   position:absolute;
   right:17px;
@@ -585,6 +512,7 @@ button{cursor:pointer}
   transform:translateY(-50%);
   font-size:19px;
   color:var(--green);
+  pointer-events:none;
 }
 
 /* FILTERS */
@@ -606,7 +534,9 @@ button{cursor:pointer}
   font-weight:800;
   transition:.25s;
 }
-.filter-btn:hover,.filter-btn.active{
+
+.filter-btn:hover,
+.filter-btn.active{
   background:var(--green);
   color:white;
   border-color:var(--green);
@@ -743,6 +673,7 @@ button{cursor:pointer}
   font-weight:800;
   transition:.25s;
 }
+
 .product-link:hover{
   gap:13px;
   color:var(--navy);
@@ -789,6 +720,7 @@ button{cursor:pointer}
   inset:0;
   transition:transform .8s;
 }
+
 .feature-image:hover img{transform:scale(1.06)}
 
 .feature-image:after{
@@ -809,12 +741,14 @@ button{cursor:pointer}
 }
 
 .feature-copy .section-tag{margin-bottom:15px}
+
 .feature-copy h2{
   font:800 clamp(29px,4vw,43px)/1.2 Manrope;
   letter-spacing:-1.5px;
   color:var(--navy);
   margin-bottom:18px;
 }
+
 .feature-copy>p{
   font-size:13px;
   color:var(--muted);
@@ -850,6 +784,7 @@ button{cursor:pointer}
   font:800 12px Manrope;
   margin-bottom:4px;
 }
+
 .feature-point p{
   color:var(--muted);
   font-size:11px;
@@ -876,6 +811,7 @@ button{cursor:pointer}
   border:1px solid #ffffff15;
   border-radius:50%;
   box-shadow:0 0 0 45px #ffffff08,0 0 0 90px #ffffff05;
+  pointer-events:none;
 }
 
 .process-inner{
@@ -888,11 +824,13 @@ button{cursor:pointer}
 }
 
 .process-copy .section-tag{color:#62e5b8}
+
 .process-copy h2{
   font:800 clamp(27px,4vw,40px)/1.2 Manrope;
   letter-spacing:-1.2px;
   margin:16px 0;
 }
+
 .process-copy p{
   color:#afc8be;
   font-size:12px;
@@ -913,6 +851,7 @@ button{cursor:pointer}
   border-radius:12px;
   transition:.3s;
 }
+
 .process-step:hover{
   background:#ffffff16;
   transform:translateY(-5px);
@@ -923,10 +862,12 @@ button{cursor:pointer}
   font:800 22px Manrope;
   margin-bottom:12px;
 }
+
 .process-step h3{
   font:800 13px Manrope;
   margin-bottom:8px;
 }
+
 .process-step p{
   color:#a9c1b9;
   font-size:10px;
@@ -955,17 +896,20 @@ button{cursor:pointer}
   font:800 clamp(22px,3vw,31px) Manrope;
   margin-bottom:10px;
 }
+
 .enquiry-banner p{
   color:#d5f5e9;
   font-size:12px;
   line-height:1.8;
   max-width:600px;
 }
+
 .enquiry-banner .btn{
   background:white;
   color:var(--green);
   white-space:nowrap;
 }
+
 .enquiry-banner .btn:hover{
   background:#dff6ed;
   transform:translateY(-3px);
@@ -1023,7 +967,9 @@ footer{
   font-size:10px;
   color:#aec3ba;
 }
+
 .footer-links a{transition:.25s}
+
 .footer-links a:hover{
   color:#57e0b3;
   transform:translateX(4px);
@@ -1036,6 +982,7 @@ footer{
   line-height:1.6;
   color:#aec3ba;
 }
+
 .footer-contact strong{color:white}
 
 .footer-bottom{
@@ -1068,6 +1015,7 @@ footer{
   box-shadow:0 8px 25px #20bd6850;
   transition:.3s;
 }
+
 .whatsapp-float:hover{
   transform:translateY(-5px) scale(1.05);
   background:#159b52;
@@ -1093,11 +1041,13 @@ footer{
   transform:translateY(10px);
   transition:.3s;
 }
+
 .back-top.show{
   opacity:1;
   visibility:visible;
   transform:translateY(0);
 }
+
 .back-top:hover{
   background:var(--navy);
   transform:translateY(-4px);
@@ -1110,6 +1060,7 @@ footer{
   transform:translateY(25px);
   transition:opacity .7s ease,transform .7s ease;
 }
+
 .reveal.visible{
   opacity:1;
   transform:translateY(0);
@@ -1124,70 +1075,133 @@ footer{
 }
 
 @media(max-width:760px){
-  .topbar{padding:0 5%}
-  .menu-toggle{display:block}
+  .topbar{
+    min-height:76px;
+    padding:0 5%;
+    gap:12px;
+  }
+
+  .brand{gap:10px}
+
+  .brand-logo{
+    width:59px;
+    height:59px;
+    min-width:59px;
+  }
+
+  .brand-name{font-size:16px}
+
+  .menu-toggle{display:flex}
+
   .nav{
-    display:none;
+    display:flex;
     position:absolute;
-    top:84px;
+    top:100%;
     left:0;
     right:0;
-    background:white;
-    padding:24px 6%;
-    box-shadow:0 15px 25px #00000012;
+    width:100%;
+    padding:12px 6% 24px;
+    background:#fff;
+    box-shadow:0 16px 30px rgba(0,0,0,.10);
+    border-top:1px solid #edf2ef;
     flex-direction:column;
     align-items:stretch;
-    gap:19px;
+    gap:0;
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+    transform:translateY(-8px);
+    transition:opacity .25s ease,transform .25s ease,visibility .25s ease;
   }
-  .nav.open{display:flex}
-  .nav .nav-cta{text-align:center}
+
+  .nav.open{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+    transform:translateY(0);
+  }
+
+  .nav a{
+    padding:14px 5px;
+    border-bottom:1px solid #edf2ef;
+    font-size:13px;
+  }
+
+  .nav a:not(.nav-cta)::after{display:none}
+
+  .nav .nav-cta{
+    margin-top:15px;
+    padding:14px 20px;
+    text-align:center;
+    border:0;
+  }
+
   .hero{min-height:510px;padding:65px 7%}
   .hero h1{letter-spacing:-1.8px}
   .hero p{font-size:13px}
   .hero-note{display:none}
+
   .intro-strip{padding:20px 4%}
   .intro-item{padding:9px;gap:9px}
   .intro-item h3{font-size:10px}
   .intro-item p{font-size:9px}
+
   .section{padding:65px 5%}
   .catalogue-toolbar{align-items:flex-start}
   .search-box{width:100%}
   .product-grid{gap:18px}
+
   .feature-panel{grid-template-columns:1fr;gap:30px}
   .feature-image{min-height:300px}
+
   .process-inner{grid-template-columns:1fr;gap:30px}
   .process-band{padding:55px 6%}
+
   .enquiry-banner{
     margin:50px 5%;
     padding:32px 25px;
     align-items:flex-start;
     flex-direction:column;
   }
+
   .footer-top{grid-template-columns:1fr 1fr;gap:28px}
   .footer-top>div:last-child{grid-column:auto}
   footer{padding:45px 6% 20px}
 }
 
 @media(max-width:540px){
-  .topbar{height:72px}
-  .brand{font-size:17px}
-  .brand-mark{width:40px;height:40px}
-  .nav{top:72px}
+  .topbar{min-height:72px}
+
+  .brand-logo{
+    width:53px;
+    height:53px;
+    min-width:53px;
+  }
+
+  .brand-name{font-size:14px}
+  .brand-name small{font-size:7px;letter-spacing:1.5px}
+
   .hero{min-height:500px}
   .hero h1{font-size:43px}
+
   .intro-strip{grid-template-columns:1fr}
+
   .intro-item{
     justify-content:flex-start;
     border:0;
     border-bottom:1px solid var(--line);
     padding:12px 8px;
   }
+
   .intro-item:last-child{border:0}
+
   .product-grid{grid-template-columns:1fr}
   .product-image{height:230px}
   .product-info p{min-height:0}
+
   .filter-bar{gap:7px}
   .filter-btn{padding:9px 13px;font-size:9px}
+
   .process-steps{grid-template-columns:1fr 1fr}
   .footer-top{grid-template-columns:1fr}
   .footer-top>div:last-child{grid-column:auto}
@@ -1195,9 +1209,19 @@ footer{
 }
 
 @media(max-width:380px){
+  .topbar{padding:0 4%}
+  .brand{gap:8px}
+  .brand-logo{
+    width:48px;
+    height:48px;
+    min-width:48px;
+  }
+  .brand-name{font-size:13px}
   .hero h1{font-size:37px}
   .process-steps{grid-template-columns:1fr}
   .product-bottom{align-items:flex-start;flex-direction:column}
+  .whatsapp-float{right:18px}
+  .back-top{right:21px}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -1214,55 +1238,41 @@ footer{
 <body>
 <div class="site-shell">
 
-
 <!-- HEADER -->
 
 <header class="topbar">
 
-  <!-- LOGO AND BRAND NAME -->
   <a class="brand" href="index.html" aria-label="SVN Enterprises Home">
-
     <span class="brand-logo">
-      <img src="logos/logo.png"
-           alt="SVN Enterprises Logo">
+      <img src="logos/logo.png" alt="SVN Enterprises Logo">
     </span>
 
     <span class="brand-name">
-      
-      <small></small>
+      SVN ENTERPRISES
+      <small>WATER TREATMENT SOLUTIONS</small>
     </span>
-
   </a>
 
-  <!-- MOBILE MENU -->
   <button class="menu-toggle"
-          aria-label="Toggle navigation"
+          type="button"
+          aria-label="Open navigation menu"
           aria-expanded="false"
           aria-controls="mainNavigation">
     ☰
   </button>
 
-  <!-- NAVIGATION -->
-  <nav class="nav" id="mainNavigation">
-
+  <nav class="nav" id="mainNavigation" aria-label="Main navigation">
     <a href="index.html">Home</a>
-
-    <a href="product.html" class="active">Products</a>
-
+    <a href="products.html" class="active" aria-current="page">Products</a>
     <a href="index.html#about">About Us</a>
-
     <a href="index.html#contact">Contact</a>
-
-    <a class="nav-cta" href="index.html#contact">
-      Send Enquiry ↗
-    </a>
-
+    <a class="nav-cta" href="index.html#contact">Send Enquiry ↗</a>
   </nav>
 
 </header>
 
-
 <!-- HERO -->
+
 <section class="hero">
   <div class="hero-content">
     <div class="hero-label">SVN Enterprises · Our Product Range</div>
@@ -1289,6 +1299,7 @@ footer{
 </section>
 
 <!-- INTRO STRIP -->
+
 <section class="intro-strip">
   <div class="intro-item">
     <div class="intro-icon">◈</div>
@@ -1316,6 +1327,7 @@ footer{
 </section>
 
 <!-- PRODUCTS -->
+
 <section class="section catalogue" id="products">
 
   <div class="section-heading reveal">
@@ -1335,22 +1347,25 @@ footer{
     </div>
 
     <div class="search-box">
-      <input type="search" id="productSearch" placeholder="Search products..." aria-label="Search products">
+      <input type="search" id="productSearch"
+             placeholder="Search products..."
+             aria-label="Search products">
       <span>⌕</span>
     </div>
   </div>
 
   <div class="filter-bar reveal">
-    <button class="filter-btn active" data-filter="all">All Products</button>
-    <button class="filter-btn" data-filter="filtration">Filtration</button>
-    <button class="filter-btn" data-filter="filters">Filter Components</button>
-    <button class="filter-btn" data-filter="equipment">Equipment</button>
-    <button class="filter-btn" data-filter="systems">Systems</button>
+    <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All Products</button>
+    <button type="button" class="filter-btn" data-filter="filtration" aria-pressed="false">Filtration</button>
+    <button type="button" class="filter-btn" data-filter="filters" aria-pressed="false">Filter Components</button>
+    <button type="button" class="filter-btn" data-filter="equipment" aria-pressed="false">Equipment</button>
+    <button type="button" class="filter-btn" data-filter="systems" aria-pressed="false">Systems</button>
   </div>
 
   <div class="product-grid" id="productGrid">
 
     <!-- 01 RO MEMBRANES -->
+
     <article class="product-card" data-category="filtration" data-name="RO Membranes Reverse Osmosis Water Purification">
       <div class="product-image">
         <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1000&q=85" alt="RO membrane water filtration" loading="lazy">
@@ -1369,6 +1384,7 @@ footer{
     </article>
 
     <!-- 02 FILTER CARTRIDGES -->
+
     <article class="product-card" data-category="filters" data-name="Filter Cartridges Micron Filtration Consumables">
       <div class="product-image">
         <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=85" alt="Industrial filter cartridge products" loading="lazy">
@@ -1387,6 +1403,7 @@ footer{
     </article>
 
     <!-- 03 FILTER HOUSINGS -->
+
     <article class="product-card" data-category="filters" data-name="Filter Housings Industrial Water Filtration Housing">
       <div class="product-image">
         <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=85" alt="Industrial water treatment equipment" loading="lazy">
@@ -1405,6 +1422,7 @@ footer{
     </article>
 
     <!-- 04 FILTER BAGS -->
+
     <article class="product-card" data-category="filters" data-name="Filter Bags Industrial Liquid Filtration">
       <div class="product-image">
         <img src="https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?auto=format&fit=crop&w=1000&q=85" alt="Industrial filter bags and filtration components" loading="lazy">
@@ -1423,6 +1441,7 @@ footer{
     </article>
 
     <!-- 05 FILTER PAPER -->
+
     <article class="product-card" data-category="filtration" data-name="Filter Paper Laboratory Process Filtration Consumables">
       <div class="product-image">
         <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85" alt="Filter paper and filtration consumables" loading="lazy">
@@ -1441,6 +1460,7 @@ footer{
     </article>
 
     <!-- 06 PUMPS -->
+
     <article class="product-card" data-category="equipment" data-name="Pumps Accessories Water Treatment Pumping Equipment">
       <div class="product-image">
         <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1000&q=85" alt="Industrial pumps and equipment" loading="lazy">
@@ -1459,6 +1479,7 @@ footer{
     </article>
 
     <!-- 07 PURIFICATION SYSTEMS -->
+
     <article class="product-card" data-category="systems" data-name="Water Purification Systems Commercial Industrial">
       <div class="product-image">
         <img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=1000&q=85" alt="Water purification system" loading="lazy">
@@ -1477,6 +1498,7 @@ footer{
     </article>
 
     <!-- 08 DOSING SYSTEMS -->
+
     <article class="product-card" data-category="systems" data-name="Dosing Systems Chemical Dosing Process Applications">
       <div class="product-image">
         <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=85" alt="Industrial chemical dosing system" loading="lazy">
@@ -1494,7 +1516,7 @@ footer{
       </div>
     </article>
 
-    <div class="no-results" id="noResults">
+    <div class="no-results" id="noResults" role="status" aria-live="polite">
       No matching products found. Please try another search.
     </div>
 
@@ -1502,6 +1524,7 @@ footer{
 </section>
 
 <!-- FEATURE SECTION -->
+
 <section class="feature-section">
   <div class="feature-panel">
 
@@ -1551,6 +1574,7 @@ footer{
 </section>
 
 <!-- HOW WE HELP -->
+
 <section class="process-band">
   <div class="process-inner">
 
@@ -1599,6 +1623,7 @@ footer{
 </section>
 
 <!-- ENQUIRY BANNER -->
+
 <section class="enquiry-banner reveal">
   <div>
     <h2>Looking for a Specific Water Treatment Product?</h2>
@@ -1614,6 +1639,7 @@ footer{
 </section>
 
 <!-- FOOTER -->
+
 <footer>
   <div class="footer-top">
 
@@ -1683,6 +1709,7 @@ footer{
 </div>
 
 <!-- WHATSAPP -->
+
 <a class="whatsapp-float"
    href="https://wa.me/919886643627"
    target="_blank"
@@ -1690,139 +1717,207 @@ footer{
    aria-label="Chat with SVN Enterprises on WhatsApp">✆</a>
 
 <!-- BACK TO TOP -->
-<button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+
+<button class="back-top" id="backTop" type="button" aria-label="Back to top">↑</button>
 
 <script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  /* CURRENT YEAR */
+
+  const yearElement = document.getElementById("year");
+
+  if(yearElement){
+    yearElement.textContent = new Date().getFullYear();
+  }
 
 
-// MOBILE NAVIGATION
+  /* MOBILE NAVIGATION */
 
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav");
+  const menuToggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav");
 
-menuToggle.addEventListener("click", () => {
+  function closeMenu(){
+    if(!menuToggle || !nav) return;
 
-  const isOpen = nav.classList.toggle("open");
-
-  menuToggle.setAttribute("aria-expanded", isOpen);
-
-  menuToggle.textContent = isOpen ? "✕" : "☰";
-
-});
-
-document.querySelectorAll(".nav a").forEach(link => {
-
-  link.addEventListener("click", () => {
-
-    nav.classList.remove("open");
-
-    menuToggle.setAttribute("aria-expanded", "false");
-
-    menuToggle.textContent = "☰";
-
-  });
-
-});
-
-
-// CURRENT YEAR
-document.getElementById("year").textContent=new Date().getFullYear();
-
-// MOBILE NAVIGATION
-const menuToggle=document.querySelector(".menu-toggle");
-const nav=document.querySelector(".nav");
-
-menuToggle.addEventListener("click",()=>{
-  nav.classList.toggle("open");
-  const isOpen=nav.classList.contains("open");
-  menuToggle.setAttribute("aria-expanded",isOpen);
-  menuToggle.textContent=isOpen?"✕":"☰";
-});
-
-document.querySelectorAll(".nav a").forEach(link=>{
-  link.addEventListener("click",()=>{
     nav.classList.remove("open");
     menuToggle.setAttribute("aria-expanded","false");
-    menuToggle.textContent="☰";
-  });
-});
+    menuToggle.setAttribute("aria-label","Open navigation menu");
+    menuToggle.textContent = "☰";
+  }
 
-// PRODUCT FILTER AND SEARCH
-const filterButtons=document.querySelectorAll(".filter-btn");
-const productCards=document.querySelectorAll(".product-card");
-const searchInput=document.getElementById("productSearch");
-const noResults=document.getElementById("noResults");
+  if(menuToggle && nav){
 
-let activeFilter="all";
+    menuToggle.addEventListener("click",function(){
 
-function filterProducts(){
-  const search=searchInput.value.toLowerCase().trim();
-  let visibleCount=0;
+      const isOpen = nav.classList.toggle("open");
 
-  productCards.forEach(card=>{
-    const category=card.dataset.category;
-    const name=card.dataset.name.toLowerCase();
-    const title=card.querySelector("h3").textContent.toLowerCase();
-    const description=card.querySelector("p").textContent.toLowerCase();
+      menuToggle.setAttribute("aria-expanded",String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
 
-    const categoryMatch=activeFilter==="all"||category===activeFilter;
-    const searchMatch=!search||
-      name.includes(search)||
-      title.includes(search)||
-      description.includes(search);
+      menuToggle.textContent = isOpen ? "✕" : "☰";
 
-    const show=categoryMatch&&searchMatch;
-    card.style.display=show?"block":"none";
+    });
 
-    if(show){
-      visibleCount++;
-      card.classList.add("visible");
-    }
-  });
+    nav.querySelectorAll("a").forEach(function(link){
+      link.addEventListener("click",closeMenu);
+    });
 
-  noResults.style.display=visibleCount===0?"block":"none";
-}
-
-filterButtons.forEach(button=>{
-  button.addEventListener("click",()=>{
-    filterButtons.forEach(btn=>btn.classList.remove("active"));
-    button.classList.add("active");
-    activeFilter=button.dataset.filter;
-    filterProducts();
-  });
-});
-
-searchInput.addEventListener("input",filterProducts);
-
-// SCROLL REVEAL
-if("IntersectionObserver" in window){
-  const revealObserver=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add("visible");
-        revealObserver.unobserve(entry.target);
+    document.addEventListener("keydown",function(event){
+      if(event.key === "Escape"){
+        closeMenu();
       }
     });
-  },{threshold:.12});
 
-  document.querySelectorAll(".reveal,.product-card").forEach(element=>{
-    revealObserver.observe(element);
+    window.addEventListener("resize",function(){
+      if(window.innerWidth > 760){
+        closeMenu();
+      }
+    });
+
+  }
+
+
+  /* PRODUCT FILTER AND SEARCH */
+
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const productCards = document.querySelectorAll(".product-card");
+  const searchInput = document.getElementById("productSearch");
+  const noResults = document.getElementById("noResults");
+
+  let activeFilter = "all";
+
+  function filterProducts(){
+
+    if(!searchInput) return;
+
+    const search = searchInput.value.toLowerCase().trim();
+    let visibleCount = 0;
+
+    productCards.forEach(function(card){
+
+      const category = card.dataset.category || "";
+      const name = (card.dataset.name || "").toLowerCase();
+
+      const titleElement = card.querySelector("h3");
+      const descriptionElement = card.querySelector(".product-info p");
+
+      const title = titleElement ? titleElement.textContent.toLowerCase() : "";
+      const description = descriptionElement ? descriptionElement.textContent.toLowerCase() : "";
+
+      const categoryMatch =
+        activeFilter === "all" || category === activeFilter;
+
+      const searchMatch =
+        !search ||
+        name.includes(search) ||
+        title.includes(search) ||
+        description.includes(search);
+
+      const show = categoryMatch && searchMatch;
+
+      card.style.display = show ? "" : "none";
+      card.setAttribute("aria-hidden",String(!show));
+
+      if(show){
+        visibleCount++;
+        card.classList.add("visible");
+      }
+
+    });
+
+    if(noResults){
+      noResults.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+  }
+
+  filterButtons.forEach(function(button){
+
+    button.addEventListener("click",function(){
+
+      filterButtons.forEach(function(btn){
+        btn.classList.remove("active");
+        btn.setAttribute("aria-pressed","false");
+      });
+
+      button.classList.add("active");
+      button.setAttribute("aria-pressed","true");
+
+      activeFilter = button.dataset.filter || "all";
+
+      filterProducts();
+
+    });
+
   });
-}else{
-  document.querySelectorAll(".reveal,.product-card").forEach(element=>{
-    element.classList.add("visible");
-  });
-}
 
-// BACK TO TOP
-const backTop=document.getElementById("backTop");
+  if(searchInput){
+    searchInput.addEventListener("input",filterProducts);
+  }
 
-window.addEventListener("scroll",()=>{
-  backTop.classList.toggle("show",window.scrollY>450);
-});
 
-backTop.addEventListener("click",()=>{
-  window.scrollTo({top:0,behavior:"smooth"});
+  /* SCROLL REVEAL */
+
+  const revealElements = document.querySelectorAll(".reveal,.product-card");
+
+  if("IntersectionObserver" in window){
+
+    const revealObserver = new IntersectionObserver(function(entries,observer){
+
+      entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+
+      });
+
+    },{
+      threshold:.10,
+      rootMargin:"0px 0px 40px 0px"
+    });
+
+    revealElements.forEach(function(element){
+      revealObserver.observe(element);
+    });
+
+  }else{
+
+    revealElements.forEach(function(element){
+      element.classList.add("visible");
+    });
+
+  }
+
+
+  /* BACK TO TOP */
+
+  const backTop = document.getElementById("backTop");
+
+  if(backTop){
+
+    function updateBackTop(){
+      backTop.classList.toggle("show",window.scrollY > 450);
+    }
+
+    window.addEventListener("scroll",updateBackTop,{passive:true});
+
+    updateBackTop();
+
+    backTop.addEventListener("click",function(){
+      window.scrollTo({
+        top:0,
+        behavior:"smooth"
+      });
+    });
+
+  }
+
 });
 </script>
 
