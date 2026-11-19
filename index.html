@@ -1800,6 +1800,75 @@ document.addEventListener("keydown",event=>{
  if(event.key==="Escape") hideModal();
 });
 
+
+
+
+/* AUTOMATIC HERO IMAGE SLIDER */
+
+const heroSlides = document.querySelectorAll(".hero-slide");
+const heroDots = document.querySelectorAll(".hero-dot");
+const heroProgress = document.getElementById("heroProgress");
+
+let currentHeroSlide = 0;
+let heroTimer;
+let heroStartTime;
+const heroInterval = 5000;
+
+function showHeroSlide(index){
+
+ heroSlides[currentHeroSlide].classList.remove("active");
+ heroDots[currentHeroSlide].classList.remove("active");
+
+ currentHeroSlide = (index + heroSlides.length) % heroSlides.length;
+
+ heroSlides[currentHeroSlide].classList.add("active");
+ heroDots[currentHeroSlide].classList.add("active");
+
+ heroProgress.style.transition="none";
+ heroProgress.style.width="0%";
+
+ requestAnimationFrame(()=>{
+  requestAnimationFrame(()=>{
+   heroProgress.style.transition=`width ${heroInterval}ms linear`;
+   heroProgress.style.width="100%";
+  });
+ });
+
+}
+
+function nextHeroSlide(){
+ showHeroSlide(currentHeroSlide + 1);
+}
+
+function previousHeroSlide(){
+ showHeroSlide(currentHeroSlide - 1);
+}
+
+function startHeroSlider(){
+ clearInterval(heroTimer);
+ heroTimer=setInterval(nextHeroSlide,heroInterval);
+}
+
+document.getElementById("heroNext").addEventListener("click",()=>{
+ nextHeroSlide();
+ startHeroSlider();
+});
+
+document.getElementById("heroPrev").addEventListener("click",()=>{
+ previousHeroSlide();
+ startHeroSlider();
+});
+
+heroDots.forEach((dot,index)=>{
+ dot.addEventListener("click",()=>{
+  showHeroSlide(index);
+  startHeroSlider();
+ });
+});
+
+startHeroSlider();
+
+
 </script>
 
 </body>
